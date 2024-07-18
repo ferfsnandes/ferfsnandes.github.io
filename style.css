@@ -2,7 +2,7 @@
 body{
     margin: 0;
     background-color: #000;
-    color: #eee;
+    color: #1a0101;
     font-family: Poppins;
     font-size: 12px;
 }
@@ -109,7 +109,7 @@ header a{
     border-radius: 20px;
 }
 .thumbnail .item .content{
-    color: #fff;
+    color: #f1683a;
     position: absolute;
     bottom: 10px;
     left: 10px;
