@@ -312,6 +312,14 @@ textarea {
       @media only screen and (max-width: 37.5em) {
         .projects__row-content-title {
           font-size: 2.4rem; } }
+    .projects__row-content-subtitle {
+        font-size: 2.4rem;
+        color: #4f4f4f; /* A neutral grey tone for consistency */
+        line-height: 2.45;
+        max-width: 60rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+       }
     .projects__row-content-desc {
       font-size: 1.8rem;
       color: grey;
