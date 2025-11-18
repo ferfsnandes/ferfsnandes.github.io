@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Projetos | Gabriel Ferfsnandes</title>
+    <meta name="description" content="Projetos em Machine Learning, jogos, aplicações desktop e mobile desenvolvidos por Gabriel Ferfsnandes." />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header__content">
+        <div class="header__logo-container">
+          <div class="header__logo-img-cont">
+            <img
+              src="./assets/png/gabriel-logo.jpeg"
+              alt="Gabriel Logo"
+              class="header__logo-img"
+            />
+          </div>
+          <span class="header__logo-sub">Gabriel Ferfsnandes</span>
+        </div>
+        <div class="header__main">
+          <ul class="header__links">
+            <li class="header__link-wrapper">
+              <a href="./index.html" class="header__link"> Início </a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./index.html#about" class="header__link"> Sobre &amp; Serviços </a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./trabalhos.html" class="header__link"> Trabalhos </a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./projetos.html" class="header__link header__link--active"> Projetos </a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./index.html#contact" class="header__link"> Contato </a>
+            </li>
+          </ul>
+          <div class="header__main-ham-menu-cont">
+            <img
+              src="./assets/svg/ham-menu.svg"
+              alt="hamburger menu"
+              class="header__main-ham-menu"
+            />
+            <img
+              src="./assets/svg/ham-menu-close.svg"
+              alt="hamburger menu close"
+              class="header__main-ham-menu-close d-none"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="header__sm-menu">
+        <div class="header__sm-menu-content">
+          <ul class="header__sm-menu-links">
+            <li class="header__sm-menu-link">
+              <a href="./index.html"> Início </a>
+            </li>
+            <li class="header__sm-menu-link">
+              <a href="./index.html#about"> Sobre &amp; Serviços </a>
+            </li>
+            <li class="header__sm-menu-link">
+              <a href="./trabalhos.html"> Trabalhos </a>
+            </li>
+            <li class="header__sm-menu-link">
+              <a href="./projetos.html"> Projetos </a>
+            </li>
+            <li class="header__sm-menu-link">
+              <a href="./index.html#contact"> Contato </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="project-cs-hero">
+      <div class="project-cs-hero__content">
+        <h1 class="heading-primary">Projetos técnicos</h1>
+        <div class="project-cs-hero__info">
+          <p class="text-primary">
+            Uma seleção de projetos em Machine Learning, desenvolvimento web,
+            mobile, desktop e jogos, mostrando minha base técnica e variedade
+            de tecnologias.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- GRID DE PROJETOS -->
+    <section class="projects sec-pad">
+      <div class="main-container">
+        <div class="projects__content">
+
+          <!-- ML Doenças -->
+          <div class="projects__row">
+            <div class="projects__row-img-cont">
+              <img src="images/doencas.png" alt="Machine Learning Doenças" class="projects__row-img" />
+            </div>
+            <div class="projects__row-content">
+              <h3 class="projects__row-content-title">
+                Modelo de Machine Learning para Doenças Crônicas
+              </h3>
+              <p class="projects__row-content-desc">
+                Comparação de diferentes algoritmos (LightGBM, CatBoost, XGBoost, etc.)
+                para predição de doenças crônicas em idosos, avaliando acurácia,
+                precisão, recall, F1-score e AUC-ROC.
+              </p>
+              <p class="projects__row-content-desc">
+                <strong>Tecnologias:</strong> Python, Pandas, scikit-learn, LightGBM.
+              </p>
+            </div>
+          </div>
+
+          <!-- Jogo Memória -->
+          <div class="projects__row">
+            <div class="projects__row-img-cont">
+              <img src="images/memorygame.png" alt="Jogo da Memória" class="projects__row-img" />
+            </div>
+            <div class="projects__row-content">
+              <h3 class="projects__row-content-title">
+                Jogo da Memória (Web)
+              </h3>
+              <p class="projects__row-content-desc">
+                Jogo da memória com interface simples e visual em pixel art,
+                desenvolvido para treinar atenção e lógica, com sistema de pontos
+                e diferentes modos de dificuldade.
+              </p>
+              <p class="projects__row-content-desc">
+                <strong>Tecnologias:</strong> HTML, CSS, JavaScript.
+              </p>
+            </div>
+          </div>
+
+          <!-- QuickList -->
+          <div class="projects__row">
+            <div class="projects__row-img-cont">
+              <img src="images/quicklist.jpg" alt="QuickList App" class="projects__row-img" />
+            </div>
+            <div class="projects__row-content">
+              <h3 class="projects__row-content-title">
+                QuickList – App de lista de compras
+              </h3>
+              <p class="projects__row-content-desc">
+                Aplicativo mobile para organizar compras de forma rápida, com
+                interface limpa, ícones ilustrativos e autenticação de usuário.
+              </p>
+              <p class="projects__row-content-desc">
+                <strong>Tecnologias:</strong> Flutter, Dart.
+              </p>
+            </div>
+          </div>
+
+          <!-- Reorganizador de texto -->
+          <div class="projects__row">
+            <div class="projects__row-img-cont">
+              <img src="images/reorganizador-texto.png" alt="Reordenador de Texto" class="projects__row-img" />
+            </div>
+            <div class="projects__row-content">
+              <h3 class="projects__row-content-title">
+                Programa Reordenador de Texto
+              </h3>
+              <p class="projects__row-content-desc">
+                Aplicação desktop que manipula blocos de texto, permitindo
+                reorganização e processamento de grandes quantidades de conteúdo,
+                com diferentes temas visuais.
+              </p>
+              <p class="projects__row-content-desc">
+                <strong>Tecnologias:</strong> Java (Swing/JavaFX ou equivalente).
+              </p>
+            </div>
+          </div>
+
+          <!-- Sistema de arquivos -->
+          <div class="projects__row">
+            <div class="projects__row-img-cont">
+              <img src="images/sistemaArquivos.png" alt="Sistema de Arquivos" class="projects__row-img" />
+            </div>
+            <div class="projects__row-content">
+              <h3 class="projects__row-content-title">
+                Sistema de Arquivos Desktop
+              </h3>
+              <p class="projects__row-content-desc">
+                Ferramenta desktop para navegação, criação, exclusão e
+                manipulação de arquivos em um ambiente gráfico, simulando um
+                gerenciador de arquivos completo.
+              </p>
+              <p class="projects__row-content-desc">
+                <strong>Tecnologias:</strong> C++ e Qt.
+              </p>
+            </div>
+          </div>
+
+          <!-- Jogo Exam Scape -->
+          <div class="projects__row">
+            <div class="projects__row-img-cont">
+              <img src="images/scape.png" alt="Exam Scape Jogo" class="projects__row-img" />
+            </div>
+            <div class="projects__row-content">
+              <h3 class="projects__row-content-title">
+                Exam Scape – Jogo de Terror Educacional
+              </h3>
+              <p class="projects__row-content-desc">
+                Jogo em primeira pessoa com atmosfera de terror, puzzles,
+                cofre com combinação e interação com cenário, unindo experiência
+                imersiva com temática educacional.
+              </p>
+              <p class="projects__row-content-desc">
+                <strong>Tecnologias:</strong> Unity, C#.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+      <div class="main-container">
+        <div class="main-footer__upper">
+          <div class="main-footer__row main-footer__row-1">
+            <h2 class="heading heading-sm main-footer__heading-sm">
+              <span>Social</span>
+            </h2>
+            <div class="main-footer__social-cont">
+              <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/gabriel-ferfsnandes">
+                <img class="main-footer__icon" src="./assets/png/linkedin-ico.png" alt="LinkedIn" />
+              </a>
+              <a target="_blank" rel="noreferrer" href="https://github.com/ferfsnandes">
+                <img class="main-footer__icon" src="./assets/png/github-ico.png" alt="GitHub" />
+              </a>
+              <a target="_blank" rel="noreferrer" href="https://www.instagram.com/ferfsnandes_g/">
+                <img class="main-footer__icon main-footer__icon--mr-none" src="./assets/png/insta-ico.png" alt="Instagram" />
+              </a>
+            </div>
+          </div>
+          <div class="main-footer__row main-footer__row-2">
+            <h4 class="heading heading-sm text-lt">Gabriel Ferfsnandes</h4>
+            <p class="main-footer__short-desc">
+              Programador e especialista em soluções digitais: sites, automação de atendimento e integração com IA.
+            </p>
+          </div>
+        </div>
+
+        <div class="main-footer__lower">
+          &copy; 2024 - Gabriel Ferfsnandes
+        </div>
+      </div>
+    </footer>
+
+    <script src="./index.js"></script>
+  </body>
+</html>

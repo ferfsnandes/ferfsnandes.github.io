@@ -63,7 +63,7 @@ textarea {
   resize: none; }
 
 .heading-primary {
-  font-size: 6rem;
+  font-size: 4rem;
   text-transform: uppercase;
   letter-spacing: 3px;
   text-align: center; }
@@ -710,3 +710,264 @@ textarea {
   to {
     opacity: 0;
     top: 27px; } }
+
+/* ============== SERVIÇOS (CARDS) ============== */
+
+.services {
+  background: #fafafa;
+}
+
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 3rem;
+}
+
+@media only screen and (max-width: 56.25em) {
+  .services__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.service-card {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 2.8rem 2.4rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  border-top: 4px solid #f1683a;
+  position: relative;
+  overflow: hidden;
+  transform: translateY(0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeUp 0.6s ease forwards;
+  opacity: 0;
+}
+
+.service-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.service-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.service-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(241, 104, 58, 0.04),
+    rgba(0, 0, 0, 0)
+  );
+  pointer-events: none;
+}
+
+.service-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.service-card__icon {
+  width: 4.8rem;
+  height: 4.8rem;
+  border-radius: 50%;
+  background: rgba(241, 104, 58, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.4rem;
+  margin-bottom: 1.5rem;
+  color: #f1683a;
+}
+
+.service-card__title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1.4rem;
+}
+
+.service-card__text {
+  font-size: 1.6rem;
+  color: #555;
+  margin-bottom: 1.4rem;
+}
+
+.service-card__list {
+  margin-left: 1.2rem;
+  margin-bottom: 1.6rem;
+  font-size: 1.6rem;
+  color: #555;
+}
+
+.service-card__list li {
+  margin-bottom: 0.8rem;
+  list-style: disc;
+}
+
+.service-card__result {
+  font-size: 1.6rem;
+  color: #333;
+  font-weight: 600;
+}
+
+/* ============== POR QUE TRABALHAR COMIGO ============== */
+
+.whyme {
+  background: #f4f4f4;
+}
+
+.whyme__content {
+  margin-top: 4rem;
+}
+
+.whyme__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 3rem;
+}
+
+@media only screen and (max-width: 56.25em) {
+  .whyme__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 37.5em) {
+  .whyme__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.whyme__item {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 2.4rem 2.2rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+  transform: translateY(0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeUp 0.6s ease forwards;
+  opacity: 0;
+}
+
+.whyme__item:nth-child(1) { animation-delay: 0.1s; }
+.whyme__item:nth-child(2) { animation-delay: 0.15s; }
+.whyme__item:nth-child(3) { animation-delay: 0.2s; }
+.whyme__item:nth-child(4) { animation-delay: 0.25s; }
+.whyme__item:nth-child(5) { animation-delay: 0.3s; }
+.whyme__item:nth-child(6) { animation-delay: 0.35s; }
+
+.whyme__item::before {
+  content: "";
+  position: absolute;
+  width: 60%;
+  height: 4px;
+  left: 0;
+  top: 0;
+  background: linear-gradient(90deg, #f1683a, transparent);
+}
+
+.whyme__item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.whyme__icon {
+  width: 4.4rem;
+  height: 4.4rem;
+  border-radius: 50%;
+  background: rgba(241, 104, 58, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  margin-bottom: 1.4rem;
+  color: #f1683a;
+}
+
+.whyme__title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.whyme__text {
+  font-size: 1.6rem;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* ============== ANIMAÇÃO GENÉRICA ============== */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contact .heading-sec__main--lt::after {
+  background: #fff;
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact__form-field:last-of-type {
+  margin-bottom: 3rem;
+}
+
+.contact__btn {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* BOTÃO WHATSAPP DESTACADO */
+.contact__whats-container {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.whatsapp-btn {
+  display: inline-block;
+  background: #25d366;
+  color: white;
+  padding: 1.6rem 3rem;
+  font-size: 1.9rem;
+  font-weight: 700;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.35);
+  transition: all 0.25s ease;
+  border: 2px solid transparent;
+}
+
+.whatsapp-btn:hover {
+  background: #1ebe5d;
+  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.45);
+  transform: translateY(-3px);
+}
+
+.whatsapp-btn:active {
+  transform: translateY(1px);
+}
+
+@media only screen and (max-width: 600px) {
+  .whatsapp-btn {
+    width: 100%;
+    padding: 1.8rem 0;
+    font-size: 1.8rem;
+  }
+}

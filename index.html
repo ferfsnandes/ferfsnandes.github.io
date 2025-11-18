@@ -1,14 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Portfólio de Gabriel</title>
-    <meta name="description" content="Portfolio from developer Gabriel Fernandes" />
 
-    <link rel="stylesheet" href="css/style.css"/>
-    <link rel="stylesheet" href="css/carousel.css"/>
+    <title>Gabriel Ferfsnandes | Soluções Digitais & Automação</title>
+    <meta
+      name="description"
+      content="Gabriel Ferfsnandes - programador e especialista em soluções digitais, criação de sites, automação de WhatsApp e integração com IA para empresas e profissionais."
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/carousel.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,6 +22,7 @@
     />
   </head>
   <body>
+    <!-- HEADER -->
     <header class="header">
       <div class="header__content">
         <div class="header__logo-container">
@@ -28,23 +33,33 @@
               class="header__logo-img"
             />
           </div>
-          <span class="header__logo-sub">Gabriel Fernandes</span>
+          <span class="header__logo-sub">Gabriel Ferfsnandes</span>
         </div>
         <div class="header__main">
           <ul class="header__links">
             <li class="header__link-wrapper">
-              <a href="./index.html" class="header__link"> Inicio </a>
+              <a href="./index.html" class="header__link"> Início </a>
             </li>
             <li class="header__link-wrapper">
-              <a href="./index.html#about" class="header__link">Sobre Mim </a>
-            </li>
-            <li class="header__link-wrapper">
-              <a href="./index.html#projects" class="header__link">
-                Projetos
+              <a href="./index.html#about" class="header__link">
+                Sobre 
               </a>
             </li>
             <li class="header__link-wrapper">
-              <a href="./index.html#footer" class="header__link"> Contato </a>
+              <a href="./index.html#services" class="header__link">
+                Serviços
+              </a>
+            </li>
+              <li class="header__link-wrapper">
+                <a href="./trabalhos.html" class="header__link"> Trabalhos </a>
+              </li>
+              <li class="header__link-wrapper">
+                <a href="./projetos.html" class="header__link"> Projetos </a>
+              </li>
+            <li class="header__link-wrapper">
+              <a href="./index.html#footer" class="header__link">
+                Contato
+              </a>
             </li>
           </ul>
           <div class="header__main-ham-menu-cont">
@@ -65,15 +80,23 @@
         <div class="header__sm-menu-content">
           <ul class="header__sm-menu-links">
             <li class="header__sm-menu-link">
-              <a href="./index.html"> Inicio </a>
+              <a href="./index.html"> Início </a>
             </li>
 
             <li class="header__sm-menu-link">
-              <a href="./index.html#about"> Sobre Mim </a>
+              <a href="./index.html#about"> Sobre </a>
             </li>
 
             <li class="header__sm-menu-link">
-              <a href="./index.html#projects"> Projetos </a>
+              <a href="./index.html#services"> Serviços </a>
+            </li>
+
+            <li class="header__sm-menu-link">
+              <a href="./projetos.html"> Projetos </a>
+            </li>
+
+            <li class="header__sm-menu-link">
+              <a href="./trabalhos.html"> Trabalhos </a>
             </li>
 
             <li class="header__sm-menu-link">
@@ -83,298 +106,406 @@
         </div>
       </div>
     </header>
+
+    <!-- HERO -->
     <section class="home-hero">
       <div class="home-hero__content">
-        <h1 class="heading-primary">Olá, Meu nome é Gabriel Fernandes</h1>
+        <h1 class="heading-primary">
+          Transforme sua Presença Digital<br />
+          e Automatize seu Atendimento
+        </h1>
         <div class="home-hero__info">
           <p class="text-primary">
-            Sou formado em <strong> Sistemas de Informação na UNICAMP</strong>.
-            Sou um <strong>Desenvolvedor</strong> com conhecimento em diferentes linguagens de programação.
-            No ambiente profissional,atuei como estagiário de TI e programação,sobretudo com Java e SQL, 
-            trabahei com a criação de dashboards e relatórios, além de atuar com suporte técnico. 
-            Possuo experiência em Python, Machine Learning e Data
-            Science, decorrente da minha pesquisa sobre
-            <strong>a aplicação de Machine Learning na predição de doenças crônicas não transmissíveis em idosos.</strong>
-            Também possuo conhecimentos em progrmação Web (HTML, CSS e JavaScript), Mobile(Flutter) e Cloud.
+            Eu sou <strong>Gabriel Ferfsnandes</strong>, programador e
+            especialista em soluções digitais. Minha missão é simples:
+            <strong
+              >tirar o peso do seu atendimento, aumentar sua visibilidade e
+              fazer a tecnologia trabalhar por você</strong
+            >.
+            <br /><br />
+            Eu não crio apenas ferramentas; eu construo
+            <strong>pontes entre o seu negócio e o seu cliente</strong>. Se o
+            seu atendimento está sobrecarregado ou se a sua empresa quase não
+            aparece online, eu posso ajudar.
           </p>
         </div>
         <div class="home-hero__cta">
-          <a href="./#projects" class="btn btn--bg">Projetos</a>
+          <a href="./index.html#footer" class="btn btn--bg">
+            Quero automatizar meu atendimento
+          </a>
+          <a href="./#projects" class="btn btn--bg" style="margin-left: 1rem;">
+            Ver exemplos de trabalhos
+          </a>
         </div>
       </div>
+
       <div class="home-hero__socials">
         <div class="home-hero__social">
-  <a href="https://www.linkedin.com/in/gabriel-ferfsnandes" class="home-hero__social-icon-link" target="_blank">
-    <img src="./assets/png/linkedin-ico.png" alt="icon" class="home-hero__social-icon" />
-  </a>
-</div>
-<div class="home-hero__social">
-  <a href="https://github.com/ferfsnandes" class="home-hero__social-icon-link" target="_blank">
-    <img src="./assets/png/github-ico.png" alt="icon" class="home-hero__social-icon" />
-  </a>
-</div>
-<div class="home-hero__social">
-  <a href="https://www.instagram.com/ferfsnandes_g/" class="home-hero__social-icon-link home-hero__social-icon-link--bd-none" target="_blank">
-    <img src="./assets/png/insta-ico.png" alt="icon" class="home-hero__social-icon" />
-  </a>
-</div>
+          <a
+            href="https://www.linkedin.com/in/gabriel-ferfsnandes"
+            class="home-hero__social-icon-link"
+            target="_blank"
+          >
+            <img
+              src="./assets/png/linkedin-ico.png"
+              alt="LinkedIn"
+              class="home-hero__social-icon"
+            />
+          </a>
+        </div>
+        <div class="home-hero__social">
+          <a
+            href="https://github.com/ferfsnandes"
+            class="home-hero__social-icon-link"
+            target="_blank"
+          >
+            <img
+              src="./assets/png/github-ico.png"
+              alt="GitHub"
+              class="home-hero__social-icon"
+            />
+          </a>
+        </div>
+        <div class="home-hero__social">
+          <a
+            href="https://www.instagram.com/ferfsnandes_g/"
+            class="home-hero__social-icon-link home-hero__social-icon-link--bd-none"
+            target="_blank"
+          >
+            <img
+              src="./assets/png/insta-ico.png"
+              alt="Instagram"
+              class="home-hero__social-icon"
+            />
+          </a>
+        </div>
       </div>
+
       <div class="home-hero__mouse-scroll-cont">
         <div class="mouse"></div>
       </div>
     </section>
+
+    <!-- SOBRE & SERVIÇOS -->
     <section id="about" class="about sec-pad">
       <div class="main-container">
         <h2 class="heading heading-sec heading-sec__mb-med">
-          <span class="heading-sec__main">Sobre Mim</span>
+          <span class="heading-sec__main">Quem sou &amp; o que eu faço</span>
           <span class="heading-sec__sub">
-            Sou uma pessoa dedicada, proativa e comprometida com o sucesso dos projetos em que
-            me envolvo. Tenho facilidade em trabalhar em equipe, comunicar ideias de forma clara e
-            resolver problemas de forma eficiente. Além disso, possuo uma grande capacidade de
-            adaptação e estou sempre aberto a novos desafios.
+            Eu ajudo empresas e profissionais a sair da invisibilidade digital,
+            reduzir a sobrecarga de atendimento e transformar processos manuais
+            em sistemas inteligentes, usando sites, bots de WhatsApp e
+            integração com Inteligência Artificial.
           </span>
         </h2>
-        <div class="projects__content">
-          <div class="projects__row">
-            <div class="projects__row-content">
-              <h3 class="projects__row-content-title">Formação Academica</h3>
-              <p class="projects__row-content-subtitle"> UNICAMP - Bacharelado em Sistemas de Informação
-              </p>
-              <p class="projects__row-content-desc">
-                2021 - 2024
-              </p>
-              <a
-                href="assets/pdf/certificadoUnicamp.pdf"
-                class="btn btn--med btn--theme dynamicBgClr"
-                download="certificadoUnicamp.pdf"
-                >Certificado de Conclusão</a
-              >
-            </div>
-            <div class="projects__row-img-cont">
-              <img
-                src="./assets/jpeg/unicamp.jpg"
-                alt="Software Screenshot"
-                class="projects__row-img"
-                loading="lazy"
-              />
-            </div>
-          </div>
-          <div class="projects__row">
-            <div class="projects__row-content">
-              <h3 class="projects__row-content-title">Experiência</h3>
-              <p class="projects__row-content-subtitle"> Multitec Sistemas (08/2024 - Presente)
-              </p>
-              <p class="projects__row-content-desc">
-                Estagiário em Programação
-              </p>
-              <a
-              </a
-              >
 
-            </div>
-          </div>
         <div class="about__content">
           <div class="about__content-main">
-            <h3 class="about__content-title">Me conheça</h3>
+            <h3 class="about__content-title">Sobre Mim</h3>
             <div class="about__content-details">
               <p class="about__content-details-para">
-              Estou preparado para contribuir com minha expertise e disposição para aprender, desejo crescer  profissionalmente e encarar novos desafios. Caso esteja em busca de um profissional comprometido e entusiasmado, fico à disposição para uma conversa.
+                Sou programador e especialista em soluções digitais, com visão
+                de ponta a ponta: do <strong>Front-End</strong> (a parte que o
+                cliente vê) ao <strong>Back-End</strong> (a lógica e os
+                processos por trás).
               </p>
-            </div>
-            >
-          </div>
-          <div class="about__content-skills">
-            <h3 class="about__content-title">Minhas Habilidades</h3>
-            <div class="skills">
-              <div class="skills__skill">Python</div>
-<div class="skills__skill">HTML</div>
-<div class="skills__skill">CSS</div>
-<div class="skills__skill">Java</div>
-<div class="skills__skill">JavaScript</div>
-<div class="skills__skill">Flutter</div>
-<div class="skills__skill">Bancos de Dados</div>
-<div class="skills__skill">Análise de dados</div>
-<div class="skills__skill">SQL</div>
-<div class="skills__skill">C</div>
-<div class="skills__skill">C++</div>
-<div class="skills__skill">C#</div>
-<div class="skills__skill">UX/UI</div>
-<div class="skills__skill">Web Design</div>
-<div class="skills__skill">Dart</div>
-<div class="skills__skill">AWS</div>
-<div class="skills__skill">WebGL</div>
-<div class="skills__skill">MySQL</div>
-<div class="skills__skill">Firebase</div>
-<div class="skills__skill">Canva</div>
-<div class="skills__skill">Pandas</div>
-<div class="skills__skill">NumPy</div>
-<div class="skills__skill">Matplotlib</div>
-<div class="skills__skill">Plotly</div>
-<div class="skills__skill">scikit-learn</div>
-<div class="skills__skill">Git</div>
-<div class="skills__skill">Inglês Avançado</div>
-<div class="skills__skill">Espanhol Básico</div>
+              <p class="about__content-details-para">
+                Mais do que escrever código, meu foco é
+                <strong>resolver problemas reais de negócio</strong>: agenda
+                lotada no WhatsApp, falta de organização no atendimento,
+                dificuldade em captar clientes novos ou pouca presença online.
+              </p>
+              <p class="about__content-details-para">
+                Trabalho conectando tudo: <strong>site</strong> que vende,
+                <strong>bot de WhatsApp</strong> que não deixa cliente esperando
+                e <strong>IA</strong> que aprende com os dados do seu
+                atendimento para melhorar seus resultados.
+              </p>
 
+              <p class="about__content-details-para">
+                Minha missão é clara: <strong>fazer a tecnologia trabalhar por
+                você</strong>, liberando seu tempo, aumentando sua
+                credibilidade e potencializando seu negócio.
+            </div>
+          </div>
+
+          <div class="about__content-skills">
+            <h3 class="about__content-title">Pilares das minhas soluções</h3>
+            <div class="skills">
+              <div class="skills__skill">Sites institucionais</div>
+              <div class="skills__skill">Landing pages de alta conversão</div>
+              <div class="skills__skill">Sistemas Web sob medida</div>
+              <div class="skills__skill">
+                Bots de WhatsApp (Secretaria Digital 24/7)
+              </div>
+              <div class="skills__skill">
+                Automação de atendimento e agendamentos
+              </div>
+              <div class="skills__skill">
+                Integração com Inteligência Artificial
+              </div>
+              <div class="skills__skill">
+                Análise de dados de atendimento com IA
+              </div>
+              <div class="skills__skill">
+                Integração site + bot + IA em um só fluxo
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section id="projects" class="projects sec-pad">
-      <div class="main-container">
-         <h2 class="heading heading-sec heading-sec__mb-bg">
-            <span class="heading-sec__main">Projetos</span>
-         </h2>
-         <div class="carousel">
-            <!-- list item -->
-            <div class="list">
-              <div class="item">
-                <img src="images/doencas.png">
-                <div class="content">
-                   <div class="author">Machine Learning</div>
-                   <div class="title">Python</div>
-                   <div class="topic">DIAGNÓSTICO DE DOENÇAS CRÔNICAS</div>
-                   <div class="des">
-                      <!-- lorem 50 -->
-                   </div>
-                </div>
-             </div>
-               <div class="item">
-                  <img src="images/memorygame.png">
-                  <div class="content">
-                     <div class="author">Web</div>
-                     <div class="title">HTML, CSS, JavaScript</div>
-                     <div class="topic">JOGO DA MEMÓRIA</div>
-                     <div class="des">
-                        <!-- lorem 50 -->
-                     </div>
-                  </div>
-               </div>
-               <div class="item">
-                  <img src="images/quicklist.jpg">
-                  <div class="content">
-                     <div class="author">Quicklist</div>
-                     <div class="title">FLUTTER</div>
-                     <div class="topic">APLICATIVO DE LISTA DE COMPRAS</div>
-                     <div class="des"></div>
-            
-                  </div>
-               </div>
-               <div class="item">
-                <img src="images/sistemaArquivos.png">
-                <div class="content">
-                   <div class="author"></div>
-                   <div class="title">C++ e Qt</div>
-                   <div class="topic">SISTEMA DE ARQUIVOS</div>
-                   <div class="des">
-                      <!-- lorem 50 -->
-                   </div>
-                </div>
-             </div>
-               <div class="item">
-                  <img src="images/scape.png">
-                  <div class="content">
-                     <div class="author">Exam Scape</div>
-                     <div class="title">C#, Unity</div>
-                     <div class="topic">JOGO DE TERROR</div>
-                     <div class="des"></div>
-        
-                  </div>
-               </div>
-               <div class="item">
-                <img src="images/reorganizador-textoBlack.png">
-                <div class="content">
-                   <div class="author"></div>
-                   <div class="title">Java</div>
-                   <div class="topic">Reorganizador de Texto</div>
-                   <div class="des"></div>
-      
-                </div>
-             </div>
-            </div>
-            <!-- list thumbnail -->
-            <div class="thumbnail">
-              <div class="item">
-                <img src="images/doencas.png">
-                <div class="content">
-                   <div class="title">
-                    Diagnóstico de Doenças Crônicas
-                   </div>
-                   <div class="description">
-  
-                   </div>
-                </div>
-             </div>
-               <div class="item">
-                  <img src="images/memorygame.png">
-                  <div class="content">
-                     <div class="title">
-                        Jogo da Memória
-                     </div>
-                     <div class="description">
-    
-                     </div>
-                  </div>
-               </div>
-               <div class="item">
-                  <img src="images/quicklist.jpg">
-                  <div class="content">
-                     <div class="title">
-                        Lista de Compras
-                     </div>
-                     <div class="description">
-                        
-                     </div>
-                  </div>
-               </div>
-               <div class="item">
-                  <img src="images/reorganizador-texto.png">
-                  <div class="content">
-                     <div class="title">
-                        Reorganizador de Texto
-                     </div>
-                     <div class="description">
-                        
-                     </div>
-                  </div>
-               </div>
-               <div class="item">
-                <img src="images/sistemaArquivos.png">
-                <div class="content">
-                   <div class="title">
-                      Sistema de Arquivos
-                   </div>
-                   <div class="description">
-                      
-                   </div>
-                </div>
-             </div>
-               <div class="item">
-                  <img src="images/scape.png">
-                  <div class="content">
-                     <div class="title">
-                        Jogo de TERROR
-                     </div>
-                     <div class="description">
-                       
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <!-- next prev -->
-            <div class="arrows">
-               <button id="prev"><</button>
-               <button id="next">></button>
-            </div>
-            <!-- time running -->
-            <div class="time"></div>
-         </div>
+
+ <!-- SERVIÇOS -->
+<section id="services" class="services sec-pad">
+  <div class="main-container">
+    <h2 class="heading heading-sec heading-sec__mb-med">
+      <span class="heading-sec__main">Meus Serviços</span>
+      <span class="heading-sec__sub">
+        Transformo desafios de negócio em soluções digitais eficientes.
+        Trabalho com três pilares principais que elevam sua presença online,
+        reduzem a sobrecarga de atendimento e colocam a tecnologia para trabalhar
+        por você.
+      </span>
+    </h2>
+
+    <div class="services__grid">
+      <!-- CARD 1 -->
+      <article class="service-card">
+        <div class="service-card__icon">🌐</div>
+        <h3 class="service-card__title">
+          Sites e Aplicações Web de Alto Impacto
+        </h3>
+        <p class="service-card__text">
+          Sua presença online é seu cartão de visitas — e muitas vezes o primeiro
+          motivo para alguém confiar (ou desistir) do seu negócio.
+        </p>
+        <ul class="service-card__list">
+          <li><strong>Sites Institucionais e Landing Pages:</strong> rápidos, modernos, responsivos e planejados para conversão.</li>
+          <li><strong>Portfólios Profissionais:</strong> para mostrar autoridade sem firulas.</li>
+          <li><strong>Sistemas Web sob medida:</strong> de painéis internos a ferramentas específicas da sua operação.</li>
+        </ul>
+        <p class="service-card__result">
+          📌 <strong>Resultado para você:</strong> mais credibilidade, melhor posicionamento no Google e uma vitrine profissional funcionando 24h.
+        </p>
+      </article>
+
+      <!-- CARD 2 -->
+      <article class="service-card">
+        <div class="service-card__icon">🤖</div>
+        <h3 class="service-card__title">
+          Secretaria Digital – Bots de WhatsApp
+        </h3>
+        <p class="service-card__text">
+          O WhatsApp é a rua mais movimentada do Brasil. Se o seu atendimento não
+          está ativo 24h por dia, você está deixando dinheiro na mesa.
+        </p>
+        <ul class="service-card__list">
+          <li><strong>Automação de Atendimento:</strong> bots que respondem imediatamente, tiram dúvidas e fazem triagem.</li>
+          <li><strong>Redução de Carga Operacional:</strong> menos perguntas repetidas, menos retrabalho, menos perda de clientes.</li>
+        </ul>
+        <p class="service-card__result">
+          📌 <strong>Resultado para você:</strong> atendimento imediato, aumento de agendamentos e muito mais organização.
+        </p>
+      </article>
+
+      <!-- CARD 3 -->
+      <article class="service-card">
+        <div class="service-card__icon">🤖💡</div>
+        <h3 class="service-card__title">
+          Integração com Inteligência Artificial
+        </h3>
+        <p class="service-card__text">
+          Aqui é onde o jogo muda e a automação deixa de ser “robô engessado” e
+          vira atendimento inteligente de verdade.
+        </p>
+        <ul class="service-card__list">
+          <li><strong>Bots inteligentes:</strong> entendem intenção, mantêm conversas naturais e resolvem problemas sem você encostar no celular.</li>
+          <li><strong>Análise automatizada de dados:</strong> a IA identifica gargalos e mostra onde o fluxo de atendimento precisa melhorar.</li>
+        </ul>
+        <p class="service-card__result">
+          📌 <strong>Resultado para você:</strong> atendimento moderno, elegante, personalizado e eficiente — enquanto você trabalha ou dorme.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<!-- POR QUE TRABALHAR COMIGO -->
+<section id="whyme" class="whyme sec-pad">
+  <div class="main-container">
+    <h2 class="heading heading-sec heading-sec__mb-med">
+      <span class="heading-sec__main">Por que trabalhar comigo?</span>
+      <span class="heading-sec__sub">
+        Não entrego apenas códigos ou telas bonitas. Entrego soluções que
+        resolvem problemas reais do seu negócio. Simples, direto e eficiente.
+      </span>
+    </h2>
+
+    <div class="whyme__content">
+      <div class="whyme__grid">
+        <div class="whyme__item">
+          <div class="whyme__icon">📡</div>
+          <h3 class="whyme__title">Visão completa</h3>
+          <p class="whyme__text">
+            Do design ao servidor: integro site, bot e IA em um fluxo único,
+            sem gambiarra e sem remendo.
+          </p>
+        </div>
+
+        <div class="whyme__item">
+          <div class="whyme__icon">🎯</div>
+          <h3 class="whyme__title">Foco no problema</h3>
+          <p class="whyme__text">
+            O objetivo não é “entregar um sistema”, é resolver o que trava seu
+            dia a dia: falta de visibilidade, atendimento lento, perda de leads.
+          </p>
+        </div>
+
+        <div class="whyme__item">
+          <div class="whyme__icon">🧩</div>
+          <h3 class="whyme__title">Versatilidade real</h3>
+          <p class="whyme__text">
+            Conecto as pontas: site que vende, bot que responde, IA que aprende
+            com os dados do seu próprio atendimento.
+          </p>
+        </div>
+
+        <div class="whyme__item">
+          <div class="whyme__icon">📈</div>
+          <h3 class="whyme__title">Projetos em produção</h3>
+          <p class="whyme__text">
+            Clínicas, negócios locais, náutica e imóveis de temporada. Projetos
+            reais, em uso, gerando resultado hoje.
+          </p>
+        </div>
+
+        <div class="whyme__item">
+          <div class="whyme__icon">⚡</div>
+          <h3 class="whyme__title">Entrega sem enrolação</h3>
+          <p class="whyme__text">
+            Comunicação direta, prazos claros e foco em colocar a solução para
+            rodar, não em inventar burocracia.
+          </p>
+        </div>
+
+        <div class="whyme__item">
+          <div class="whyme__icon">🤝</div>
+          <h3 class="whyme__title">Parceria de longo prazo</h3>
+          <p class="whyme__text">
+            Não sumo depois da entrega. A ideia é evoluir o sistema com o seu
+            negócio, não largar um “frankenstein” na sua mão.
+          </p>
+        </div>
       </div>
-   </section>
-   <script src="app.js"></script>
-   
-      </div>
-    </section>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section id="contact" class="contact sec-pad">
+  <div class="main-container">
+
+    <h2 class="heading heading-sec heading-sec__mb-med">
+      <span class="heading-sec__main heading-sec__main--lt">
+        Vamos conversar sobre o seu projeto?
+      </span>
+      <span class="heading-sec__sub heading-sec__sub--lt">
+        Atendo de forma direta e objetiva. Me chame no WhatsApp para uma resposta mais rápida
+        ou preencha o formulário abaixo para detalhar seu projeto.
+      </span>
+    </h2>
+
+    <!-- BOTÃO WHATSAPP DESTACADO -->
+    <div class="contact__whats-container">
+      <a
+        href="https://wa.me/5511941502527"
+        target="_blank"
+        class="whatsapp-btn"
+      >
+        💬 Falar comigo agora pelo WhatsApp
+      </a>
+    </div>
+
+    <div class="contact__form-container">
+      <form class="contact__form" action="#" method="POST">
+        <div class="contact__form-field">
+          <label class="contact__form-label" for="name">Nome</label>
+          <input
+            required
+            placeholder="Como posso te chamar?"
+            type="text"
+            class="contact__form-input"
+            name="name"
+            id="name"
+          />
+        </div>
+
+        <div class="contact__form-field">
+          <label class="contact__form-label" for="email">E-mail</label>
+          <input
+            required
+            placeholder="Seu melhor e-mail"
+            type="email"
+            class="contact__form-input"
+            name="email"
+            id="email"
+          />
+        </div>
+
+        <div class="contact__form-field">
+          <label class="contact__form-label" for="business">
+            Tipo de negócio
+          </label>
+          <input
+            placeholder="Clínica, loja, serviço, infoproduto, etc."
+            type="text"
+            class="contact__form-input"
+            name="business"
+            id="business"
+          />
+        </div>
+
+        <div class="contact__form-field">
+          <label class="contact__form-label" for="service">
+            O que você está buscando?
+          </label>
+          <select class="contact__form-input" name="service" id="service">
+            <option value="" selected disabled>Selecione uma opção</option>
+            <option value="site">Site / Landing page</option>
+            <option value="bot">Bot de WhatsApp / Secretaria digital</option>
+            <option value="ia">Integração com IA</option>
+            <option value="combo">Site + Bot + IA</option>
+            <option value="outro">Outro tipo de solução digital</option>
+          </select>
+        </div>
+
+        <div class="contact__form-field">
+          <label class="contact__form-label" for="message">
+            Me conte rapidamente seu cenário:
+          </label>
+          <textarea
+            required
+            class="contact__form-input"
+            name="message"
+            id="message"
+            rows="4"
+            placeholder="Ex: recebo muitos pedidos pelo WhatsApp, não dou conta de responder tudo..."
+          ></textarea>
+        </div>
+
+        <button type="submit" class="btn btn--theme contact__btn">
+          Enviar e receber uma proposta
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+
+    <!-- FOOTER -->
     <footer id="footer" class="main-footer">
       <div class="main-container">
         <div class="main-footer__upper">
@@ -383,38 +514,63 @@
               <span>Social</span>
             </h2>
             <div class="main-footer__social-cont">
-             <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/gabriel-ferfsnandes">
-  <img class="main-footer__icon" src="./assets/png/linkedin-ico.png" alt="icon" />
-</a>
-<a target="_blank" rel="noreferrer" href="https://github.com/ferfsnandes">
-  <img class="main-footer__icon" src="./assets/png/github-ico.png" alt="icon" />
-</a>
-<a target="_blank" rel="noreferrer" href="https://www.instagram.com/ferfsnandes_g/">
-  <img class="main-footer__icon main-footer__icon--mr-none" src="./assets/png/insta-ico.png" alt="icon" />
-</a>
-
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://www.linkedin.com/in/gabriel-ferfsnandes"
+              >
+                <img
+                  class="main-footer__icon"
+                  src="./assets/png/linkedin-ico.png"
+                  alt="LinkedIn"
+                />
+              </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://github.com/ferfsnandes"
+              >
+                <img
+                  class="main-footer__icon"
+                  src="./assets/png/github-ico.png"
+                  alt="GitHub"
+                />
+              </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://www.instagram.com/ferfsnandes_g/"
+              >
+                <img
+                  class="main-footer__icon main-footer__icon--mr-none"
+                  src="./assets/png/insta-ico.png"
+                  alt="Instagram"
+                />
+              </a>
             </div>
           </div>
           <div class="main-footer__row main-footer__row-2">
-            <h4 class="heading heading-sm text-lt">Gabriel Fernandes</h4>
+            <h4 class="heading heading-sm text-lt">Gabriel Ferfsnandes</h4>
             <p class="main-footer__short-desc">
-              <strong> CONTATO:<p>
-                <strong>Telefone:</strong> (11)941502527</p>
-<p>
-                <strong>Email:</strong>gabrielfs2311@gmail.com</p>
+              <strong>CONTATO:</strong>
+            </p>
+            <p class="main-footer__short-desc">
+              <strong>Telefone:</strong> (11) 94150-2527
+            </p>
+            <p class="main-footer__short-desc">
+              <strong>Email:</strong> gabrielfs2311@gmail.com
             </p>
           </div>
         </div>
 
         <div class="main-footer__lower">
-          &copy; Copyright 2024. Made by
-          <a rel="noreferrer" target="_blank"
-            >Gabriel Fernandes</a
-          >
+          &copy; Copyright 2024. Feito por
+          <a rel="noreferrer" target="_blank">Gabriel Ferfsnandes</a>
         </div>
       </div>
     </footer>
 
+    <script src="app.js"></script>
     <script src="./index.js"></script>
   </body>
 </html>
