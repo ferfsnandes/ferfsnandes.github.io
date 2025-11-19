@@ -73,7 +73,7 @@ function showSlider(type){
         <div class="header__logo-container">
           <div class="header__logo-img-cont">
             <img
-              src="./assets/png/gabriel-logo.jpeg"
+              src="./assets/png/robo_logo.png"
               alt="Gabriel Logo Image"
               class="header__logo-img"
             />
