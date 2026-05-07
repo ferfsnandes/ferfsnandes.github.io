@@ -1,0 +1,5 @@
+@use 'abstracts/variables'; // Define variables first
+@use 'abstracts/mixins';    // Define mixins next
+@use 'abstracts/utilities'; // Utilities might use variables and mixins
+
+@use 'components/mouse-scroll'; // Components

@@ -463,3 +463,119 @@
       </div>
     </section>
 
+
+   <section id="pre-atendimento" class="pr-wrapper">
+    <h1>Pré-atendimento</h1>
+    <p class="lead">
+        Olá! Para encaminhar suas informações à Dra. Thais e agilizar sua pré-avaliação, por favor preencha os dados abaixo:
+    </p>
+
+    <form class="pr-grid"
+          action="https://formcarry.com/s/Q6eOp9iPQgx"
+          method="POST"
+          enctype="multipart/form-data">
+
+        <!-- Honeypot (funciona normalmente) -->
+        <div class="pr-honeypot" aria-hidden="true" style="position:absolute;left:-10000px;">
+            <label>Não preencher:
+                <input type="text" name="_honey" tabindex="-1">
+            </label>
+        </div>
+
+        <div class="pr-columns">
+            <label>Nome completo:
+                <input type="text" name="nomeCompleto" required aria-required="true">
+            </label>
+
+            <label>Idade:
+                <input type="number" name="idade" min="0" max="120" required aria-required="true">
+            </label>
+
+            <label>Contato (e-mail ou WhatsApp):
+                <input type="text" name="contato" required aria-required="true">
+            </label>
+        </div>
+
+        <fieldset>
+            <legend>Sintomas</legend>
+
+            <label>Por favor, descreva:
+                <textarea name="sintomasDescricao" required aria-required="true"></textarea>
+            </label>
+
+            <div class="pr-columns">
+                <label>Quando começaram:
+                    <input type="text" name="sintomasInicio">
+                </label>
+
+                <label>Intensidade da dor (0 a 10):
+                    <input type="number" name="sintomasIntensidade" min="0" max="10">
+                </label>
+
+                <label>O que piora ou melhora:
+                    <input type="text" name="sintomasFatores">
+                </label>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Histórico clínico</legend>
+
+            <label>Comorbidades ou cirurgias prévias:
+                <input type="text" name="historicoComorbidades">
+            </label>
+
+            <label>Medicações e suplementos em uso:
+                <input type="text" name="historicoMedicacoes">
+            </label>
+
+            <label>Alergias conhecidas:
+                <input type="text" name="historicoAlergias">
+            </label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Hábitos atuais</legend>
+
+            <label>Qualidade do sono:
+                <textarea name="habitosSono"></textarea>
+            </label>
+
+            <div class="pr-columns">
+                <label>Nível de estresse (0 a 10):
+                    <input type="number" name="habitosEstresse" min="0" max="10">
+                </label>
+
+                <label>Alimentação:
+                    <textarea name="habitosAlimentacao"></textarea>
+                </label>
+
+                <label>Atividade física:
+                    <textarea name="habitosAtividade"></textarea>
+                </label>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Envio de exames (opcional)</legend>
+
+            <label>Exames de sangue:
+                <input type="file" name="examesSangue[]" accept="image/*,application/pdf" multiple>
+            </label>
+
+            <label>Exames de imagem:
+                <input type="file" name="examesImagem[]" accept="image/*,application/pdf" multiple>
+            </label>
+        </fieldset>
+
+        <div class="pr-consent">
+            <input type="checkbox" id="prConsent" name="consentimento" required aria-required="true">
+            <label for="prConsent">
+                Autorizo o uso dos meus dados e exames para pré-anamnese e envio à Dra. Thais.
+                Sei que não é diagnóstico nem prescrição.
+            </label>
+        </div>
+
+        <button type="submit" class="pr-submit">Enviar</button>
+    </form>
+</section>

@@ -1,20 +1,21 @@
+// Use variables and mixins from other modules
+@use '../abstracts/variables' as vars;
+@use '../abstracts/mixins' as mixins;
+
 .home-hero {
   color: #fff;
   background: linear-gradient(
       to right,
-      rgba($themeClrPrimary, 0.8),
-      rgba($themeClrPrimary, 0.8)
+      rgba(vars.$themeClrPrimary, 0.8),
+      rgba(vars.$themeClrPrimary, 0.8)
     ),
     url(../../assets/svg/common-bg.svg);
   background-position: center;
-
   height: 100vh;
-
   min-height: 80rem;
   max-height: 120rem;
   position: relative;
-
-  @include respond(phone) {
+  @include mixins.respond(phone) {
     height: unset;
     min-height: unset;
   }
@@ -23,19 +24,18 @@
     position: absolute;
     top: 50%;
     border: 2px solid #eee;
-    border-left: 2px solid #eee;
+    border-left: 2px solid #eee; // Use mixins.respond
     transform: translateY(-50%);
-    @include respond(tab-port) {
+    @include mixins.respond(tab-port) {
       display: none;
     }
   }
   &__mouse-scroll-cont {
     position: absolute;
     bottom: 3%;
-    left: 50%;
-    transform: translateX(-50%);
-
-    @include respond(phone) {
+    left: 50%; // Use mixins.respond
+    transform: translateX(-50%); // Use mixins.respond
+    @include mixins.respond(phone) {
       display: none;
     }
   }
@@ -48,7 +48,7 @@
     width: 100%;
     display: block;
     padding: 1.2rem;
-    border-bottom: 2px solid #eee;
+    border-bottom: 2px solid #eee; // Use mixins.respond
     transition: background .3s;
 
     &:hover {
@@ -70,9 +70,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
     max-width: 90rem;
-    width: 92%;
-
-    @include respond(phone) {
+    width: 92%; // Use mixins.respond
+    @include mixins.respond(phone) {
       padding: 19rem 0 13rem 0;
       margin: auto;
       position: static;
@@ -95,16 +94,16 @@
   &__content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 10rem;
-    @include respond(tab-port) {
+    grid-gap: 10rem; // Use mixins.respond
+    @include mixins.respond(tab-port) {
       grid-template-columns: 1fr;
       grid-gap: 8rem;
     }
     &-title {
       font-weight: 700;
-      font-size: 2.8rem;
+      font-size: 2.8rem; // Use mixins.respond
       margin-bottom: 3rem;
-      @include respond(phone) {
+      @include mixins.respond(phone) {
         font-size: 2.4rem;
       }
     }
@@ -131,14 +130,14 @@
     grid-template-columns: 1.5fr 1fr;
     grid-gap: 5rem;
     margin-bottom: 11rem;
-
-    @include respond(tab-port) {
+    @include mixins.respond(tab-port) {
       grid-template-columns: 1fr;
       grid-gap: 2rem;
       margin-bottom: 8rem;
     }
-
-    @include respond(tab-port) {
+    // Use mixins.respond
+    // Use mixins.respond
+    @include mixins.respond(tab-port) {
       text-align: center;
     }
 
@@ -161,15 +160,15 @@
       flex-direction: column;
       align-items: flex-start;
 
-      @include respond(tab-port) {
+      @include mixins.respond(tab-port) {
         align-items: center;
       }
 
       &-title {
         font-weight: 700;
         font-size: 2.8rem;
-        margin-bottom: 2rem;
-        @include respond(phone) {
+        margin-bottom: 2rem; // Use mixins.respond
+        @include mixins.respond(phone) {
           font-size: 2.4rem;
         }
       }
@@ -179,7 +178,7 @@
         max-width: 60rem;
         line-height: 1.7;
         margin-bottom: 3rem;
-        @include respond(phone) {
+        @include mixins.respond(phone) {
           font-size: 1.7rem;
         }
       }
@@ -190,8 +189,8 @@
 .contact {
   background: linear-gradient(
       to right,
-      rgba($themeClrPrimary, 0.8),
-      rgba($themeClrPrimary, 0.8)
+      rgba(vars.$themeClrPrimary, 0.8),
+      rgba(vars.$themeClrPrimary, 0.8)
     ),
     url(../../assets/svg/common-bg.svg);
   background-size: cover;
@@ -204,17 +203,17 @@
     margin-top: 6rem;
     max-width: 80rem;
     text-align: right;
-    width: 95%;
-    border-radius: $commonBorderRadius;
-
+    width: 95%; // Use vars.$commonBorderRadius
+    border-radius: vars.$commonBorderRadius;
     margin: 5rem auto 0 auto;
-    @include respond(phone) {
+    @include mixins.respond(phone) {
       padding: 3rem;
     }
   }
+  // Use mixins.respond
   &__form-field {
     margin-bottom: 4rem;
-    @include respond(phone) {
+    @include mixins.respond(phone) {
       margin-bottom: 3rem;
     }
   }
@@ -235,7 +234,7 @@
     font-size: 1.6rem;
     letter-spacing: 0px;
     background: rgba(rgb(240, 240, 240), 1);
-    border-radius: $commonBorderRadius;
+    border-radius: vars.$commonBorderRadius;
     font-weight: 600;
     /* Code for Modern Browsers */
     &::placeholder {
@@ -286,7 +285,7 @@
 
     padding: 2rem 4rem;
     font-size: 1.6rem;
-    @include respond(phone) {
+    @include mixins.respond(phone) {
       width: 100%;
     }
   }
