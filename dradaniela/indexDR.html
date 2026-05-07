@@ -381,8 +381,29 @@
       background: var(--graphite-mid); padding: 36px;
       border-top: 2px solid var(--blush);
       transition: transform var(--transition);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
     }
     .dep-card:hover { transform: translateY(-6px); box-shadow: 0 12px 36px rgba(201,168,76,0.1); }
+    .dep-card::after {
+      content: "Ver foto do resultado";
+      position: absolute;
+      inset: 0;
+      background: rgba(10, 10, 10, 0.85);
+      backdrop-filter: blur(3px);
+      color: var(--white);
+      font-size: 1.2rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity var(--transition);
+      z-index: 2;
+    }
+    .dep-card:hover::after { opacity: 1; }
     .dep-stars { color: var(--blush); font-size: 0.75rem; letter-spacing: 3px; margin-bottom: 20px; }
     .dep-text { font-family: 'Cormorant Garamond', serif; font-size: 1.08rem; font-style: italic; line-height: 1.7; color: var(--gray-text); margin-bottom: 24px; }
     .dep-author { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--blush); }
@@ -458,6 +479,28 @@
       0%, 100% { box-shadow: 0 8px 30px rgba(201,168,76,0.35); }
       50% { box-shadow: 0 8px 45px rgba(201,168,76,0.65); }
     }
+    @keyframes zoomIn {
+      from {transform: scale(0.9); opacity: 0;}
+      to {transform: scale(1); opacity: 1;}
+    }
+
+    /* ─── MODAL RESULTADOS ─── */
+    .modal {
+      display: none; position: fixed; z-index: 1000; left: 0; top: 0;
+      width: 100%; height: 100%; overflow: auto;
+      background-color: rgba(0, 0, 0, 0.9);
+      justify-content: center; align-items: center;
+      backdrop-filter: blur(5px);
+    }
+    .modal-content {
+      max-width: 90%; max-height: 90vh; border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); animation: zoomIn 0.3s ease;
+    }
+    .modal-close {
+      position: absolute; top: 20px; right: 35px; color: var(--white);
+      font-size: 40px; font-weight: bold; transition: 0.3s; cursor: pointer;
+    }
+    .modal-close:hover, .modal-close:focus { color: var(--blush); text-decoration: none; cursor: pointer; }
 
     /* ─── REVEAL ANIMATION ─── */
     .reveal {
@@ -550,7 +593,7 @@
       <p class="hero-crm">CRM-SP 170913 · RQE 89966 · Otorrinolaringologista</p>
     </div>
     <div class="hero-right">
-      <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=900&q=80" alt="Dra. Daniela Garcia – Otorrinolaringologista em São Paulo" class="hero-img" />
+      <img src="./assets/DraDaniela2.jpeg" alt="Dra. Daniela Garcia – Otorrinolaringologista em São Paulo" class="hero-img" />
       <div class="hero-stat-box">
         <div class="hero-stats">
           <div class="hero-stat">
@@ -583,26 +626,26 @@
   <section id="sintomas">
     <div>
       <div class="section-eyebrow reveal">Quando procurar</div>
-      <h2 class="section-title reveal reveal-delay-1">Você não precisa se acostumar a <em>respirar mal</em></h2>
+      <h2 class="section-title reveal reveal-delay-1">Você não precisa se acostumar a respirar mal ou a <em>não gostar da sua aparência</em></h2>
       <p class="sintomas-lead reveal reveal-delay-2">
-        Muitos pacientes chegam depois de anos normalizando sintomas que têm tratamento. Se algum destes sinais faz parte da sua rotina, uma avaliação pode mudar sua qualidade de vida.
+        Muitos pacientes chegam ao consultório após anos de desconforto com a própria imagem — sentindo-se mal ao tirar fotos, não se achando atraentes ou incomodados com o tamanho e formato do nariz. Se a estética afeta sua autoestima ou se você também sofre com problemas respiratórios, uma avaliação pode transformar sua qualidade de vida.
       </p>
       <a href="https://wa.me/5511948884848" target="_blank" class="btn-primary reveal reveal-delay-3">Agendar pelo WhatsApp</a>
     </div>
     <div class="sintomas-grid">
-      <div class="sintoma-card reveal"><span>✓</span>Nariz entupido com frequência</div>
-      <div class="sintoma-card reveal reveal-delay-1"><span>✓</span>Ronco alto ou sono não reparador</div>
-      <div class="sintoma-card reveal reveal-delay-2"><span>✓</span>Sinusite ou rinite recorrente</div>
-      <div class="sintoma-card reveal reveal-delay-3"><span>✓</span>Cansaço ao acordar</div>
-      <div class="sintoma-card reveal reveal-delay-4"><span>✓</span>Desvio de septo ou dificuldade para respirar</div>
-      <div class="sintoma-card reveal reveal-delay-5"><span>✓</span>Desejo de rinoplastia com resultado natural</div>
+      <div class="sintoma-card reveal"><span>✓</span>Sentir-se mal com o tamanho ou formato do nariz</div>
+      <div class="sintoma-card reveal reveal-delay-1"><span>✓</span>Insegurança e baixa autoestima ao se olhar no espelho</div>
+      <div class="sintoma-card reveal reveal-delay-2"><span>✓</span>Evitar fotos de perfil por não se achar atraente</div>
+      <div class="sintoma-card reveal reveal-delay-3"><span>✓</span>Desejo de alinhar um nariz bonito a uma respiração perfeita</div>
+      <div class="sintoma-card reveal reveal-delay-4"><span>✓</span>Nariz entupido com frequência ou desvio de septo</div>
+      <div class="sintoma-card reveal reveal-delay-5"><span>✓</span>Ronco alto, apneia ou cansaço ao acordar</div>
     </div>
   </section>
 
   <!-- SOBRE -->
   <section id="sobre">
     <div class="sobre-img-wrap reveal">
-      <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800&q=80" alt="Consultório Dra. Daniela Garcia" class="sobre-img" />
+      <img src="./assets/DraDaniela1.jpeg" alt="Consultório Dra. Daniela Garcia" class="sobre-img" />
       <div class="sobre-badge">
         <span class="sobre-badge-num">10+</span>
         <span class="sobre-badge-text">Anos de<br/>Especialidade</span>
@@ -614,7 +657,7 @@
         Excelência médica com<br/><em>atendimento humanizado</em>
       </h2>
       <p class="sobre-text reveal reveal-delay-2">
-        A Dra. Daniela Garcia atua com foco em saúde nasal, qualidade respiratória, ronco, apneia do sono e rinoplastia funcional com estética natural. A consulta é individualizada, com diagnóstico claro e plano de tratamento explicado sem pressa.
+        Para a Dra. Daniela Garcia, a beleza não existe sem harmonia. Seu trabalho é dedicado a quem busca transformar a estética do nariz sem perder a própria identidade. A consulta é individualizada, com diagnóstico claro e plano de tratamento explicado sem pressa.
       </p>
       <p class="sobre-text reveal reveal-delay-2">
         A proposta é unir precisão técnica, bom senso cirúrgico e atendimento humano. Nada de promessas mágicas: o objetivo é tratar a causa do problema e entregar segurança, função e naturalidade.
@@ -649,8 +692,8 @@
       <div class="servico-card reveal">
         <span class="servico-num">01</span>
         <svg class="servico-icon" viewBox="0 0 44 44"><path d="M22 8 C14 8 8 15 8 22 C8 30 14 36 22 36 C30 36 36 30 36 22" stroke-linecap="round"/><path d="M26 14 C26 14 30 16 30 22 C30 28 26 30 22 30" stroke-linecap="round"/><circle cx="22" cy="22" r="3"/></svg>
-        <h3 class="servico-title">Rinoplastia</h3>
-        <p class="servico-desc">Correção estética e funcional do nariz, buscando harmonia facial, melhora respiratória e resultado natural — sem exageros.</p>
+        <h3 class="servico-title">Rinoplastia e Harmonização</h3>
+        <p class="servico-desc">Para pacientes inseguros com o próprio nariz. O foco é resgatar a sua autoestima com uma transformação estética que harmoniza perfeitamente com o seu rosto, mantendo a naturalidade.</p>
       </div>
 
       <div class="servico-card reveal reveal-delay-1">
@@ -701,7 +744,7 @@
     <div class="diferenciais-grid">
       <div class="diferencial-card reveal"><h3 class="diferencial-title">Consulta sem pressa</h3><p class="diferencial-text">Tempo para ouvir sintomas, histórico, expectativas e explicar possibilidades reais de tratamento.</p></div>
       <div class="diferencial-card reveal reveal-delay-1"><h3 class="diferencial-title">Plano individualizado</h3><p class="diferencial-text">Nada de receita pronta. A conduta é definida conforme exame, queixa, estilo de vida e objetivo do paciente.</p></div>
-      <div class="diferencial-card reveal reveal-delay-2"><h3 class="diferencial-title">Função + estética</h3><p class="diferencial-text">Na rinoplastia, a meta é equilíbrio: respirar melhor, preservar naturalidade e respeitar a identidade facial.</p></div>
+      <div class="diferencial-card reveal reveal-delay-2"><h3 class="diferencial-title">Estética + Função</h3><p class="diferencial-text">O fim da insegurança com o formato do seu nariz. A cirurgia é desenhada para entregar um rosto mais harmônico e atraente, sem abrir mão da excelência respiratória.</p></div>
       <div class="diferencial-card reveal reveal-delay-3"><h3 class="diferencial-title">Pós-operatório acompanhado</h3><p class="diferencial-text">Orientações claras e seguimento adequado para uma recuperação mais segura e previsível.</p></div>
       <div class="diferencial-card reveal reveal-delay-4"><h3 class="diferencial-title">Estrutura confortável</h3><p class="diferencial-text">Ambiente discreto, acolhedor e compatível com uma experiência médica particular de alto padrão.</p></div>
       <div class="diferencial-card reveal reveal-delay-5"><h3 class="diferencial-title">Comunicação direta</h3><p class="diferencial-text">Agendamento facilitado pelo WhatsApp, com caminho simples entre interesse, consulta e acompanhamento.</p></div>
@@ -745,17 +788,17 @@
       <h2 class="section-title reveal reveal-delay-1">Pacientes que <em>voltaram a viver melhor</em></h2>
     </div>
     <div class="dep-grid">
-      <div class="dep-card reveal">
+      <div class="dep-card reveal" data-img="./assets/resultados1.jpg" title="Clique para ver o resultado">
         <div class="dep-stars">★★★★★</div>
         <p class="dep-text">"Fiz rinoplastia e o resultado ficou natural. Além da estética, minha respiração melhorou muito."</p>
         <span class="dep-author">— Paciente, rinoplastia</span>
       </div>
-      <div class="dep-card reveal reveal-delay-2">
+      <div class="dep-card reveal reveal-delay-2" data-img="./assets/resultados2.jpg" title="Clique para ver o resultado">
         <div class="dep-stars">★★★★★</div>
         <p class="dep-text">"Eu roncava muito e acordava cansado. Depois da avaliação e do tratamento, meu sono mudou de verdade."</p>
         <span class="dep-author">— Paciente, ronco e apneia</span>
       </div>
-      <div class="dep-card reveal reveal-delay-4">
+      <div class="dep-card reveal reveal-delay-4" data-img="./assets/resultados3.jpg" title="Clique para ver o resultado">
         <div class="dep-stars">★★★★★</div>
         <p class="dep-text">"Passei anos respirando mal. A consulta foi clara, objetiva e finalmente entendi o que precisava tratar."</p>
         <span class="dep-author">— Paciente, obstrução nasal</span>
@@ -799,8 +842,8 @@
   <!-- FINAL CTA -->
   <section id="cta-final">
     <div class="section-eyebrow reveal">Próximo passo</div>
-    <h2 class="section-title reveal reveal-delay-1">Seu problema pode ter solução.<br/><em>E talvez você esteja adiando há tempo demais.</em></h2>
-    <p class="cta-final-text reveal reveal-delay-2">Respirar mal, dormir mal, roncar alto ou conviver com incômodo nasal não precisa ser tratado como normal. Agende uma avaliação e entenda, com clareza, o melhor caminho para o seu caso.</p>
+    <h2 class="section-title reveal reveal-delay-1">Deixe a insegurança no passado.<br/><em>É hora de resgatar sua autoestima.</em></h2>
+    <p class="cta-final-text reveal reveal-delay-2">Esconder o rosto em fotos, sentir-se mal ao se olhar no espelho ou conviver com problemas respiratórios não precisa ser a sua realidade. Dê o primeiro passo para uma transformação que une beleza, naturalidade e saúde. Agende sua avaliação e descubra o melhor caminho para você.</p>
     <div class="hero-actions" style="justify-content:center; opacity:1; transform:none; animation:none;">
       <a href="https://wa.me/5511948884848" target="_blank" class="btn-primary">Agendar Consulta Agora</a>
       <a href="#servicos" class="btn-secondary">Ver Tratamentos</a>
@@ -828,6 +871,12 @@
   <a href="https://wa.me/5511948884848" target="_blank" class="whatsapp-float" aria-label="Agendar consulta via WhatsApp">
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   </a>
+
+  <!-- MODAL -->
+  <div id="imageModal" class="modal">
+    <span class="modal-close">&times;</span>
+    <img class="modal-content" id="modalImage">
+  </div>
 
   <script>
     // NAV scroll
@@ -880,6 +929,27 @@
       });
     }, { threshold: 0.1 });
     reveals.forEach(el => observer.observe(el));
+
+    // Modal logic
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImage");
+    const closeBtn = document.querySelector(".modal-close");
+
+    document.querySelectorAll('.dep-card').forEach(card => {
+      card.addEventListener('click', function() {
+        const imgSrc = this.getAttribute('data-img');
+        if (imgSrc) {
+          modal.style.display = "flex";
+          modalImg.src = imgSrc;
+        }
+      });
+    });
+
+    closeBtn.onclick = () => modal.style.display = "none";
+    
+    modal.onclick = (e) => {
+      if (e.target === modal) modal.style.display = "none";
+    };
   </script>
 </body>
 </html>
