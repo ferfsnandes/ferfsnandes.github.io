@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dra. Daniela Garcia | Otorrinolaringologia Clínica e Cirúrgica</title>
+  <meta name="description" content="Otorrinolaringologista em São Paulo. Tratamento para rinite, sinusite, apneia do sono e desvio de septo com foco em qualidade de vida." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --graphite: #0a0a0a;
+      --graphite-mid: #111111;
+      --graphite-light: #1c1c1c;
+      --blush: #c9a84c;
+      --blush-light: #e2c87a;
+      --blush-pale: rgba(201,168,76,0.10);
+      --white: #f5f0e8;
+      --gray-text: #9a9080;
+      --border: rgba(201,168,76,0.22);
+      --transition: 0.4s ease;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--graphite);
+      color: var(--white);
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      display: flex;
+      overflow-x: hidden;
+    }
+
+    /* SCROLLBAR */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--graphite); }
+    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--blush); }
+
+    /* ─── SIDEBAR NAVIGATION (DESKTOP) ─── */
+    .sidebar {
+      position: fixed;
+      top: 0; left: 0; bottom: 0;
+      width: 320px;
+      background: var(--graphite-mid);
+      border-right: 1px solid var(--border);
+      padding: 50px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      z-index: 100;
+    }
+    .sidebar-brand { text-decoration: none; display: block; margin-bottom: 60px; }
+    .sidebar-brand-title { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: var(--white); margin-bottom: 5px; line-height: 1.1; }
+    .sidebar-brand-sub { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--blush); }
+    
+    .sidebar-nav { list-style: none; display: flex; flex-direction: column; gap: 24px; }
+    .sidebar-nav a {
+      color: var(--gray-text); text-decoration: none;
+      font-size: 0.85rem; letter-spacing: 0.15em; text-transform: uppercase;
+      transition: color var(--transition);
+      display: flex; align-items: center; gap: 12px;
+    }
+    .sidebar-nav a::before {
+      content: ''; width: 0; height: 1px; background: var(--blush);
+      transition: width var(--transition);
+    }
+    .sidebar-nav a:hover, .sidebar-nav a.active { color: var(--white); }
+    .sidebar-nav a:hover::before, .sidebar-nav a.active::before { width: 20px; }
+
+    .sidebar-footer { margin-top: auto; }
+    .sidebar-cta {
+      display: block; text-align: center;
+      background: var(--blush); color: #0a0a0a;
+      padding: 16px 24px; text-decoration: none;
+      font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500;
+      transition: background var(--transition);
+      margin-bottom: 20px;
+    }
+    .sidebar-cta:hover { background: var(--blush-light); }
+    .sidebar-crm { font-size: 0.7rem; color: var(--gray-text); text-align: center; line-height: 1.6; }
+
+    /* ─── MOBILE NAV ─── */
+    .mobile-nav {
+      display: none; position: fixed; top: 0; left: 0; right: 0;
+      background: rgba(17, 17, 17, 0.98); backdrop-filter: blur(10px);
+      padding: 20px 24px; z-index: 1000; border-bottom: 1px solid var(--border);
+      justify-content: space-between; align-items: center;
+    }
+    .mobile-nav .sidebar-brand { margin-bottom: 0; }
+    .hamburger { display: flex; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { width: 24px; height: 1px; background: var(--white); }
+
+    /* ─── MAIN CONTENT AREA ─── */
+    .main-content {
+      margin-left: 320px;
+      width: calc(100% - 320px);
+    }
+
+    section { padding: 100px 80px; border-bottom: 1px solid var(--border); }
+    .section-label {
+      font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--blush); margin-bottom: 20px; display: inline-block;
+      border: 1px solid var(--border); padding: 8px 16px; border-radius: 30px;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      font-weight: 400; color: var(--white);
+      line-height: 1.2; margin-bottom: 30px;
+    }
+    .section-text {
+      font-size: 1.05rem; line-height: 1.8; color: var(--gray-text);
+      max-width: 700px;
+    }
+
+    /* ─── HERO ─── */
+    #inicio {
+      min-height: 100vh;
+      display: flex; flex-direction: column; justify-content: center;
+      position: relative; overflow: hidden;
+    }
+    #inicio::after {
+      content: ''; position: absolute; right: 0; top: 0; bottom: 0;
+      width: 50%; background: url('./assets/DraDaniela6.jpeg') center/cover;
+      opacity: 0.4; z-index: 0;
+      mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+      -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 650px; }
+    .hero-content h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 5vw, 4.5rem); line-height: 1.1; margin-bottom: 24px; font-weight: 400; }
+    .hero-content h1 em { color: var(--blush); font-style: italic; }
+    .health-stats { display: flex; gap: 40px; margin-top: 50px; border-top: 1px solid var(--border); padding-top: 30px; }
+    .h-stat-num { font-size: 2rem; color: var(--white); font-weight: 400; font-family: 'Cormorant Garamond', serif; }
+    .h-stat-label { font-size: 0.7rem; color: var(--gray-text); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 5px; }
+
+    /* ─── SINTOMAS / ALERTA ─── */
+    #sintomas { background: var(--graphite-light); }
+    .symptoms-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px; margin-top: 50px;
+    }
+    .symptom-card {
+      background: var(--graphite-mid); padding: 30px;
+      border-left: 3px solid var(--border);
+      transition: border-color var(--transition);
+    }
+    .symptom-card:hover { border-left-color: var(--blush); }
+    .symptom-card h4 { font-size: 1.1rem; color: var(--white); margin-bottom: 12px; font-weight: 500; }
+    .symptom-card p { font-size: 0.9rem; color: var(--gray-text); line-height: 1.6; }
+
+    /* ─── TRATAMENTOS ─── */
+    #tratamentos { background: var(--graphite); }
+    .treatments-list { margin-top: 50px; display: flex; flex-direction: column; }
+    .treatment-item {
+      display: grid; grid-template-columns: 1fr 2fr; gap: 40px;
+      padding: 40px 0; border-top: 1px solid var(--border);
+    }
+    .treatment-item:last-child { border-bottom: 1px solid var(--border); }
+    .treatment-name { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--white); }
+    .treatment-desc { font-size: 0.95rem; color: var(--gray-text); line-height: 1.7; margin-bottom: 15px; }
+    .treatment-tags { display: flex; gap: 10px; flex-wrap: wrap; }
+    .tag { font-size: 0.7rem; background: var(--graphite-light); padding: 6px 12px; color: var(--blush); border-radius: 4px; }
+
+    /* ─── DOUTORA ─── */
+    #doutora { background: var(--graphite-mid); }
+    .doctor-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .doctor-img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 4px; }
+    .doctor-bio { display: flex; flex-direction: column; gap: 20px; }
+    .cred-list { margin-top: 20px; list-style: none; }
+    .cred-list li {
+      font-size: 0.9rem; color: var(--white); padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; gap: 15px;
+    }
+    .cred-list li::before { content: '■'; color: var(--blush); font-size: 0.5rem; }
+
+    /* ─── ATENDIMENTO / CONTATO ─── */
+    #atendimento { background: var(--graphite); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-top: 40px; }
+    .contact-box { background: var(--graphite-light); padding: 40px; border-radius: 4px; }
+    .contact-box h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: var(--blush); margin-bottom: 20px; }
+    .contact-detail { margin-bottom: 20px; }
+    .contact-detail strong { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gray-text); margin-bottom: 5px; }
+    .contact-detail p { font-size: 1.1rem; color: var(--white); }
+    .map-container { height: 100%; min-height: 300px; border-radius: 4px; overflow: hidden; border: 1px solid var(--border); }
+    .map-container iframe { width: 100%; height: 100%; filter: grayscale(100%) contrast(1.1); }
+
+    /* ─── WHATSAPP FLOAT ─── */
+    .whatsapp-float {
+      position: fixed; bottom: 30px; right: 30px; z-index: 200;
+      width: 60px; height: 60px; background: var(--blush);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      text-decoration: none; box-shadow: 0 8px 30px rgba(201,168,76,0.35);
+      transition: all var(--transition);
+      animation: pulse 3s infinite;
+    }
+    .whatsapp-float:hover { transform: scale(1.1); background: var(--blush-light); }
+    .whatsapp-float svg { width: 30px; height: 30px; fill: #0a0a0a; }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 8px 30px rgba(201,168,76,0.35); }
+      50% { box-shadow: 0 8px 45px rgba(201,168,76,0.65); }
+    }
+
+    /* ANIMATIONS */
+    .reveal { opacity: 0; transform: translateY(20px); transition: 0.6s ease; }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+    .delay-1 { transition-delay: 0.1s; }
+    .delay-2 { transition-delay: 0.2s; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1024px) {
+      body { flex-direction: column; }
+      .sidebar { display: none; }
+      .mobile-nav { display: flex; }
+      .main-content { margin-left: 0; width: 100%; padding-top: 80px; }
+      section { padding: 60px 30px; }
+      .treatment-item { grid-template-columns: 1fr; gap: 15px; }
+      .doctor-layout { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      #inicio::after { opacity: 0.2; width: 100%; mask-image: none; -webkit-mask-image: none; }
+      .hero-content h1 { font-size: 2.8rem; }
+      .whatsapp-float { bottom: 20px; right: 20px; width: 50px; height: 50px; }
+      .whatsapp-float svg { width: 26px; height: 26px; }
+    }
+
+    /* Mobile Menu Overlay */
+    .mobile-menu-overlay {
+      position: fixed; top: 80px; left: 0; width: 100%; height: calc(100vh - 80px);
+      background: var(--graphite-mid); z-index: 999;
+      display: none; flex-direction: column; padding: 40px 30px;
+      border-top: 1px solid var(--border);
+    }
+    .mobile-menu-overlay.open { display: flex; }
+    .mobile-menu-overlay .sidebar-nav { gap: 30px; margin-bottom: 40px; }
+    .mobile-menu-overlay .sidebar-nav a { font-size: 1.1rem; }
+  </style>
+</head>
+<body>
+
+  <!-- MOBILE NAV -->
+  <nav class="mobile-nav">
+    <a href="#inicio" class="sidebar-brand">
+      <div class="sidebar-brand-title">Dra. Daniela Garcia</div>
+      <div class="sidebar-brand-sub">Otorrinolaringologista</div>
+    </a>
+    <div class="hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <div class="mobile-menu-overlay" id="mobileMenu">
+    <ul class="sidebar-nav">
+      <li><a href="#inicio" onclick="closeMenu()">Início</a></li>
+      <li><a href="#sintomas" onclick="closeMenu()">Quando Procurar</a></li>
+      <li><a href="#tratamentos" onclick="closeMenu()">Tratamentos Clínicos</a></li>
+      <li><a href="#doutora" onclick="closeMenu()">A Especialista</a></li>
+      <li><a href="#atendimento" onclick="closeMenu()">Agendamento</a></li>
+    </ul>
+    <a href="https://wa.me/5511948884848" class="sidebar-cta">Agendar Avaliação</a>
+  </div>
+
+  <!-- SIDEBAR DESKTOP -->
+  <aside class="sidebar">
+    <div>
+      <a href="#inicio" class="sidebar-brand">
+        <div class="sidebar-brand-title">Dra. Daniela Garcia</div>
+        <div class="sidebar-brand-sub">Otorrinolaringologista</div>
+      </a>
+      <ul class="sidebar-nav">
+        <li><a href="#inicio" class="nav-link active">Início</a></li>
+        <li><a href="#sintomas" class="nav-link">Quando Procurar</a></li>
+        <li><a href="#tratamentos" class="nav-link">Tratamentos</a></li>
+        <li><a href="#doutora" class="nav-link">A Especialista</a></li>
+        <li><a href="#atendimento" class="nav-link">Agendamento</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-footer">
+      <a href="https://wa.me/5511948884848" target="_blank" class="sidebar-cta">Agendar Consulta</a>
+      <div class="sidebar-crm">CRM-SP 170913<br>RQE 89966</div>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+
+    <!-- HERO -->
+    <section id="inicio">
+      <div class="hero-content">
+        <div class="section-label reveal">Saúde Respiratória & Qualidade de Vida</div>
+        <h1 class="reveal delay-1">Respire bem.<br>Durma melhor.<br><em>Viva plenamente.</em></h1>
+        <p class="section-text reveal delay-2">
+          O tratamento de condições otorrinolaringológicas vai muito além de aliviar um sintoma; trata-se de restaurar sua energia, seu sono e sua saúde de forma definitiva. Com abordagem técnica e minuciosa, oferecemos soluções reais para apneia, sinusite, rinite e obstruções nasais.
+        </p>
+        <div class="health-stats reveal delay-2">
+          <div>
+            <div class="h-stat-num">+1.000</div>
+            <div class="h-stat-label">Vidas transformadas</div>
+          </div>
+          <div>
+            <div class="h-stat-num">10+</div>
+            <div class="h-stat-label">Anos de dedicação</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SINTOMAS / QUANDO PROCURAR -->
+    <section id="sintomas">
+      <div class="section-label reveal">Sinais de Alerta</div>
+      <h2 class="section-title reveal delay-1">Não normalize o <em>desconforto.</em></h2>
+      <p class="section-text reveal delay-2">
+        Muitos pacientes convivem anos com sintomas que drenam sua energia, acreditando ser "normal" ou incurável. Se você se identifica com os sinais abaixo, é hora de buscar uma avaliação médica especializada.
+      </p>
+
+      <div class="symptoms-grid">
+        <div class="symptom-card reveal">
+          <h4>Dependência de Neosoro</h4>
+          <p>Uso frequente de descongestionantes nasais apenas para conseguir respirar ou dormir.</p>
+        </div>
+        <div class="symptom-card reveal delay-1">
+          <h4>Ronco e Apneia</h4>
+          <p>Acordar com sensação de sufocamento, ronco alto relatado pela família e cansaço excessivo durante o dia.</p>
+        </div>
+        <div class="symptom-card reveal delay-2">
+          <h4>Obstrução Nasal Crônica</h4>
+          <p>Sensação constante de nariz entupido, afetando a prática de exercícios e a rotina diária.</p>
+        </div>
+        <div class="symptom-card reveal">
+          <h4>Sinusite de Repetição</h4>
+          <p>Dores de cabeça frontais, pressão no rosto, perda de olfato e secreção constante.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRATAMENTOS -->
+    <section id="tratamentos">
+      <div class="section-label reveal">Áreas de Atuação</div>
+      <h2 class="section-title reveal delay-1">Medicina baseada em <em>resultados.</em></h2>
+      <p class="section-text reveal delay-2">
+        Cada diagnóstico requer um plano de ação específico. Trabalhamos desde o manejo clínico rigoroso até intervenções cirúrgicas funcionais de alta precisão.
+      </p>
+
+      <div class="treatments-list">
+        
+        <div class="treatment-item reveal">
+          <div class="treatment-name">Cirurgia do Desvio de Septo</div>
+          <div>
+            <p class="treatment-desc">A septoplastia visa corrigir tortuosidades na estrutura interna do nariz que bloqueiam o fluxo de ar. Uma via aérea desobstruída melhora imediatamente a qualidade respiratória e do sono.</p>
+            <div class="treatment-tags">
+              <span class="tag">Funcional</span>
+              <span class="tag">Obstrução Nasal</span>
+              <span class="tag">Microcirurgia</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="treatment-item reveal">
+          <div class="treatment-name">Tratamento do Ronco e Apneia</div>
+          <div>
+            <p class="treatment-desc">A Síndrome da Apneia Obstrutiva do Sono (SAOS) é um problema de saúde grave. Oferecemos investigação completa (polissonografia) e tratamentos que vão do CPAP a cirurgias palatais e faríngeas.</p>
+            <div class="treatment-tags">
+              <span class="tag">Medicina do Sono</span>
+              <span class="tag">Cansaço Diurno</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="treatment-item reveal">
+          <div class="treatment-name">Rinite e Sinusite Crônica</div>
+          <div>
+            <p class="treatment-desc">Controle clínico de processos alérgicos e infecciosos. Nos casos crônicos sem resposta a medicamentos, realizamos a Cirurgia Endoscópica Nasossinusal para limpar os seios da face.</p>
+            <div class="treatment-tags">
+              <span class="tag">Alergia</span>
+              <span class="tag">FESS</span>
+              <span class="tag">Pólipos Nasais</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="treatment-item reveal">
+          <div class="treatment-name">Rinoplastia Funcional</div>
+          <div>
+            <p class="treatment-desc">Muitas vezes, a estética nasal está atrelada à função. Corrigimos a estrutura óssea e cartilaginosa para garantir um nariz harmonioso que funciona perfeitamente.</p>
+            <div class="treatment-tags">
+              <span class="tag">Estética & Saúde</span>
+              <span class="tag">Preservadora</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- DOUTORA -->
+    <section id="doutora">
+      <div class="doctor-layout">
+        <div class="reveal">
+          <img src="./assets/DraDaniela4.jpeg" alt="Dra Daniela Garcia" class="doctor-img">
+        </div>
+        <div class="doctor-bio">
+          <div class="section-label reveal">Responsabilidade Técnica</div>
+          <h2 class="section-title reveal delay-1" style="margin-bottom:10px;">Dra. Daniela Garcia</h2>
+          <p class="section-text reveal delay-2">
+            Médica dedicada à Otorrinolaringologia Clínica e Cirúrgica, fundamenta sua prática no compromisso de devolver a saúde funcional a seus pacientes. Acredita que o ato de respirar livremente é o pilar central para um corpo saudável e uma mente ativa.
+          </p>
+          <ul class="cred-list reveal delay-2">
+            <li>Membro Titular da Associação Brasileira de Otorrinolaringologia e Cirurgia Cérvico-Facial (ABORL-CCF).</li>
+            <li>Registro de Qualificação de Especialista (RQE) ativo sob nº 89966.</li>
+            <li>Atuação ativa no Instituto Inspirare em São Paulo.</li>
+            <li>Especialização em cirurgias nasais (Septo, Seios da Face e Rinoplastia Funcional).</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ATENDIMENTO -->
+    <section id="atendimento">
+      <div class="section-label reveal">Agendamento Particular</div>
+      <h2 class="section-title reveal delay-1">Inicie seu <em>tratamento.</em></h2>
+      
+      <div class="contact-grid">
+        <div class="contact-box reveal">
+          <h3>Fale com a Recepção</h3>
+          <div class="contact-detail">
+            <strong>WhatsApp Corporativo</strong>
+            <p><a href="https://wa.me/5511948884848" style="color:var(--white); text-decoration:none;">(11) 94888-4848</a></p>
+          </div>
+          <div class="contact-detail">
+            <strong>Horário de Atendimento</strong>
+            <p>Segunda a Sexta: 8h às 18h<br>Sábados: 8h às 13h</p>
+          </div>
+          <div class="contact-detail">
+            <strong>Clínica</strong>
+            <p>Instituto Inspirare<br>São Paulo, SP</p>
+          </div>
+          <a href="https://wa.me/5511948884848" target="_blank" class="sidebar-cta" style="margin-top:30px; display:inline-block; margin-bottom:0;">Solicitar Horário</a>
+        </div>
+        
+        <div class="map-container reveal delay-1">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.526895590658!2d-46.65489422376836!3d-23.55370787888437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1710000000000!5m2!1spt-BR!2sbr" loading="lazy" title="Mapa"></iframe>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://wa.me/5511948884848" target="_blank" class="whatsapp-float" aria-label="Agendar consulta via WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script>
+    // Mobile Menu Close
+    function closeMenu() {
+      document.getElementById('mobileMenu').classList.remove('open');
+    }
+
+    // Active Link Highlighting on Scroll
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (pageYOffset >= sectionTop - 150) {
+          current = section.getAttribute('id');
+        }
+      });
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').includes(current)) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // Reveal Animations
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

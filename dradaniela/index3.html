@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dra. Daniela Garcia | Otorrinolaringologista em São Paulo | CRM-SP 170913</title>
+  <meta name="description" content="Dra. Daniela Garcia – Otorrinolaringologista especialista em São Paulo. Rinoplastia, rinite, sinusite, desvio de septo, apneia do sono. Agende sua consulta." />
+  <meta name="keywords" content="otorrino em São Paulo, médica otorrinolaringologista SP, consulta de otorrino perto de mim, rinoplastia SP, desvio de septo, sinusite, rinite, apneia do sono São Paulo" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --graphite: #050505;
+      --graphite-mid: #0a0a0a; 
+      --blush: #d4af37;
+      --blush-light: #e8c85c;
+      --blush-pale: rgba(212,175,55,0.06);
+      --white: #fdfbf7;
+      --gray-text: #a39e93;
+      --border: rgba(212,175,55,0.15);
+      --transition: 0.6s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--graphite);
+      color: var(--white);
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    /* ─── SCROLLBAR ─── */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--graphite); }
+    ::-webkit-scrollbar-thumb { background: var(--blush); border-radius: 2px; }
+
+    /* ─── NAV EDITORIAL ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 30px 60px;
+      display: flex; align-items: center; justify-content: center;
+      transition: background var(--transition), padding var(--transition);
+    }
+    nav.scrolled {
+      background: rgba(5,5,5,0.95);
+      backdrop-filter: blur(14px);
+      padding: 18px 60px;
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      position: absolute; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; text-decoration: none;
+    }
+    .nav-logo-text { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--white); letter-spacing: 0.1em; text-align: center; line-height: 1.2;}
+    .nav-logo-text span { display: block; font-family: 'Jost', sans-serif; font-size: 0.55rem; letter-spacing: 0.3em; color: var(--blush); text-transform: uppercase; margin-top: 4px; }
+    
+    .nav-group { display: flex; gap: 40px; list-style: none; width: 100%; }
+    .nav-group.left { justify-content: flex-start; }
+    .nav-group.right { justify-content: flex-end; }
+    
+    .nav-links a {
+      font-size: 0.68rem; letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--gray-text); text-decoration: none;
+      transition: color var(--transition); position: relative;
+    }
+    .nav-links a:hover { color: var(--white); }
+    
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { display: block; width: 24px; height: 1px; background: var(--white); transition: var(--transition); }
+
+    /* ─── HERO ─── */
+    #hero {
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 60px; gap: 60px;
+    }
+    .hero-left {
+      flex: 1; padding-top: 80px; max-width: 600px;
+    }
+    .hero-eyebrow {
+      font-size: 0.65rem; letter-spacing: 0.35em; text-transform: uppercase;
+      color: var(--blush); margin-bottom: 24px;
+      display: flex; align-items: center; gap: 12px;
+      opacity: 0; transform: translateY(20px);
+      animation: fadeUp 0.8s 0.3s ease forwards;
+    }
+    .hero-eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--blush); }
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.5rem, 5vw, 5.5rem);
+      font-weight: 300; line-height: 1.05;
+      color: var(--white); margin-bottom: 28px;
+      opacity: 0; transform: translateY(20px);
+      animation: fadeUp 0.8s 0.5s ease forwards;
+    }
+    .hero-title em { font-style: italic; color: var(--blush-light); }
+    .hero-sub {
+      font-size: 0.92rem; line-height: 1.8;
+      color: var(--gray-text); max-width: 440px; margin-bottom: 54px;
+      opacity: 0; transform: translateY(20px);
+      animation: fadeUp 0.8s 0.7s ease forwards;
+    }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: transparent; color: var(--white);
+      border: 1px solid var(--border);
+      padding: 18px 42px; text-decoration: none;
+      font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase;
+      transition: all var(--transition);
+      opacity: 0; transform: translateY(20px);
+      animation: fadeUp 0.8s 0.9s ease forwards;
+    }
+    .btn-primary:hover { background: var(--blush); border-color: var(--blush); color: #050505; }
+    
+    .hero-right {
+      flex: 1; display: flex; justify-content: flex-end; align-items: flex-end;
+      height: 100vh; padding-top: 120px;
+    }
+    .hero-img-arch {
+      width: 100%; height: 100%; object-fit: cover; object-position: top center;
+      border-radius: 400px 400px 0 0;
+      opacity: 0; animation: fadeIn 1.2s 0.4s ease forwards;
+    }
+
+    /* ─── SECTIONS COMMON ─── */
+    section { padding: 140px 60px; }
+    .section-eyebrow {
+      font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--blush); margin-bottom: 16px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .section-eyebrow::before { content: ''; display: block; width: 28px; height: 1px; background: var(--blush); }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.4rem, 4vw, 3.6rem); font-weight: 300;
+      color: var(--white); line-height: 1.2; margin-bottom: 20px;
+    }
+    .section-title em { font-style: italic; color: var(--blush-light); }
+
+    /* ─── FILOSOFIA ─── */
+    #filosofia {
+      background: var(--graphite);
+      border-top: 1px solid var(--border);
+    }
+    .filosofia-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center;
+    }
+    .filosofia-img {
+      width: 100%; height: 80vh; object-fit: cover; object-position: top;
+      border-radius: 0 300px 0 0;
+    }
+    .filosofia-content .section-title { margin-bottom: 32px; }
+    .filosofia-text { font-size: 0.95rem; line-height: 2; color: var(--gray-text); margin-bottom: 30px; }
+    .filosofia-credentials p {
+      font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--white); border-left: 1px solid var(--blush); padding-left: 16px;
+      margin-bottom: 12px;
+    }
+
+    /* ─── ESPECIALIDADES EDITORIAL ─── */
+    #especialidades { background: var(--graphite); border-top: 1px solid var(--border); }
+    .especialidades-header { max-width: 640px; margin-bottom: 80px; }
+    .servicos-list { display: flex; flex-direction: column; border-top: 1px solid var(--border); }
+    .servico-row {
+      display: grid; grid-template-columns: 100px 1fr 1fr; align-items: center; gap: 40px;
+      padding: 50px 0; border-bottom: 1px solid var(--border);
+      transition: background var(--transition);
+    }
+    .servico-row:hover { background: var(--blush-pale); }
+    .servico-num { font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--blush); font-style: italic; }
+    .servico-name { font-family: 'Cormorant Garamond', serif; font-size: 2.6rem; color: var(--white); }
+    .servico-desc { font-size: 0.9rem; line-height: 1.85; color: var(--gray-text); }
+
+    /* ─── ESPAÇO (GALERIA) ─── */
+    #espaco { background: var(--graphite-mid); }
+    .espaco-grid {
+      margin-top: 60px;
+      display: grid; grid-template-columns: 1.4fr 1fr; gap: 24px;
+    }
+    .espaco-col { display: flex; flex-direction: column; gap: 24px; }
+    .espaco-img {
+      width: 100%; object-fit: cover; filter: grayscale(30%);
+      transition: filter 0.8s ease;
+    }
+    .espaco-img:hover { filter: grayscale(0%); }
+    .img-large { height: 100%; min-height: 600px; }
+    .espaco-col .espaco-img { height: calc(50% - 12px); min-height: 288px; }
+
+    /* ─── RESULTADOS ─── */
+    #resultados { background: var(--graphite); border-top: 1px solid var(--border); }
+    .resultados-header { text-align: center; margin-bottom: 60px; }
+    .resultados-header .section-eyebrow { justify-content: center; }
+    .resultados-header .section-eyebrow::before { display: none; }
+    .resultados-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+    .resultado-item { overflow: hidden; border: 1px solid var(--border); aspect-ratio: 1 / 1; }
+    .resultado-img {
+      width: 100%; height: 100%; display: block; object-fit: cover; object-position: center;
+      transition: transform 0.8s ease;
+    }
+    .resultado-item:hover .resultado-img { transform: scale(1.03); }
+
+    /* ─── DEPOIMENTOS ─── */
+    #depoimentos { background: var(--graphite-mid); border-top: 1px solid var(--border); }
+    .dep-header { text-align: center; margin-bottom: 80px; }
+    .dep-header .section-eyebrow { justify-content: center; }
+    .dep-header .section-eyebrow::before { display: none; }
+    .dep-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+    .dep-card {
+      padding: 40px; border: 1px solid var(--border);
+      transition: transform var(--transition); text-align: center;
+    }
+    .dep-card:hover { transform: translateY(-10px); }
+    .dep-quote-icon { font-family: 'Cormorant Garamond', serif; font-size: 4rem; color: var(--blush-pale); line-height: 0.5; margin-bottom: 10px; }
+    .dep-text { font-size: 0.95rem; line-height: 1.8; color: var(--gray-text); margin-bottom: 24px; font-weight: 300; }
+    .dep-author { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--blush); }
+
+    /* ─── CONTATO ─── */
+    #contato {
+      background: var(--graphite); border-top: 1px solid var(--border);
+      display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: center;
+    }
+    .contato-map { height: 600px; border-radius: 0 200px 0 0; overflow: hidden; }
+    .contato-map iframe { width: 100%; height: 100%; border: 0; filter: grayscale(100%) contrast(1.2); }
+    .info-item { margin-bottom: 36px; }
+    .info-label { font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--blush); margin-bottom: 10px; }
+    .info-value { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--white); line-height: 1.4; }
+    .info-value a { color: var(--white); text-decoration: none; transition: color var(--transition); }
+    .info-value a:hover { color: var(--blush); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--graphite); border-top: 1px solid var(--border);
+      padding: 60px;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 24px;
+    }
+    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--gray-text); }
+    .footer-logo strong { color: var(--white); font-weight: 300; }
+    .footer-social { display: flex; gap: 20px; }
+    .footer-social a {
+      width: 44px; height: 44px; border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gray-text); transition: all var(--transition);
+      text-decoration: none; border-radius: 50%;
+    }
+    .footer-social a:hover { border-color: var(--blush); color: var(--blush); }
+    .footer-legal { font-size: 0.65rem; letter-spacing: 0.1em; color: var(--graphite-light); }
+
+    /* ─── WHATSAPP FLOAT ─── */
+    .whatsapp-float {
+      position: fixed; bottom: 32px; right: 32px; z-index: 200;
+      width: 64px; height: 64px; background: var(--blush);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      text-decoration: none; box-shadow: 0 8px 40px rgba(212,175,55,0.25);
+      transition: all var(--transition);
+      animation: pulse 3s 3s infinite;
+    }
+    .whatsapp-float:hover { transform: scale(1.1); background: var(--blush-light); }
+    .whatsapp-float svg { width: 28px; height: 28px; fill: #050505; }
+
+    /* ─── DIVIDER LINE ─── */
+    .divider { width: 100%; height: 1px; background: var(--border); }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 8px 40px rgba(212,175,55,0.25); }
+      50% { box-shadow: 0 8px 50px rgba(212,175,55,0.5); }
+    }
+
+    /* ─── REVEAL ANIMATION ─── */
+    .reveal {
+      opacity: 0; transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+    .reveal-delay-5 { transition-delay: 0.5s; }
+
+    /* ─── MOBILE ─── */
+    @media (max-width: 900px) {
+      nav { padding: 20px 24px; }
+      nav.scrolled { padding: 14px 24px; }
+      .nav-logo { position: relative; left: 0; transform: none; align-items: flex-start; }
+      .nav-logo-text { text-align: left; }
+      .nav-logo-text span { text-align: left; margin-left: 2px;}
+      .nav-group { display: none; }
+      .hamburger { display: flex; }
+      #hero { flex-direction: column; padding: 120px 24px 0; gap: 40px; }
+      .hero-left { padding-top: 0; }
+      .hero-right { width: 100%; height: 50vh; padding-top: 0; }
+      .hero-img-arch { border-radius: 200px 200px 0 0; }
+      section { padding: 70px 24px; }
+      #filosofia { padding: 70px 24px; }
+      .filosofia-grid { grid-template-columns: 1fr; gap: 40px; }
+      .filosofia-img { height: 50vh; border-radius: 0 150px 0 0; }
+      .servico-row { grid-template-columns: 1fr; gap: 16px; padding: 40px 0; }
+      .servico-name { font-size: 2rem; }
+      .espaco-grid { grid-template-columns: 1fr; }
+      .img-large { min-height: 400px; }
+      .resultados-grid { grid-template-columns: 1fr; gap: 20px; }
+      .dep-grid { grid-template-columns: 1fr; }
+      #contato { grid-template-columns: 1fr; gap: 40px; }
+      .contato-map { min-height: 320px; }
+      footer { padding: 36px 24px; flex-direction: column; align-items: flex-start; }
+      .whatsapp-float { bottom: 20px; right: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <ul class="nav-group left nav-links">
+      <li><a href="#filosofia">Filosofia</a></li>
+      <li><a href="#especialidades">Especialidades</a></li>
+    </ul>
+    <a href="#hero" class="nav-logo">
+      <span class="nav-logo-text">Dra. Daniela Garcia<span>Rinoplastia & Estética</span></span>
+    </a>
+    <ul class="nav-group right nav-links">
+      <li><a href="#espaco">Clínica</a></li>
+      <li><a href="#depoimentos">Pacientes</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-left">
+      <div class="hero-eyebrow">Clínica de Estética Facial · São Paulo</div>
+      <h1 class="hero-title">
+        Sua essência,<br/><em>elevada.</em>
+      </h1>
+      <p class="hero-sub">
+        Especialista em Rinoplastia e Harmonização. Um cuidado que une a máxima precisão médica e cirúrgica à proporção perfeita para o seu rosto.
+      </p>
+      <a href="https://wa.me/5511948884848" target="_blank" class="btn-primary">Agendar Avaliação</a>
+    </div>
+    <div class="hero-right">
+      <img src="./assets/DraDaniela1.jpeg" alt="Dra. Daniela Garcia – Otorrinolaringologista em São Paulo" class="hero-img-arch" />
+    </div>
+  </section>
+
+  <!-- FILOSOFIA -->
+  <section id="filosofia">
+    <div class="filosofia-grid">
+      <div class="filosofia-img-wrap reveal">
+        <img src="./assets/DraDaniela7.jpg" alt="Filosofia Dra Daniela" class="filosofia-img" />
+      </div>
+      <div class="filosofia-content">
+        <div class="section-eyebrow reveal">A Filosofia</div>
+        <h2 class="section-title reveal reveal-delay-1">
+          A verdadeira beleza <em>respeita quem você é.</em>
+        </h2>
+        <p class="filosofia-text reveal reveal-delay-2">
+          Na nossa clínica, não buscamos uma perfeição padronizada e irreal. O foco é resgatar a sua melhor versão. A Dra. Daniela Garcia une sua vasta experiência em otorrinolaringologia à paixão pela estética para entregar resultados que combinam uma respiração plenamente funcional e um design nasal naturalmente atraente.
+        </p>
+        <div class="filosofia-credentials">
+          <p class="reveal reveal-delay-3">Membro Titular de Otorrinolaringologia (ABORL-CCF)</p>
+          <p class="reveal reveal-delay-4">Expertise em Rinoplastia Estruturada e Preservadora</p>
+          <p class="reveal reveal-delay-5">CRM-SP 170913 · RQE 89966</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ESPECIALIDADES -->
+  <section id="especialidades">
+    <div class="especialidades-header">
+      <div class="section-eyebrow reveal">Expertise</div>
+      <h2 class="section-title reveal reveal-delay-1">Procedimentos de <em>Alta Performance</em></h2>
+    </div>
+    <div class="servicos-list">
+      <div class="servico-row reveal">
+        <span class="servico-num">01</span>
+        <h3 class="servico-name">Rinoplastia</h3>
+        <p class="servico-desc">A arte de esculpir o nariz em perfeita harmonia com os traços do seu rosto, garantindo ao mesmo tempo uma respiração impecável e naturalidade absoluta.</p>
+      </div>
+      <div class="servico-row reveal reveal-delay-1">
+        <span class="servico-num">02</span>
+        <h3 class="servico-name">Otoplastia</h3>
+        <p class="servico-desc">Procedimento altamente especializado para correção de orelhas proeminentes, restaurando a simetria com cicatrizes praticamente imperceptíveis.</p>
+      </div>
+      <div class="servico-row reveal reveal-delay-2">
+        <span class="servico-num">03</span>
+        <h3 class="servico-name">Desvio de Septo</h3>
+        <p class="servico-desc">Intervenções funcionais avançadas focadas em desobstruir completamente as vias aéreas, tratando condições crônicas e devolvendo energia ao seu dia a dia.</p>
+      </div>
+      <div class="servico-row reveal reveal-delay-3">
+        <span class="servico-num">04</span>
+        <h3 class="servico-name">Apneia do Sono</h3>
+        <p class="servico-desc">Abordagem completa para distúrbios obstrutivos do sono, eliminando a fadiga e proporcionando noites de descanso verdadeiramente reparadoras.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ESPAÇO -->
+  <section id="espaco">
+    <div class="section-eyebrow reveal">Ambiente</div>
+    <h2 class="section-title reveal reveal-delay-1">Conforto & <em>Sofisticação</em></h2>
+    <div class="espaco-grid">
+      <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=900&q=80" alt="Recepção" class="espaco-img img-large reveal" />
+      <div class="espaco-col">
+        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&q=80" alt="Consultório" class="espaco-img reveal reveal-delay-1" />
+        <img src="https://images.unsplash.com/photo-1666214280577-5d4ae1b42789?w=600&q=80" alt="Procedimentos" class="espaco-img reveal reveal-delay-2" />
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTADOS -->
+  <section id="resultados">
+    <div class="resultados-header">
+      <div class="section-eyebrow reveal">Transformações</div>
+      <h2 class="section-title reveal reveal-delay-1">Resultados que <em>elevam a autoestima.</em></h2>
+    </div>
+    <div class="resultados-grid">
+      <div class="resultado-item reveal">
+        <img src="./assets/resultados3.jpg" alt="Antes e Depois Rinoplastia" class="resultado-img" />
+      </div>
+      <div class="resultado-item reveal reveal-delay-1">
+        <img src="./assets/resultados2.jpg" alt="Antes e Depois Rinoplastia" class="resultado-img" />
+      </div>
+      <div class="resultado-item reveal reveal-delay-2">
+        <img src="./assets/resultados4.jpg" alt="Antes e Depois Rinoplastia" class="resultado-img" />
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section id="depoimentos">
+    <div class="dep-header">
+      <div class="section-eyebrow reveal">Pacientes</div>
+      <h2 class="section-title reveal reveal-delay-1">Histórias de <em>transformação</em></h2>
+    </div>
+    <div class="dep-grid">
+      <div class="dep-card reveal">
+        <div class="dep-quote-icon">"</div>
+        <p class="dep-text">"A Dra. Daniela é extremamente atenciosa e competente. Minha rinoplastia superou todas as expectativas — resultado natural e recuperação tranquila."</p>
+        <span class="dep-author">— Mariana S., rinoplastia</span>
+      </div>
+      <div class="dep-card reveal reveal-delay-2">
+        <div class="dep-quote-icon">"</div>
+        <p class="dep-text">"Sofria com apneia há anos. Após o tratamento com a Dra. Daniela, minha qualidade de sono melhorou completamente. Consultório lindo e equipe incrível."</p>
+        <span class="dep-author">— Roberto L., apneia do sono</span>
+      </div>
+      <div class="dep-card reveal reveal-delay-4">
+        <div class="dep-quote-icon">"</div>
+        <p class="dep-text">"Corrigi o desvio de septo e nunca mais tive crises de sinusite. Atendimento humanizado, desde a consulta até o pós-operatório. Recomendo demais!"</p>
+        <span class="dep-author">— Juliana M., desvio de septo</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato">
+    <div class="contato-map reveal reveal-delay-2">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.526895590658!2d-46.65489422376836!3d-23.55370787888437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1710000000000!5m2!1spt-BR!2sbr"
+        allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        title="Localização Instituto Inspirare São Paulo">
+      </iframe>
+    </div>
+    <div class="contato-info">
+      <div class="section-eyebrow reveal">Agende sua Consulta</div>
+      <h2 class="section-title reveal reveal-delay-1">Dê o primeiro passo para a sua <em>transformação.</em></h2>
+
+      <div class="info-item reveal reveal-delay-2">
+        <div class="info-label">WhatsApp Corporativo</div>
+        <div class="info-value"><a href="https://wa.me/5511948884848">(11) 94888-4848</a></div>
+      </div>
+      <div class="info-item reveal reveal-delay-3">
+        <div class="info-label">Localização</div>
+        <div class="info-value">Instituto Inspirare<br/>São Paulo — SP</div>
+      </div>
+      
+      <div style="margin-top: 60px" class="reveal reveal-delay-4">
+        <a href="https://wa.me/5511948884848" target="_blank" class="btn-primary">Fale com a Equipe</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">
+      <strong>Dra. Daniela Garcia</strong><br/>
+      Otorrinolaringologista · CRM-SP 170913 · RQE 89966
+    </div>
+    <div class="footer-social">
+      <a href="#" aria-label="Instagram">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      </a>
+    </div>
+    <div class="footer-legal">© 2025 Instituto Inspirare · Todos os direitos reservados</div>
+  </footer>
+
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://wa.me/5511948884848" target="_blank" class="whatsapp-float" aria-label="Agendar consulta via WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script>
+    // NAV scroll
+    const nav = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // Hamburger (mobile nav)
+    function toggleMenu() {
+      const links = document.querySelector('.nav-group');
+      if (links) {
+        if (links.style.display === 'flex') {
+          links.style.display = '';
+        } else {
+          links.style.display = 'flex';
+          links.style.flexDirection = 'column';
+          links.style.position = 'fixed';
+          links.style.top = '70px';
+          links.style.left = '0';
+          links.style.right = '0';
+          links.style.background = 'rgba(5,5,5,0.98)';
+          links.style.padding = '24px';
+          links.style.gap = '20px';
+          links.style.borderTop = '1px solid rgba(212,175,55,0.15)';
+        }
+      }
+    }
+
+    // Smooth close on link click (mobile)
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      a.addEventListener('click', () => {
+        const links = document.querySelector('.nav-group');
+        if (window.innerWidth < 900) {
+          links.style.display = '';
+        }
+      });
+    });
+
+    // Intersection Observer for reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
