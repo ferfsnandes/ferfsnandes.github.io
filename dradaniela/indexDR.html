@@ -357,9 +357,8 @@
       grid-template-rows: 260px 260px;
       gap: 3px;
     }
-    .galeria-item { overflow: hidden; position: relative; }
+    .galeria-item { overflow: hidden; position: relative; cursor: pointer; }
     .galeria-item:first-child { grid-column: span 2; grid-row: span 2; }
-    .galeria-item:nth-child(4) { grid-column: span 2; }
     .galeria-img {
       width: 100%; height: 100%; object-fit: cover;
       transition: transform 0.7s ease;
@@ -368,8 +367,15 @@
     .galeria-item:hover .galeria-img { transform: scale(1.06); }
     .galeria-overlay {
       position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(38,36,35,0.5), transparent);
+      background: rgba(10, 10, 10, 0.7);
+      backdrop-filter: blur(2px);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--white); font-size: 1.2rem;
+      font-family: 'Cormorant Garamond', serif; font-style: italic;
       opacity: 0; transition: opacity var(--transition);
+    }
+    .galeria-overlay::after {
+      content: "Ampliar imagem";
     }
     .galeria-item:hover .galeria-overlay { opacity: 1; }
 
@@ -501,6 +507,15 @@
       font-size: 40px; font-weight: bold; transition: 0.3s; cursor: pointer;
     }
     .modal-close:hover, .modal-close:focus { color: var(--blush); text-decoration: none; cursor: pointer; }
+    .modal-prev, .modal-next {
+      cursor: pointer; position: absolute; top: 50%; transform: translateY(-50%);
+      width: auto; padding: 16px; color: var(--white); z-index: 1001;
+      font-size: 40px; font-weight: bold; transition: 0.3s;
+      user-select: none; -webkit-user-select: none;
+    }
+    .modal-prev { left: 20px; }
+    .modal-next { right: 20px; }
+    .modal-prev:hover, .modal-next:hover { color: var(--blush); }
 
     /* ─── REVEAL ANIMATION ─── */
     .reveal {
@@ -533,7 +548,6 @@
       .servicos-grid { grid-template-columns: 1fr; }
       .galeria-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
       .galeria-item:first-child { grid-column: span 2; }
-      .galeria-item:nth-child(4) { grid-column: span 1; }
       .dep-grid { grid-template-columns: 1fr; }
       #contato { grid-template-columns: 1fr; }
       .contato-info { padding: 70px 24px; }
@@ -545,6 +559,8 @@
       #sintomas { grid-template-columns: 1fr; gap: 36px; }
       .sintomas-grid { grid-template-columns: 1fr; }
       .diferenciais-grid { grid-template-columns: 1fr; }
+      .modal-prev { left: 5px; font-size: 30px; padding: 10px; }
+      .modal-next { right: 5px; font-size: 30px; padding: 10px; }
       #galeria { padding: 70px 24px; }
     }
   </style>
@@ -760,23 +776,23 @@
     </div>
     <div class="galeria-grid">
       <div class="galeria-item reveal">
-        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=900&q=80" alt="Clínica Instituto Inspirare São Paulo" class="galeria-img" />
+        <img src="./assets/consultorio4.jpeg" alt="Clínica Instituto Inspirare São Paulo" class="galeria-img" />
         <div class="galeria-overlay"></div>
       </div>
       <div class="galeria-item reveal reveal-delay-1">
-        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&q=80" alt="Consultório otorrinolaringologia SP" class="galeria-img" />
+        <img src="./assets/consultorio2.jpeg" alt="Consultório otorrinolaringologia SP" class="galeria-img" />
         <div class="galeria-overlay"></div>
       </div>
       <div class="galeria-item reveal reveal-delay-2">
-        <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=600&q=80" alt="Atendimento médico especializado" class="galeria-img" />
+        <img src="./assets/consultorio6.jpeg" alt="Atendimento médico especializado" class="galeria-img" />
         <div class="galeria-overlay"></div>
       </div>
       <div class="galeria-item reveal reveal-delay-3">
-        <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?w=900&q=80" alt="Cirurgia rinoplastia São Paulo" class="galeria-img" />
+        <img src="./assets/consultorio7.jpeg" alt="Cirurgia rinoplastia São Paulo" class="galeria-img" />
         <div class="galeria-overlay"></div>
       </div>
       <div class="galeria-item reveal reveal-delay-4">
-        <img src="https://images.unsplash.com/photo-1666214280577-5d4ae1b42789?w=600&q=80" alt="Sala de cirurgia moderna" class="galeria-img" />
+        <img src="./assets/consultorio8.jpeg" alt="Sala de cirurgia moderna" class="galeria-img" />
         <div class="galeria-overlay"></div>
       </div>
     </div>
@@ -819,7 +835,7 @@
       </div>
       <div class="info-item reveal reveal-delay-3">
         <div class="info-label">Endereço</div>
-        <div class="info-value">Instituto Inspirare<br/>São Paulo — SP</div>
+        <div class="info-value">Rua Joaquim Floriano, 243 – Sala 22<br/>Itaim Bibi –São Paulo — SP</div>
       </div>
       <div class="info-item reveal reveal-delay-4">
         <div class="info-label">Horário de Atendimento</div>
@@ -858,7 +874,7 @@
       Otorrinolaringologista · CRM-SP 170913 · RQE 89966
     </div>
     <div class="footer-social">
-      <a href="#" aria-label="Instagram">
+      <a href="https://www.instagram.com/dradaniela.garcia/" target="_blank" aria-label="Instagram">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
       </a>
       <a href="https://wa.me/5511948884848" target="_blank" aria-label="WhatsApp">
@@ -876,7 +892,9 @@
   <!-- MODAL -->
   <div id="imageModal" class="modal">
     <span class="modal-close">&times;</span>
+    <span class="modal-prev">&#10094;</span>
     <img class="modal-content" id="modalImage">
+    <span class="modal-next">&#10095;</span>
   </div>
 
   <script>
@@ -935,22 +953,56 @@
     const modal = document.getElementById("imageModal");
     const modalImg = document.getElementById("modalImage");
     const closeBtn = document.querySelector(".modal-close");
+    const prevBtn = document.querySelector(".modal-prev");
+    const nextBtn = document.querySelector(".modal-next");
 
-    document.querySelectorAll('.dep-card').forEach(card => {
+    const galleryItems = Array.from(document.querySelectorAll('.dep-card, .galeria-item'));
+    let currentImageIndex = 0;
+
+    function getImageUrl(item) {
+      let src = item.getAttribute('data-img');
+      if (!src) {
+        const img = item.querySelector('img');
+        if (img) src = img.src;
+      }
+      return src;
+    }
+
+    galleryItems.forEach((card, index) => {
       card.addEventListener('click', function() {
-        const imgSrc = this.getAttribute('data-img');
+        const imgSrc = getImageUrl(this);
         if (imgSrc) {
+          currentImageIndex = index;
           modal.style.display = "flex";
           modalImg.src = imgSrc;
         }
       });
     });
 
+    function navigateModal(direction) {
+      currentImageIndex += direction;
+      if (currentImageIndex < 0) currentImageIndex = galleryItems.length - 1;
+      if (currentImageIndex >= galleryItems.length) currentImageIndex = 0;
+      modalImg.src = getImageUrl(galleryItems[currentImageIndex]);
+    }
+
+    prevBtn.onclick = (e) => { e.stopPropagation(); navigateModal(-1); };
+    nextBtn.onclick = (e) => { e.stopPropagation(); navigateModal(1); };
+
     closeBtn.onclick = () => modal.style.display = "none";
     
     modal.onclick = (e) => {
       if (e.target === modal) modal.style.display = "none";
     };
+
+    // Suporte a teclado para navegação no modal
+    document.addEventListener('keydown', (e) => {
+      if (modal.style.display === "flex") {
+        if (e.key === "ArrowLeft") navigateModal(-1);
+        if (e.key === "ArrowRight") navigateModal(1);
+        if (e.key === "Escape") modal.style.display = "none";
+      }
+    });
   </script>
 </body>
 </html>
