@@ -186,6 +186,163 @@
   }
 }
 
+// ─── SERVICES SECTION ─────────────────────────────────────────────────────────
+.services {
+  background: #fff;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+
+    @include mixins.respond(tab-port) {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+  }
+}
+
+.service-card {
+  background: #fafafa;
+  border: 1px solid #eee;
+  border-radius: 1rem;
+  padding: 3.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  transition: box-shadow 0.3s, transform 0.3s;
+
+  &:hover {
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.09);
+    transform: translateY(-4px);
+  }
+
+  &__icon {
+    font-size: 3.6rem;
+    line-height: 1;
+  }
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+  }
+
+  &__text {
+    font-size: 1.6rem;
+    color: #666;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  &__list {
+    font-size: 1.6rem;
+    color: #555;
+    line-height: 1.8;
+    padding-left: 2rem;
+    margin: 0;
+
+    li {
+      margin-bottom: 0.6rem;
+    }
+  }
+
+  &__result {
+    font-size: 1.5rem;
+    color: #444;
+    background: rgba(vars.$themeClrPrimary, 0.07);
+    border-left: 3px solid vars.$themeClrPrimary;
+    padding: 1rem 1.4rem;
+    border-radius: 0 5px 5px 0;
+    margin: 0.5rem 0 0;
+    line-height: 1.6;
+  }
+}
+
+// ─── WHY WORK WITH ME ─────────────────────────────────────────────────────────
+.whyme {
+  background: #fafafa;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+
+    @include mixins.respond(tab-port) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3rem;
+    }
+
+    @include mixins.respond(phone) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    background: #fff;
+    border-radius: 1rem;
+    padding: 3rem 2.5rem;
+    text-align: center;
+    border: 1px solid #eee;
+    transition: box-shadow 0.3s, transform 0.3s;
+
+    &:hover {
+      box-shadow: 0 6px 22px rgba(0, 0, 0, 0.08);
+      transform: translateY(-3px);
+    }
+  }
+
+  &__icon {
+    font-size: 3.4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+
+  &__text {
+    font-size: 1.6rem;
+    color: #666;
+    line-height: 1.7;
+    margin: 0;
+  }
+}
+
+// ─── WHATSAPP BUTTON ──────────────────────────────────────────────────────────
+.contact__whats-container {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.whatsapp-btn {
+  display: inline-block;
+  background: #25d366;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 1.6rem 4rem;
+  border-radius: 50px;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(37, 211, 102, 0.5);
+  }
+
+  @include mixins.respond(phone) {
+    font-size: 1.7rem;
+    padding: 1.4rem 2.4rem;
+  }
+}
+
 .contact {
   background: linear-gradient(
       to right,
