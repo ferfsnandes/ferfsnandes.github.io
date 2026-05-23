@@ -548,6 +548,20 @@
       .servicos-grid { grid-template-columns: 1fr; }
       .galeria-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
       .galeria-item:first-child { grid-column: span 2; }
+      /* GALERIA MOBILE */
+      .galeria-header { top: 60px; left: 24px; }
+      .carousel { height: 80vh; }
+      .carousel .list .item .content { max-width: 90%; top: 40%; left: 24px; }
+      .carousel .list .item .des { font-size: 0.9rem; }
+      .arrows { right: 50%; transform: translateX(50%); top: 65%; }
+      .thumbnail { bottom: 20px; gap: 10px; left: 50%; transform: translateX(-50%); width: 100%; justify-content: center; }
+      .thumbnail .item { width: 80px; height: 120px; }
+      .carousel.next .list .item:nth-child(1) img, 
+      .carousel.prev .list .item:nth-child(2) img {
+        width: 80px; height: 120px; bottom: 20px; left: 50%;
+      }
+      @keyframes outFrame { to { width: 80px; height: 120px; bottom: 20px; left: 50%; border-radius: 8px; } }
+      @keyframes effectNext { from { transform: translateX(90px); } }
       .dep-grid { grid-template-columns: 1fr; }
       #contato { grid-template-columns: 1fr; }
       .contato-info { padding: 70px 24px; }
@@ -849,7 +863,7 @@
     </div>
     <div class="contato-map reveal reveal-delay-2">
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.526895590658!2d-46.65489422376836!3d-23.55370787888437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1710000000000!5m2!1spt-BR!2sbr"
+        src="https://www.google.com/maps?q=Rua+Joaquim+Floriano,+243,+Itaim+Bibi,+São+Paulo,+SP&output=embed"
         allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
         title="Localização Instituto Inspirare São Paulo">
       </iframe>

@@ -253,30 +253,84 @@
       color: var(--blush-pale); font-weight: 300; line-height: 1;
     }
 
-    /* ─── GALERIA ─── */
-    #galeria { background: var(--graphite-mid); padding: 100px 60px; }
-    .galeria-header { margin-bottom: 52px; }
-    .galeria-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: 260px 260px;
-      gap: 3px;
+    /* ─── CARROSSEL (GALERIA) ─── */
+    #galeria { padding: 0; position: relative; background: var(--graphite); }
+    .galeria-header {
+      position: absolute; z-index: 100; top: 100px; left: 60px; pointer-events: none;
     }
-    .galeria-item { overflow: hidden; position: relative; }
-    .galeria-item:first-child { grid-column: span 2; grid-row: span 2; }
-    .galeria-item:nth-child(4) { grid-column: span 2; }
-    .galeria-img {
-      width: 100%; height: 100%; object-fit: cover;
-      transition: transform 0.7s ease;
-      display: block;
+    .carousel {
+      height: 90vh; width: 100%; overflow: hidden; position: relative;
     }
-    .galeria-item:hover .galeria-img { transform: scale(1.06); }
-    .galeria-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(38,36,35,0.5), transparent);
-      opacity: 0; transition: opacity var(--transition);
+    .carousel .list .item {
+      width: 100%; height: 100%; position: absolute; inset: 0; overflow: hidden;
     }
-    .galeria-item:hover .galeria-overlay { opacity: 1; }
+    .carousel .list .item img {
+      width: 65%; height: 100%; object-fit: cover; object-position: center; display: block;
+      -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+      mask-image: linear-gradient(to right, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+    }
+    
+    /* thumbnails */
+    .thumbnail {
+      position: absolute; bottom: 50px; left: 50%; width: max-content; z-index: 100; display: flex; gap: 20px;
+    }
+    .thumbnail .item {
+      width: 130px; height: 190px; flex-shrink: 0; position: relative; cursor: pointer; overflow: hidden; border-radius: 8px;
+    }
+    .thumbnail .item::before {
+      content: ''; position: absolute; inset: 0; background: rgba(10,10,10,0.4); z-index: 1; transition: var(--transition);
+    }
+    .thumbnail .item:hover::before { background: rgba(10,10,10,0); }
+    .thumbnail .item img {
+      width: 100%; height: 100%; object-fit: cover; border-radius: 8px; border: 1px solid var(--border);
+    }
+    .thumbnail .item .content {
+      position: absolute; bottom: 10px; left: 10px; right: 10px; color: var(--white); z-index: 2;
+    }
+    .thumbnail .item .content .title {
+      font-weight: 400; font-size: 0.9rem; font-family: 'Cormorant Garamond', serif; text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+    }
+
+    /* arrows */
+    .arrows {
+      position: absolute; top: 80%; right: 55%; z-index: 100; width: 300px; max-width: 30%; display: flex; gap: 12px; align-items: center;
+    }
+    .arrows button {
+      width: 44px; height: 44px; border-radius: 50%; background: rgba(20,20,20,0.5); border: 1px solid var(--border);
+      color: var(--white); font-weight: bold; font-size: 1.2rem; transition: var(--transition); cursor: pointer; backdrop-filter: blur(5px);
+    }
+    .arrows button:hover { background: var(--blush); color: #0a0a0a; border-color: var(--blush); }
+
+    /* running time */
+    .carousel .time {
+      position: absolute; z-index: 100; width: 0%; height: 2px; background: var(--blush); left: 0; top: 0;
+    }
+
+    /* animation */
+    .carousel .list .item:nth-child(1) { z-index: 1; }
+
+    /* click next */
+    .carousel.next .list .item:nth-child(1) img {
+      width: 130px; height: 190px; position: absolute; bottom: 50px; left: 50%; border-radius: 8px;
+      animation: showImage .5s linear 1 forwards;
+    }
+    @keyframes showImage { to { bottom: 0; left: 0; width: 65%; height: 100%; border-radius: 0; } }
+    .carousel.next .thumbnail .item:nth-last-child(1) { overflow: hidden; animation: showThumbnail .5s linear 1 forwards; }
+    .carousel.prev .list .item img { z-index: 100; }
+    @keyframes showThumbnail { from { width: 0; opacity: 0; } }
+    .carousel.next .thumbnail { animation: effectNext .5s linear 1 forwards; }
+    @keyframes effectNext { from { transform: translateX(150px); } }
+    .carousel.next .time, .carousel.prev .time { animation: runningTime 6s linear 1 forwards; }
+    @keyframes runningTime { from { width: 100% } to { width: 0 } }
+
+    /* click prev */
+    .carousel.prev .list .item:nth-child(2) { z-index: 2; }
+    .carousel.prev .list .item:nth-child(2) img {
+      animation: outFrame 0.5s linear 1 forwards; position: absolute; bottom: 0; left: 0;
+    }
+    @keyframes outFrame { to { width: 130px; height: 190px; bottom: 50px; left: 50%; border-radius: 8px; } }
+    .carousel.prev .thumbnail .item:nth-child(1) { overflow: hidden; opacity: 0; animation: showThumbnail .5s linear 1 forwards; }
+    .carousel.next .arrows button, .carousel.prev .arrows button { pointer-events: none; }
 
     /* ─── DEPOIMENTOS ─── */
     #depoimentos { background: var(--graphite); }
@@ -393,16 +447,30 @@
       #sobre { grid-template-columns: 1fr; gap: 40px; }
       .sobre-img-wrap { max-width: 380px; }
       .servicos-grid { grid-template-columns: 1fr; }
-      .galeria-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
-      .galeria-item:first-child { grid-column: span 2; }
-      .galeria-item:nth-child(4) { grid-column: span 1; }
+      /* GALERIA MOBILE */
+      .galeria-header { top: 60px; left: 24px; }
+      .carousel { height: 80vh; }
+      .arrows { right: 50%; transform: translateX(50%); top: 65%; }
+      .thumbnail { bottom: 20px; gap: 10px; left: 50%; transform: translateX(-50%); width: 100%; justify-content: center; }
+      .thumbnail .item { width: 80px; height: 120px; }
+      .carousel.next .list .item:nth-child(1) img, 
+      .carousel.prev .list .item:nth-child(2) img {
+        width: 80px; height: 120px; bottom: 20px; left: 50%;
+      }
+      @keyframes outFrame { to { width: 80px; height: 120px; bottom: 20px; left: 50%; border-radius: 8px; } }
+      @keyframes effectNext { from { transform: translateX(90px); } }
+      .carousel .list .item img {
+        width: 100%;
+        -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+        mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+      }
+      @keyframes showImage { to { bottom: 0; left: 0; width: 100%; height: 100%; border-radius: 0; } }
       .dep-grid { grid-template-columns: 1fr; }
       #contato { grid-template-columns: 1fr; }
       .contato-info { padding: 70px 24px; }
       .contato-map { min-height: 320px; }
       footer { padding: 36px 24px; flex-direction: column; align-items: flex-start; }
       .whatsapp-float { bottom: 20px; right: 20px; }
-      #galeria { padding: 70px 24px; }
     }
   </style>
 </head>
@@ -434,7 +502,7 @@
   <!-- HERO -->
   <section id="hero">
     <div class="hero-left">
-      <div class="hero-eyebrow">Instituto Inspirare · São Paulo</div>
+      <div class="hero-eyebrow">Doutora Daniela Garcia · São Paulo</div>
       <h1 class="hero-title">
         Cuidado especializado<br/>em <em>Otorrinolaringologia</em><br/>em São Paulo
       </h1>
@@ -567,29 +635,56 @@
   <section id="galeria">
     <div class="galeria-header">
       <div class="section-eyebrow reveal">O Espaço</div>
-      <h2 class="section-title reveal reveal-delay-1">Instituto Inspirare<br/><em>São Paulo</em></h2>
     </div>
-    <div class="galeria-grid">
-      <div class="galeria-item reveal">
-        <img src="./assets/consultorio8.jpeg" alt="Clínica Instituto Inspirare São Paulo" class="galeria-img" />
-        <div class="galeria-overlay"></div>
+    
+    <div class="carousel reveal reveal-delay-2">
+      <div class="list">
+        <div class="item">
+          <img src="./assets/consultorio8.jpeg" alt="Recepção" />
+        </div>
+        <div class="item">
+          <img src="./assets/consultorio4.jpeg" alt="Consultório" />
+        </div>
+        <div class="item">
+          <img src="./assets/consultorio1.jpeg" alt="Atendimento" />
+        </div>
+        <div class="item">
+          <img src="./assets/consultorio2.jpeg" alt="Estrutura" />
+        </div>
+        <div class="item">
+          <img src="./assets/consultorio3.jpeg" alt="Sala de Espera" />
+        </div>
       </div>
-      <div class="galeria-item reveal reveal-delay-1">
-        <img src="./assets/consultorio4.jpeg" alt="Consultório otorrinolaringologia SP" class="galeria-img" />
-        <div class="galeria-overlay"></div>
+      
+      <!-- thumbnails -->
+      <div class="thumbnail">
+        <div class="item">
+          <img src="./assets/consultorio8.jpeg" alt="Acolhimento" />
+          <div class="content"><div class="title">Acolhimento</div></div>
+        </div>
+        <div class="item">
+          <img src="./assets/consultorio4.jpeg" alt="Recepção" />
+          <div class="content"><div class="title">Recepção</div></div>
+        </div>
+        <div class="item">
+          <img src="./assets/consultorio1.jpeg" alt="Atendimento" />
+          <div class="content"><div class="title">Atendimento</div></div>
+        </div>
+        <div class="item">
+          <img src="./assets/consultorio2.jpeg" alt="Estrutura" />
+          <div class="content"><div class="title">Estrutura</div></div>
+        </div>
+        <div class="item">
+          <img src="./assets/consultorio3.jpeg" alt="Procedimentos" />
+          <div class="content"><div class="title">Procedimentos</div></div>
+        </div>
       </div>
-      <div class="galeria-item reveal reveal-delay-2">
-        <img src="./assets/consultorio1.jpeg" alt="Atendimento médico especializado" class="galeria-img" />
-        <div class="galeria-overlay"></div>
+      
+      <div class="arrows">
+        <button id="prev">&#10094;</button>
+        <button id="next">&#10095;</button>
       </div>
-      <div class="galeria-item reveal reveal-delay-3">
-        <img src="./assets/consultorio2.jpeg" alt="Cirurgia rinoplastia São Paulo" class="galeria-img" />
-        <div class="galeria-overlay"></div>
-      </div>
-      <div class="galeria-item reveal reveal-delay-4">
-        <img src="./assets/consultorio3.jpeg" alt="Sala de cirurgia moderna" class="galeria-img" />
-        <div class="galeria-overlay"></div>
-      </div>
+      <div class="time"></div>
     </div>
   </section>
 
@@ -724,6 +819,52 @@
       });
     }, { threshold: 0.1 });
     reveals.forEach(el => observer.observe(el));
+
+    // CAROUSEL LOGIC
+    const nextDom = document.getElementById('next');
+    const prevDom = document.getElementById('prev');
+    const carouselDom = document.querySelector('.carousel');
+    if (carouselDom && nextDom && prevDom) {
+      const SliderDom = carouselDom.querySelector('.list');
+      const thumbnailBorderDom = carouselDom.querySelector('.thumbnail');
+      const thumbnailItemsDom = thumbnailBorderDom.querySelectorAll('.item');
+      
+      if (thumbnailItemsDom.length > 0) {
+        thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
+      }
+      const timeRunning = 500;
+      const timeAutoNext = 6000;
+      
+      let runTimeOut;
+      let runNextAuto = setTimeout(() => { nextDom.click(); }, timeAutoNext);
+      
+      nextDom.onclick = function(){ showSlider('next'); }
+      prevDom.onclick = function(){ showSlider('prev'); }
+      
+      function showSlider(type){
+          const SliderItemsDom = SliderDom.querySelectorAll('.item');
+          const thumbnailItemsDom = thumbnailBorderDom.querySelectorAll('.item');
+          
+          if(type === 'next'){
+              SliderDom.appendChild(SliderItemsDom[0]);
+              thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
+              carouselDom.classList.add('next');
+          }else{
+              SliderDom.prepend(SliderItemsDom[SliderItemsDom.length - 1]);
+              thumbnailBorderDom.prepend(thumbnailItemsDom[thumbnailItemsDom.length - 1]);
+              carouselDom.classList.add('prev');
+          }
+          
+          clearTimeout(runTimeOut);
+          runTimeOut = setTimeout(() => {
+              carouselDom.classList.remove('next');
+              carouselDom.classList.remove('prev');
+          }, timeRunning);
+      
+          clearTimeout(runNextAuto);
+          runNextAuto = setTimeout(() => { nextDom.click(); }, timeAutoNext);
+      }
+    }
   </script>
 </body>
 </html>

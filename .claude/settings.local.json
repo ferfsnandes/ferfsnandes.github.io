@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git checkout *)",
+      "Bash(where gh *)",
+      "PowerShell(Get-Command gh -ErrorAction SilentlyContinue)",
+      "Bash(sass --version)",
+      "Bash(npx sass *)",
+      "Bash(which sass *)",
+      "PowerShell(\\(Get-Command sass -ErrorAction SilentlyContinue\\).Source)"
+    ]
+  }
+}
