@@ -1,3 +1,124 @@
+// ─── PROJECT CARD GRID ────────────────────────────────────────────────────────
+.proj-section {
+  background: #f4f4f4;
+}
+
+.proj-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;
+
+  @include respond(tab-port) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+
+  @include respond(phone) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.proj-card {
+  background: #fff;
+  border-radius: 1.4rem;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.14);
+
+    .proj-card__img {
+      transform: scale(1.05);
+    }
+  }
+
+  // ── Image area ──────────────────────────────────────────
+  &__img-cont {
+    position: relative;
+    overflow: hidden;
+    height: 22rem;
+    background: #1a1a1a;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+    opacity: 0.92;
+  }
+
+  &__tag {
+    position: absolute;
+    top: 1.6rem;
+    left: 1.6rem;
+    background: $themeClrPrimary;
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 0.5rem 1.4rem;
+    border-radius: 50px;
+  }
+
+  // ── Card body ───────────────────────────────────────────
+  &__body {
+    padding: 3rem 3rem 3.5rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 1.6rem;
+  }
+
+  &__title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1.3;
+    margin: 0;
+  }
+
+  &__desc {
+    font-size: 1.7rem;
+    color: #555;
+    line-height: 1.8;
+    margin: 0;
+    flex: 1;
+  }
+
+  // ── Tech chip row ───────────────────────────────────────
+  &__techs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__tech {
+    background: rgba($themeClrPrimary, 0.1);
+    color: #c94e26;
+    font-size: 1.4rem;
+    font-weight: 700;
+    padding: 0.5rem 1.4rem;
+    border-radius: 50px;
+    border: 1px solid rgba($themeClrPrimary, 0.25);
+  }
+
+  // ── Button row ──────────────────────────────────────────
+  &__links {
+    margin-top: 0.5rem;
+  }
+}
+
+// ─── PROJECT HERO ─────────────────────────────────────────────────────────────
 .project-cs-hero {
   color: #fff;
   background: linear-gradient(

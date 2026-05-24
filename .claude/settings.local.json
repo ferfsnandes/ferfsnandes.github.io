@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(cd \"C:\\\\Users\\\\gafgo\\\\Documents\\\\GitHub\\\\ferfsnandes.github.io\"; npx sass sass/main.scss css/style.css --style=compressed --no-source-map; Write-Host \"Exit: $LASTEXITCODE\")"
+    ]
+  }
+}

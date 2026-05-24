@@ -7,6 +7,7 @@
     <title>Projetos | Gabriel Fernandes</title>
     <meta name="description" content="Projetos em Machine Learning, jogos, aplicações desktop e mobile desenvolvidos por Gabriel Fernandes." />
 
+    <link rel="icon" type="image/png" href="./assets/png/robo_logo.png" />
     <link rel="stylesheet" href="css/style.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -22,11 +23,7 @@
       <div class="header__content">
         <div class="header__logo-container">
           <div class="header__logo-img-cont">
-            <img
-              src="./assets/png/robo_logo.png"
-              alt="Gabriel Logo"
-              class="header__logo-img"
-            />
+            <img src="./assets/png/robo_logo.png" alt="Gabriel Logo" class="header__logo-img" />
           </div>
           <span class="header__logo-sub">Gabriel Fernandes</span>
         </div>
@@ -49,37 +46,19 @@
             </li>
           </ul>
           <div class="header__main-ham-menu-cont">
-            <img
-              src="./assets/svg/ham-menu.svg"
-              alt="hamburger menu"
-              class="header__main-ham-menu"
-            />
-            <img
-              src="./assets/svg/ham-menu-close.svg"
-              alt="hamburger menu close"
-              class="header__main-ham-menu-close d-none"
-            />
+            <img src="./assets/svg/ham-menu.svg" alt="hamburger menu" class="header__main-ham-menu" />
+            <img src="./assets/svg/ham-menu-close.svg" alt="hamburger menu close" class="header__main-ham-menu-close d-none" />
           </div>
         </div>
       </div>
       <div class="header__sm-menu">
         <div class="header__sm-menu-content">
           <ul class="header__sm-menu-links">
-            <li class="header__sm-menu-link">
-              <a href="./index.html"> Início </a>
-            </li>
-            <li class="header__sm-menu-link">
-              <a href="./index.html#about"> Sobre &amp; Serviços </a>
-            </li>
-            <li class="header__sm-menu-link">
-              <a href="./trabalhos.html"> Trabalhos </a>
-            </li>
-            <li class="header__sm-menu-link">
-              <a href="./projetos.html"> Projetos </a>
-            </li>
-            <li class="header__sm-menu-link">
-              <a href="./index.html#contact"> Contato </a>
-            </li>
+            <li class="header__sm-menu-link"><a href="./index.html"> Início </a></li>
+            <li class="header__sm-menu-link"><a href="./index.html#about"> Sobre &amp; Serviços </a></li>
+            <li class="header__sm-menu-link"><a href="./trabalhos.html"> Trabalhos </a></li>
+            <li class="header__sm-menu-link"><a href="./projetos.html"> Projetos </a></li>
+            <li class="header__sm-menu-link"><a href="./index.html#contact"> Contato </a></li>
           </ul>
         </div>
       </div>
@@ -88,140 +67,195 @@
     <!-- HERO -->
     <section class="project-cs-hero">
       <div class="project-cs-hero__content">
-        <h1 class="heading-primary">Projetos técnicos</h1>
+        <h1 class="heading-primary">Projetos Técnicos</h1>
         <div class="project-cs-hero__info">
           <p class="text-primary">
-            Uma seleção de projetos em Machine Learning, desenvolvimento web,
-            mobile, desktop e jogos, mostrando minha base técnica e variedade
-            de tecnologias.
+            Uma seleção de projetos que mostram minha amplitude técnica:
+            da predição com Machine Learning ao desenvolvimento mobile,
+            de jogos imersivos a ferramentas desktop — cada um com um
+            problema real por trás.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- GRID DE PROJETOS -->
-    <section class="projects sec-pad">
+    <!-- CARDS DE PROJETOS -->
+    <section class="proj-section sec-pad">
       <div class="main-container">
-        <div class="projects__content">
 
-          <!-- ML Doenças -->
-          <div class="projects__row">
-            <div class="projects__row-img-cont">
-              <img src="images/doencas.png" alt="Machine Learning Doenças" class="projects__row-img" />
-            </div>
-            <div class="projects__row-content">
-              <h3 class="projects__row-content-title">
-                Modelo de Machine Learning para Doenças Crônicas
-              </h3>
-              <p class="projects__row-content-desc">
-                Comparação de diferentes algoritmos (LightGBM, CatBoost, XGBoost, etc.)
-                para predição de doenças crônicas em idosos, avaliando acurácia,
-                precisão, recall, F1-score e AUC-ROC.
-              </p>
-              <p class="projects__row-content-desc">
-                <strong>Tecnologias:</strong> Python, Pandas, scikit-learn, LightGBM.
-              </p>
-            </div>
-          </div>
+        <div class="proj-grid">
 
-          <!-- Jogo Memória -->
-          <div class="projects__row">
-            <div class="projects__row-img-cont">
-              <img src="images/memorygame.png" alt="Jogo da Memória" class="projects__row-img" />
+          <!-- ── ML DOENÇAS CRÔNICAS ── -->
+          <article class="proj-card">
+            <div class="proj-card__img-cont">
+              <img src="images/doencas.png" alt="Dashboard de Machine Learning para predição de doenças" class="proj-card__img" />
+              <span class="proj-card__tag">Machine Learning</span>
             </div>
-            <div class="projects__row-content">
-              <h3 class="projects__row-content-title">
-                Jogo da Memória (Web)
-              </h3>
-              <p class="projects__row-content-desc">
-                Jogo da memória com interface simples e visual em pixel art,
-                desenvolvido para treinar atenção e lógica, com sistema de pontos
-                e diferentes modos de dificuldade.
+            <div class="proj-card__body">
+              <h3 class="proj-card__title">Predição de Doenças Crônicas com ML</h3>
+              <p class="proj-card__desc">
+                Pipeline completo de ciência de dados para predição de doenças crônicas em idosos.
+                Comparei 6 algoritmos de classificação — LightGBM, CatBoost, XGBoost, Random Forest,
+                SVM e Regressão Logística — com avaliação por acurácia, F1-score e AUC-ROC.
+                O modelo final atingiu <strong>91% de AUC-ROC</strong>, demonstrando potencial para
+                apoio clínico em triagem preventiva.
               </p>
-              <p class="projects__row-content-desc">
-                <strong>Tecnologias:</strong> HTML, CSS, JavaScript.
-              </p>
+              <ul class="proj-card__techs">
+                <li class="proj-card__tech">Python</li>
+                <li class="proj-card__tech">Pandas</li>
+                <li class="proj-card__tech">scikit-learn</li>
+                <li class="proj-card__tech">LightGBM</li>
+                <li class="proj-card__tech">XGBoost</li>
+                <li class="proj-card__tech">Matplotlib</li>
+              </ul>
+              <div class="proj-card__links">
+                <a href="https://github.com/ferfsnandes" target="_blank" rel="noreferrer" class="btn btn--theme btn--med">
+                  Ver no GitHub
+                </a>
+              </div>
             </div>
-          </div>
+          </article>
 
-          <!-- QuickList -->
-          <div class="projects__row">
-            <div class="projects__row-img-cont">
-              <img src="images/quicklist.jpg" alt="QuickList App" class="projects__row-img" />
+          <!-- ── EXAM SCAPE ── -->
+          <article class="proj-card">
+            <div class="proj-card__img-cont">
+              <img src="images/scape.png" alt="Jogo Exam Scape - terror educacional em Unity" class="proj-card__img" />
+              <span class="proj-card__tag">Game Development</span>
             </div>
-            <div class="projects__row-content">
-              <h3 class="projects__row-content-title">
-                QuickList – App de lista de compras
-              </h3>
-              <p class="projects__row-content-desc">
-                Aplicativo mobile para organizar compras de forma rápida, com
-                interface limpa, ícones ilustrativos e autenticação de usuário.
+            <div class="proj-card__body">
+              <h3 class="proj-card__title">Exam Scape – Jogo de Terror Educacional</h3>
+              <p class="proj-card__desc">
+                Jogo 3D em primeira pessoa desenvolvido em Unity, com mecânicas de exploração,
+                puzzles lógicos, cofre com combinação e atmosfera de terror. O projeto envolveu
+                design de level, programação de IA de comportamento, sistema de inventário e
+                integração de áudio 3D — resultando em uma experiência imersiva completa.
               </p>
-              <p class="projects__row-content-desc">
-                <strong>Tecnologias:</strong> Flutter, Dart.
-              </p>
+              <ul class="proj-card__techs">
+                <li class="proj-card__tech">Unity</li>
+                <li class="proj-card__tech">C#</li>
+                <li class="proj-card__tech">3D Design</li>
+                <li class="proj-card__tech">Game AI</li>
+                <li class="proj-card__tech">Level Design</li>
+              </ul>
+              <div class="proj-card__links">
+                <a href="https://github.com/ferfsnandes" target="_blank" rel="noreferrer" class="btn btn--theme btn--med">
+                  Ver no GitHub
+                </a>
+              </div>
             </div>
-          </div>
+          </article>
 
-          <!-- Reorganizador de texto -->
-          <div class="projects__row">
-            <div class="projects__row-img-cont">
-              <img src="images/reorganizador-texto.png" alt="Reordenador de Texto" class="projects__row-img" />
+          <!-- ── QUICKLIST ── -->
+          <article class="proj-card">
+            <div class="proj-card__img-cont">
+              <img src="images/quicklist.jpg" alt="QuickList - aplicativo mobile de lista de compras" class="proj-card__img" />
+              <span class="proj-card__tag">Mobile</span>
             </div>
-            <div class="projects__row-content">
-              <h3 class="projects__row-content-title">
-                Programa Reordenador de Texto
-              </h3>
-              <p class="projects__row-content-desc">
-                Aplicação desktop que manipula blocos de texto, permitindo
-                reorganização e processamento de grandes quantidades de conteúdo,
-                com diferentes temas visuais.
+            <div class="proj-card__body">
+              <h3 class="proj-card__title">QuickList – App de Lista de Compras</h3>
+              <p class="proj-card__desc">
+                Aplicativo mobile cross-platform para organização de compras, com
+                autenticação de usuário, sincronização em tempo real via Firebase,
+                interface intuitiva com ícones ilustrativos e suporte a múltiplas listas.
+                Publicado e testado em Android real, com foco em performance e UX limpa.
               </p>
-              <p class="projects__row-content-desc">
-                <strong>Tecnologias:</strong> Java (Swing/JavaFX ou equivalente).
-              </p>
+              <ul class="proj-card__techs">
+                <li class="proj-card__tech">Flutter</li>
+                <li class="proj-card__tech">Dart</li>
+                <li class="proj-card__tech">Firebase</li>
+                <li class="proj-card__tech">Android</li>
+              </ul>
+              <div class="proj-card__links">
+                <a href="https://github.com/ferfsnandes" target="_blank" rel="noreferrer" class="btn btn--theme btn--med">
+                  Ver no GitHub
+                </a>
+              </div>
             </div>
-          </div>
+          </article>
 
-          <!-- Sistema de arquivos -->
-          <div class="projects__row">
-            <div class="projects__row-img-cont">
-              <img src="images/sistemaArquivos.png" alt="Sistema de Arquivos" class="projects__row-img" />
+          <!-- ── JOGO DA MEMÓRIA ── -->
+          <article class="proj-card">
+            <div class="proj-card__img-cont">
+              <img src="images/memorygame.png" alt="Jogo da Memória web com pixel art" class="proj-card__img" />
+              <span class="proj-card__tag">Web / Front-End</span>
             </div>
-            <div class="projects__row-content">
-              <h3 class="projects__row-content-title">
-                Sistema de Arquivos Desktop
-              </h3>
-              <p class="projects__row-content-desc">
-                Ferramenta desktop para navegação, criação, exclusão e
-                manipulação de arquivos em um ambiente gráfico, simulando um
-                gerenciador de arquivos completo.
+            <div class="proj-card__body">
+              <h3 class="proj-card__title">Jogo da Memória em Pixel Art</h3>
+              <p class="proj-card__desc">
+                Jogo da memória completamente desenvolvido em JavaScript puro, com arte em
+                pixel art, sistema de pontuação progressiva, timer e três modos de dificuldade.
+                O projeto demonstra domínio de DOM manipulation, lógica de jogo, animações
+                CSS e responsividade sem frameworks externos.
               </p>
-              <p class="projects__row-content-desc">
-                <strong>Tecnologias:</strong> C++ e Qt.
-              </p>
+              <ul class="proj-card__techs">
+                <li class="proj-card__tech">HTML5</li>
+                <li class="proj-card__tech">CSS3</li>
+                <li class="proj-card__tech">JavaScript</li>
+                <li class="proj-card__tech">Pixel Art</li>
+              </ul>
+              <div class="proj-card__links">
+                <a href="https://github.com/ferfsnandes" target="_blank" rel="noreferrer" class="btn btn--theme btn--med">
+                  Ver no GitHub
+                </a>
+              </div>
             </div>
-          </div>
+          </article>
 
-          <!-- Jogo Exam Scape -->
-          <div class="projects__row">
-            <div class="projects__row-img-cont">
-              <img src="images/scape.png" alt="Exam Scape Jogo" class="projects__row-img" />
+          <!-- ── REORGANIZADOR DE TEXTO ── -->
+          <article class="proj-card">
+            <div class="proj-card__img-cont">
+              <img src="images/reorganizador-texto.png" alt="Programa Reordenador de Texto Desktop" class="proj-card__img" />
+              <span class="proj-card__tag">Desktop</span>
             </div>
-            <div class="projects__row-content">
-              <h3 class="projects__row-content-title">
-                Exam Scape – Jogo de Terror Educacional
-              </h3>
-              <p class="projects__row-content-desc">
-                Jogo em primeira pessoa com atmosfera de terror, puzzles,
-                cofre com combinação e interação com cenário, unindo experiência
-                imersiva com temática educacional.
+            <div class="proj-card__body">
+              <h3 class="proj-card__title">Reordenador de Texto – App Desktop</h3>
+              <p class="proj-card__desc">
+                Aplicação desktop para manipulação inteligente de blocos de texto,
+                com suporte a drag-and-drop, múltiplos temas visuais e processamento
+                em lote de grandes volumes de conteúdo. Desenvolvido com interface
+                gráfica nativa Java, focada em produtividade para operações editoriais.
               </p>
-              <p class="projects__row-content-desc">
-                <strong>Tecnologias:</strong> Unity, C#.
-              </p>
+              <ul class="proj-card__techs">
+                <li class="proj-card__tech">Java</li>
+                <li class="proj-card__tech">Swing</li>
+                <li class="proj-card__tech">OOP</li>
+              </ul>
+              <div class="proj-card__links">
+                <a href="https://github.com/ferfsnandes" target="_blank" rel="noreferrer" class="btn btn--theme btn--med">
+                  Ver no GitHub
+                </a>
+              </div>
             </div>
-          </div>
+          </article>
+
+          <!-- ── SISTEMA DE ARQUIVOS ── -->
+          <article class="proj-card">
+            <div class="proj-card__img-cont">
+              <img src="images/sistemaArquivos.png" alt="Sistema de Arquivos Desktop em C++ e Qt" class="proj-card__img" />
+              <span class="proj-card__tag">Sistemas / Desktop</span>
+            </div>
+            <div class="proj-card__body">
+              <h3 class="proj-card__title">Gerenciador de Arquivos com Interface Gráfica</h3>
+              <p class="proj-card__desc">
+                Gerenciador de arquivos desktop completo com interface Qt, implementando
+                navegação por diretórios, criação, renomeação e exclusão de arquivos,
+                barra de busca e visualização em árvore. Demonstra conhecimento de
+                programação de sistemas, gerenciamento de memória e design de interfaces
+                nativas em C++.
+              </p>
+              <ul class="proj-card__techs">
+                <li class="proj-card__tech">C++</li>
+                <li class="proj-card__tech">Qt Framework</li>
+                <li class="proj-card__tech">OOP</li>
+                <li class="proj-card__tech">File Systems</li>
+              </ul>
+              <div class="proj-card__links">
+                <a href="https://github.com/ferfsnandes" target="_blank" rel="noreferrer" class="btn btn--theme btn--med">
+                  Ver no GitHub
+                </a>
+              </div>
+            </div>
+          </article>
 
         </div>
       </div>
@@ -254,9 +288,8 @@
             </p>
           </div>
         </div>
-
         <div class="main-footer__lower">
-          &copy; 2024 - Gabriel Fernandes
+          &copy; 2026 - Gabriel Fernandes
         </div>
       </div>
     </footer>
