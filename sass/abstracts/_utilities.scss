@@ -3,9 +3,10 @@
 @use 'mixins' as mixins;
 
 .heading-primary {
-  font-size: clamp(4.4rem, 7vw, 6rem);
+  font-family: 'Archivo', 'Source Sans 3', sans-serif;
+  font-size: clamp(4.8rem, 7.4vw, 7.6rem);
   font-weight: 900;
-  line-height: 1.08;
+  line-height: 0.98;
   letter-spacing: 0;
   margin-left: auto;
   margin-right: auto;
@@ -15,11 +16,12 @@
   text-wrap: balance;
 
   @include mixins.respond(phone) {
-    font-size: 3.5rem;
+    font-size: 3.8rem;
+    line-height: 1.03;
   }
 
   @media only screen and (max-width: 22.5em) {
-    font-size: 3rem;
+    font-size: 3.2rem;
   }
 }
 
@@ -40,8 +42,11 @@
 
   &__main {
     display: block;
-    font-size: 4rem;
+    font-family: 'Archivo', 'Source Sans 3', sans-serif;
+    font-size: clamp(3.8rem, 5vw, 5.4rem);
+    font-weight: 900;
     letter-spacing: 0;
+    line-height: 1.02;
     text-align: center;
     text-wrap: balance;
     margin-bottom: 3.5rem;
@@ -74,7 +79,7 @@
     display: block;
     text-align: center;
     color: vars.$color-muted;
-    font-size: 2rem;
+    font-size: 2.1rem;
     font-weight: 500;
     max-width: 80rem;
     margin: auto;
@@ -113,8 +118,8 @@
   overflow-wrap: break-word;
   border-radius: vars.$commonBorderRadius;
   text-align: center;
-  box-shadow: 0 5px 12px 0 rgba(31, 23, 20, 0.12);
-  transition: transform .3s;
+  box-shadow: 0 5px 8px 0 rgba(31, 23, 20, 0.14);
+  transition: transform .3s, background .3s, color .3s;
 
   &:hover {
     transform: translateY(-3px);

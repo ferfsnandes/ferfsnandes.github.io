@@ -16,7 +16,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -140,26 +144,68 @@
     <!-- HERO -->
     <section class="home-hero">
       <div class="home-hero__content">
-        <h1 class="heading-primary">
-          Sites que passam confiança. Atendimento que responde rápido.
-        </h1>
-        <div class="home-hero__info">
-          <p class="text-primary">
-            Sou <strong>Gabriel Fernandes</strong>, programador de soluções
-            digitais para negócios que precisam captar melhor, responder com
-            mais agilidade e organizar o atendimento. Crio
-            <strong>sites, automações de WhatsApp e fluxos com IA</strong>
-            para reduzir retrabalho e converter interesse em conversa
-            comercial.
+        <div class="home-hero__copy">
+          <p class="home-hero__kicker">Presença digital + WhatsApp + IA</p>
+          <h1 class="heading-primary">
+            Menos leads perdidos. Mais respostas no tempo certo.
+          </h1>
+          <div class="home-hero__info">
+            <p class="text-primary">
+              Sou <strong>Gabriel Fernandes</strong>, programador de soluções
+              digitais para negócios que precisam captar melhor, responder com
+              mais agilidade e organizar o atendimento. Crio
+              <strong>sites comerciais, automações de WhatsApp e fluxos com IA</strong>
+              para transformar interesse em conversa comercial sem depender de
+              resposta manual o dia inteiro.
+            </p>
+          </div>
+          <div class="home-hero__cta">
+            <a
+              href="https://wa.me/5511947020766"
+              target="_blank"
+              rel="noreferrer"
+              class="btn btn--theme btn--hero-primary"
+            >
+              Falar no WhatsApp
+            </a>
+            <a href="./trabalhos.html" class="btn btn--theme-inv btn--hero-secondary">
+              Ver trabalhos reais
+            </a>
+          </div>
+          <p class="home-hero__microcopy">
+            Me conte o gargalo em poucos minutos; eu respondo com um caminho
+            claro para o seu atendimento.
           </p>
         </div>
-        <div class="home-hero__cta">
-          <a href="./index.html#contact" class="btn btn--bg">
-            Quero automatizar meu atendimento
-          </a>
-          <a href="./trabalhos.html" class="btn btn--bg">
-            Ver exemplos de trabalhos
-          </a>
+
+        <div class="home-hero__system" aria-label="Fluxo de atendimento digital">
+          <div class="system-flow__header">
+            <span>Fluxo comercial</span>
+            <strong>site -> bot -> conversa</strong>
+          </div>
+          <ol class="system-flow">
+            <li class="system-flow__item">
+              <span class="system-flow__step">Lead</span>
+              <div>
+                <strong>Lead chega</strong>
+                <p>O cliente vem do site, Instagram, Google ou indicação.</p>
+              </div>
+            </li>
+            <li class="system-flow__item">
+              <span class="system-flow__step">Zap</span>
+              <div>
+                <strong>WhatsApp responde</strong>
+                <p>Dúvidas repetidas, triagem e agendamento saem do improviso.</p>
+              </div>
+            </li>
+            <li class="system-flow__item">
+              <span class="system-flow__step">Humano</span>
+              <div>
+                <strong>Você decide melhor</strong>
+                <p>O fluxo organiza o pedido e encaminha o que exige decisão humana.</p>
+              </div>
+            </li>
+          </ol>
         </div>
       </div>
 
@@ -225,15 +271,15 @@
     <!-- SOBRE & SERVIÇOS -->
     <section id="about" class="about sec-pad">
       <div class="main-container">
-        <h2 class="heading heading-sec heading-sec__mb-med">
-          <span class="heading-sec__main">Quem sou &amp; o que eu faço</span>
-          <span class="heading-sec__sub">
+        <div class="heading heading-sec heading-sec__mb-med">
+          <h2 class="heading-sec__main">Quem sou &amp; o que eu faço</h2>
+          <p class="heading-sec__sub">
             Eu ajudo empresas e profissionais a sair da invisibilidade digital,
             reduzir a sobrecarga de atendimento e transformar processos manuais
             em sistemas inteligentes, usando sites, bots de WhatsApp e
             integração com Inteligência Artificial.
-          </span>
-        </h2>
+          </p>
+        </div>
 
         <div class="about__content">
           <div class="about__content-main">
@@ -296,18 +342,18 @@
  <!-- SERVIÇOS -->
 <section id="services" class="services sec-pad">
   <div class="main-container">
-    <h2 class="heading heading-sec heading-sec__mb-med">
-      <span class="heading-sec__main">Serviços para vender e atender melhor</span>
-      <span class="heading-sec__sub">
+    <div class="heading heading-sec heading-sec__mb-med">
+      <h2 class="heading-sec__main">Serviços para vender e atender melhor</h2>
+      <p class="heading-sec__sub">
         Transformo gargalos de atendimento, captação e operação em soluções
         digitais práticas: site claro, WhatsApp organizado e IA aplicada ao que
         realmente toma tempo no dia a dia.
-      </span>
-    </h2>
+      </p>
+    </div>
 
     <div class="services__grid">
       <article class="service-card">
-        <div class="service-card__icon" aria-hidden="true">🌐</div>
+        <div class="service-card__icon" aria-hidden="true">SITE</div>
         <h3 class="service-card__title">
           Sites e aplicações web que dão confiança
         </h3>
@@ -326,7 +372,7 @@
       </article>
 
       <article class="service-card">
-        <div class="service-card__icon" aria-hidden="true">🤖</div>
+        <div class="service-card__icon" aria-hidden="true">ZAP</div>
         <h3 class="service-card__title">
           Secretaria digital para WhatsApp
         </h3>
@@ -344,7 +390,7 @@
       </article>
 
       <article class="service-card">
-        <div class="service-card__icon" aria-hidden="true">🤖💡</div>
+        <div class="service-card__icon" aria-hidden="true">IA</div>
         <h3 class="service-card__title">
           IA aplicada ao atendimento
         </h3>
@@ -368,70 +414,55 @@
 <!-- POR QUE TRABALHAR COMIGO -->
 <section id="whyme" class="whyme sec-pad">
   <div class="main-container">
-    <h2 class="heading heading-sec heading-sec__mb-med">
-      <span class="heading-sec__main">Por que trabalhar comigo?</span>
-      <span class="heading-sec__sub">
-        Não entrego apenas códigos ou telas bonitas. Entrego soluções que
-        resolvem problemas reais do seu negócio. Simples, direto e eficiente.
-      </span>
-    </h2>
+    <div class="heading heading-sec heading-sec__mb-med whyme__heading">
+      <h2 class="heading-sec__main">Como eu tiro o atendimento do improviso</h2>
+      <p class="heading-sec__sub">
+        Antes de escolher tecnologia, eu desenho o caminho que transforma
+        interesse em resposta, triagem e conversa comercial.
+      </p>
+    </div>
 
     <div class="whyme__content">
-      <div class="whyme__grid">
-        <div class="whyme__item">
-          <div class="whyme__icon" aria-hidden="true">📡</div>
-          <h3 class="whyme__title">Visão completa</h3>
-          <p class="whyme__text">
-            Do design ao servidor: integro site, bot e IA em um fluxo único,
-            sem gambiarra e sem remendo.
-          </p>
-        </div>
-
-        <div class="whyme__item">
-          <div class="whyme__icon" aria-hidden="true">🎯</div>
-          <h3 class="whyme__title">Foco no problema</h3>
-          <p class="whyme__text">
-            O objetivo não é “entregar um sistema”, é resolver o que trava seu
-            dia a dia: falta de visibilidade, atendimento lento, perda de leads.
-          </p>
-        </div>
-
-        <div class="whyme__item">
-          <div class="whyme__icon" aria-hidden="true">🧩</div>
-          <h3 class="whyme__title">Versatilidade real</h3>
-          <p class="whyme__text">
-            Conecto as pontas: site que vende, bot que responde, IA que aprende
-            com os dados do seu próprio atendimento.
-          </p>
-        </div>
-
-        <div class="whyme__item">
-          <div class="whyme__icon" aria-hidden="true">📈</div>
-          <h3 class="whyme__title">Projetos em produção</h3>
-          <p class="whyme__text">
-            Clínicas, negócios locais, náutica e imóveis de temporada. Projetos
-            reais, em uso, gerando resultado hoje.
-          </p>
-        </div>
-
-        <div class="whyme__item">
-          <div class="whyme__icon" aria-hidden="true">⚡</div>
-          <h3 class="whyme__title">Entrega sem enrolação</h3>
-          <p class="whyme__text">
-            Comunicação direta, prazos claros e foco em colocar a solução para
-            rodar, não em inventar burocracia.
-          </p>
-        </div>
-
-        <div class="whyme__item">
-          <div class="whyme__icon" aria-hidden="true">🤝</div>
-          <h3 class="whyme__title">Parceria de longo prazo</h3>
-          <p class="whyme__text">
-            Não sumo depois da entrega. A ideia é evoluir o sistema com o seu
-            negócio, não deixar uma solução difícil de manter na sua mão.
-          </p>
-        </div>
-      </div>
+      <ol class="workflow">
+        <li class="workflow__item">
+          <span class="workflow__number">Mapa</span>
+          <div>
+            <h3 class="workflow__title">Mapeio onde o lead trava</h3>
+            <p class="workflow__text">
+              Entendo como o cliente chega, quais perguntas se repetem e onde a
+              resposta manual vira gargalo.
+            </p>
+          </div>
+        </li>
+        <li class="workflow__item">
+          <span class="workflow__number">Fluxo</span>
+          <div>
+            <h3 class="workflow__title">Organizo o caminho de contato</h3>
+            <p class="workflow__text">
+              Crio site, formulário, bot e integrações para transformar interesse
+              em pedido claro, sem depender de improviso.
+            </p>
+          </div>
+        </li>
+        <li class="workflow__item">
+          <span class="workflow__number">IA</span>
+          <div>
+            <h3 class="workflow__title">Conecto IA onde ela economiza tempo</h3>
+            <p class="workflow__text">
+              A IA entra para responder, classificar e resumir informações,
+              deixando a decisão importante para você.
+            </p>
+          </div>
+        </li>
+      </ol>
+      <aside class="whyme__proof" aria-label="Resumo de entrega">
+        <span class="whyme__proof-label">Entrega sem remendo</span>
+        <strong>site + WhatsApp + IA no mesmo fluxo</strong>
+        <p>
+          Uma solução pensada para funcionar no dia a dia: captar, responder,
+          organizar e evoluir junto com o seu negócio.
+        </p>
+      </aside>
     </div>
   </div>
 </section>
@@ -440,15 +471,15 @@
 <section id="contact" class="contact sec-pad">
   <div class="main-container">
 
-    <h2 class="heading heading-sec heading-sec__mb-med">
-      <span class="heading-sec__main heading-sec__main--lt">
+    <div class="heading heading-sec heading-sec__mb-med">
+      <h2 class="heading-sec__main heading-sec__main--lt">
         Vamos conversar sobre o seu projeto?
-      </span>
-      <span class="heading-sec__sub heading-sec__sub--lt">
+      </h2>
+      <p class="heading-sec__sub heading-sec__sub--lt">
         Atendo de forma direta e objetiva. Me chame no WhatsApp para uma resposta mais rápida
         ou preencha o formulário abaixo para detalhar seu projeto.
-      </span>
-    </h2>
+      </p>
+    </div>
 
     <!-- BOTÃO WHATSAPP DESTACADO -->
     <div class="contact__whats-container">
@@ -459,7 +490,7 @@
         class="whatsapp-btn"
         aria-label="Falar com Gabriel Fernandes agora pelo WhatsApp"
       >
-        💬 Falar comigo agora pelo WhatsApp
+        Falar comigo agora pelo WhatsApp
       </a>
     </div>
 
@@ -622,7 +653,7 @@
         </div>
 
         <div class="main-footer__lower">
-          &copy; Copyright 2024. Feito por
+          &copy; Copyright 2026. Feito por
           <span>Gabriel Fernandes</span>
         </div>
       </div>
