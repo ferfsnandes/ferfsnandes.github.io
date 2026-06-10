@@ -2,7 +2,7 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
     <title>Gabriel Fernandes | Soluções Digitais & Automação</title>
@@ -12,7 +12,6 @@
     />
 
     <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/carousel.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,23 +21,33 @@
     />
   </head>
   <body>
+    <a class="skip-link" href="#main">Pular para o conteudo principal</a>
     <!-- HEADER -->
     <header class="header">
       <div class="header__content">
-        <div class="header__logo-container">
+        <a
+          href="./index.html"
+          class="header__logo-container"
+          aria-label="Gabriel Fernandes - pagina inicial"
+        >
           <div class="header__logo-img-cont">
             <img
               src="./assets/png/robo_logo.png"
-              alt="Gabriel Logo Image"
+              alt="Logo de Gabriel Fernandes"
               class="header__logo-img"
+              width="160"
+              height="160"
+              decoding="async"
+              fetchpriority="high"
             />
           </div>
           <span class="header__logo-sub">Gabriel Fernandes</span>
-        </div>
+        </a>
         <div class="header__main">
+          <nav class="header__nav" aria-label="Navegacao principal">
           <ul class="header__links">
             <li class="header__link-wrapper">
-              <a href="./index.html" class="header__link"> Início </a>
+              <a href="./index.html" class="header__link" aria-current="page"> Início </a>
             </li>
             <li class="header__link-wrapper">
               <a href="./index.html#about" class="header__link">
@@ -62,25 +71,45 @@
               </a>
             </li>
           </ul>
-          <div class="header__main-ham-menu-cont">
+          </nav>
+          <button
+            type="button"
+            class="header__main-ham-menu-cont"
+            aria-controls="mobile-menu"
+            aria-expanded="false"
+            aria-label="Abrir menu"
+          >
             <img
               src="./assets/svg/ham-menu.svg"
-              alt="hamburger menu"
+              alt=""
               class="header__main-ham-menu"
+              aria-hidden="true"
+              width="30"
+              height="30"
+              decoding="async"
             />
             <img
               src="./assets/svg/ham-menu-close.svg"
-              alt="hamburger menu close"
+              alt=""
               class="header__main-ham-menu-close d-none"
+              aria-hidden="true"
+              width="30"
+              height="30"
+              decoding="async"
             />
-          </div>
+          </button>
         </div>
       </div>
-      <div class="header__sm-menu">
+      <nav
+        id="mobile-menu"
+        class="header__sm-menu"
+        aria-label="Menu mobile"
+        hidden
+      >
         <div class="header__sm-menu-content">
           <ul class="header__sm-menu-links">
             <li class="header__sm-menu-link">
-              <a href="./index.html"> Início </a>
+              <a href="./index.html" aria-current="page"> Início </a>
             </li>
 
             <li class="header__sm-menu-link">
@@ -104,36 +133,31 @@
             </li>
           </ul>
         </div>
-      </div>
+      </nav>
     </header>
 
+    <main id="main">
     <!-- HERO -->
     <section class="home-hero">
       <div class="home-hero__content">
         <h1 class="heading-primary">
-          Transforme sua Presença Digital<br />
-          e Automatize seu Atendimento
+          Sites que passam confiança. Atendimento que responde rápido.
         </h1>
         <div class="home-hero__info">
           <p class="text-primary">
-            Eu sou <strong>Gabriel Fernandes</strong>, programador e
-            especialista em soluções digitais. Minha missão é simples:
-            <strong
-              >tirar o peso do seu atendimento, aumentar sua visibilidade e
-              fazer a tecnologia trabalhar por você</strong
-            >.
-            <br /><br />
-            Eu não crio apenas ferramentas; eu construo
-            <strong>pontes entre o seu negócio e o seu cliente</strong>. Se o
-            seu atendimento está sobrecarregado ou se a sua empresa quase não
-            aparece online, eu posso ajudar.
+            Sou <strong>Gabriel Fernandes</strong>, programador de soluções
+            digitais para negócios que precisam captar melhor, responder com
+            mais agilidade e organizar o atendimento. Crio
+            <strong>sites, automações de WhatsApp e fluxos com IA</strong>
+            para reduzir retrabalho e converter interesse em conversa
+            comercial.
           </p>
         </div>
         <div class="home-hero__cta">
           <a href="./index.html#contact" class="btn btn--bg">
             Quero automatizar meu atendimento
           </a>
-          <a href="./trabalhos.html" class="btn btn--bg" style="margin-left: 1rem;">
+          <a href="./trabalhos.html" class="btn btn--bg">
             Ver exemplos de trabalhos
           </a>
         </div>
@@ -145,11 +169,15 @@
             href="https://www.linkedin.com/in/gabriel-ferfsnandes"
             class="home-hero__social-icon-link"
             target="_blank"
+            rel="noreferrer"
           >
             <img
               src="./assets/png/linkedin-ico.png"
               alt="LinkedIn"
               class="home-hero__social-icon"
+              width="25"
+              height="25"
+              decoding="async"
             />
           </a>
         </div>
@@ -158,11 +186,15 @@
             href="https://github.com/ferfsnandes"
             class="home-hero__social-icon-link"
             target="_blank"
+            rel="noreferrer"
           >
             <img
               src="./assets/png/github-ico.png"
               alt="GitHub"
               class="home-hero__social-icon"
+              width="25"
+              height="25"
+              decoding="async"
             />
           </a>
         </div>
@@ -171,11 +203,15 @@
             href="https://www.instagram.com/ferfsnandes_g/"
             class="home-hero__social-icon-link home-hero__social-icon-link--bd-none"
             target="_blank"
+            rel="noreferrer"
           >
             <img
               src="./assets/png/insta-ico.png"
               alt="Instagram"
               class="home-hero__social-icon"
+              width="25"
+              height="25"
+              decoding="async"
             />
           </a>
         </div>
@@ -226,6 +262,7 @@
                 Minha missão é clara: <strong>fazer a tecnologia trabalhar por
                 você</strong>, liberando seu tempo, aumentando sua
                 credibilidade e potencializando seu negócio.
+              </p>
             </div>
           </div>
 
@@ -260,71 +297,67 @@
 <section id="services" class="services sec-pad">
   <div class="main-container">
     <h2 class="heading heading-sec heading-sec__mb-med">
-      <span class="heading-sec__main">Meus Serviços</span>
+      <span class="heading-sec__main">Serviços para vender e atender melhor</span>
       <span class="heading-sec__sub">
-        Transformo desafios de negócio em soluções digitais eficientes.
-        Trabalho com três pilares principais que elevam sua presença online,
-        reduzem a sobrecarga de atendimento e colocam a tecnologia para trabalhar
-        por você.
+        Transformo gargalos de atendimento, captação e operação em soluções
+        digitais práticas: site claro, WhatsApp organizado e IA aplicada ao que
+        realmente toma tempo no dia a dia.
       </span>
     </h2>
 
     <div class="services__grid">
-      <!-- CARD 1 -->
       <article class="service-card">
-        <div class="service-card__icon">🌐</div>
+        <div class="service-card__icon" aria-hidden="true">🌐</div>
         <h3 class="service-card__title">
-          Sites e Aplicações Web de Alto Impacto
+          Sites e aplicações web que dão confiança
         </h3>
         <p class="service-card__text">
-          Sua presença online é seu cartão de visitas — e muitas vezes o primeiro
-          motivo para alguém confiar (ou desistir) do seu negócio.
+          Seu site precisa explicar o que você faz, carregar rápido e facilitar
+          o contato. Quando isso falha, o cliente some antes de conversar.
         </p>
         <ul class="service-card__list">
-          <li><strong>Sites Institucionais e Landing Pages:</strong> rápidos, modernos, responsivos e planejados para conversão.</li>
-          <li><strong>Portfólios Profissionais:</strong> para mostrar autoridade sem firulas.</li>
-          <li><strong>Sistemas Web sob medida:</strong> de painéis internos a ferramentas específicas da sua operação.</li>
+          <li><strong>Sites institucionais e páginas de venda:</strong> rápidos, responsivos e planejados para gerar contato.</li>
+          <li><strong>Portfólios profissionais:</strong> para mostrar autoridade sem firulas.</li>
+          <li><strong>Sistemas web sob medida:</strong> de painéis internos a ferramentas específicas da sua operação.</li>
         </ul>
         <p class="service-card__result">
-          📌 <strong>Resultado para você:</strong> mais credibilidade, melhor posicionamento no Google e uma vitrine profissional funcionando 24h.
+          <strong>Resultado para você:</strong> mais credibilidade, melhor presença no Google e uma vitrine profissional funcionando 24h.
         </p>
       </article>
 
-      <!-- CARD 2 -->
       <article class="service-card">
-        <div class="service-card__icon">🤖</div>
+        <div class="service-card__icon" aria-hidden="true">🤖</div>
         <h3 class="service-card__title">
-          Secretaria Digital – Bots de WhatsApp
+          Secretaria digital para WhatsApp
         </h3>
         <p class="service-card__text">
-          O WhatsApp é a rua mais movimentada do Brasil. Se o seu atendimento não
-          está ativo 24h por dia, você está deixando dinheiro na mesa.
+          O WhatsApp concentra dúvidas, orçamentos e agendamentos. Quando tudo
+          depende de resposta manual, o lead esfria e a equipe perde tempo.
         </p>
         <ul class="service-card__list">
-          <li><strong>Automação de Atendimento:</strong> bots que respondem imediatamente, tiram dúvidas e fazem triagem.</li>
-          <li><strong>Redução de Carga Operacional:</strong> menos perguntas repetidas, menos retrabalho, menos perda de clientes.</li>
+          <li><strong>Automação de atendimento:</strong> bots que respondem imediatamente, tiram dúvidas e fazem triagem.</li>
+          <li><strong>Redução de carga operacional:</strong> menos perguntas repetidas, menos retrabalho, menos perda de clientes.</li>
         </ul>
         <p class="service-card__result">
-          📌 <strong>Resultado para você:</strong> atendimento imediato, aumento de agendamentos e muito mais organização.
+          <strong>Resultado para você:</strong> atendimento imediato, mais agendamentos e uma rotina mais organizada.
         </p>
       </article>
 
-      <!-- CARD 3 -->
       <article class="service-card">
-        <div class="service-card__icon">🤖💡</div>
+        <div class="service-card__icon" aria-hidden="true">🤖💡</div>
         <h3 class="service-card__title">
-          Integração com Inteligência Artificial
+          IA aplicada ao atendimento
         </h3>
         <p class="service-card__text">
-          Aqui é onde o jogo muda e a automação deixa de ser “robô engessado” e
-          vira atendimento inteligente de verdade.
+          A automação fica melhor quando entende contexto, registra dados úteis
+          e encaminha o que precisa de decisão humana.
         </p>
         <ul class="service-card__list">
-          <li><strong>Bots inteligentes:</strong> entendem intenção, mantêm conversas naturais e resolvem problemas sem você encostar no celular.</li>
-          <li><strong>Análise automatizada de dados:</strong> a IA identifica gargalos e mostra onde o fluxo de atendimento precisa melhorar.</li>
+          <li><strong>Bots inteligentes:</strong> entendem intenção, mantêm conversas naturais e resolvem dúvidas frequentes.</li>
+          <li><strong>Análise automatizada de dados:</strong> a IA identifica gargalos e mostra onde o fluxo precisa melhorar.</li>
         </ul>
         <p class="service-card__result">
-          📌 <strong>Resultado para você:</strong> atendimento moderno, elegante, personalizado e eficiente — enquanto você trabalha ou dorme.
+          <strong>Resultado para você:</strong> atendimento mais claro, personalizado e eficiente, mesmo fora do horário comercial.
         </p>
       </article>
     </div>
@@ -346,7 +379,7 @@
     <div class="whyme__content">
       <div class="whyme__grid">
         <div class="whyme__item">
-          <div class="whyme__icon">📡</div>
+          <div class="whyme__icon" aria-hidden="true">📡</div>
           <h3 class="whyme__title">Visão completa</h3>
           <p class="whyme__text">
             Do design ao servidor: integro site, bot e IA em um fluxo único,
@@ -355,7 +388,7 @@
         </div>
 
         <div class="whyme__item">
-          <div class="whyme__icon">🎯</div>
+          <div class="whyme__icon" aria-hidden="true">🎯</div>
           <h3 class="whyme__title">Foco no problema</h3>
           <p class="whyme__text">
             O objetivo não é “entregar um sistema”, é resolver o que trava seu
@@ -364,7 +397,7 @@
         </div>
 
         <div class="whyme__item">
-          <div class="whyme__icon">🧩</div>
+          <div class="whyme__icon" aria-hidden="true">🧩</div>
           <h3 class="whyme__title">Versatilidade real</h3>
           <p class="whyme__text">
             Conecto as pontas: site que vende, bot que responde, IA que aprende
@@ -373,7 +406,7 @@
         </div>
 
         <div class="whyme__item">
-          <div class="whyme__icon">📈</div>
+          <div class="whyme__icon" aria-hidden="true">📈</div>
           <h3 class="whyme__title">Projetos em produção</h3>
           <p class="whyme__text">
             Clínicas, negócios locais, náutica e imóveis de temporada. Projetos
@@ -382,7 +415,7 @@
         </div>
 
         <div class="whyme__item">
-          <div class="whyme__icon">⚡</div>
+          <div class="whyme__icon" aria-hidden="true">⚡</div>
           <h3 class="whyme__title">Entrega sem enrolação</h3>
           <p class="whyme__text">
             Comunicação direta, prazos claros e foco em colocar a solução para
@@ -391,11 +424,11 @@
         </div>
 
         <div class="whyme__item">
-          <div class="whyme__icon">🤝</div>
+          <div class="whyme__icon" aria-hidden="true">🤝</div>
           <h3 class="whyme__title">Parceria de longo prazo</h3>
           <p class="whyme__text">
             Não sumo depois da entrega. A ideia é evoluir o sistema com o seu
-            negócio, não largar um “frankenstein” na sua mão.
+            negócio, não deixar uma solução difícil de manter na sua mão.
           </p>
         </div>
       </div>
@@ -422,74 +455,101 @@
       <a
         href="https://wa.me/5511947020766"
         target="_blank"
+        rel="noreferrer"
         class="whatsapp-btn"
+        aria-label="Falar com Gabriel Fernandes agora pelo WhatsApp"
       >
         💬 Falar comigo agora pelo WhatsApp
       </a>
     </div>
 
-<div class="contact__form-container">
-  <form class="contact__form" action="https://formspree.io/f/mnnwpkbk" method="POST">
-    <div class="contact__form-field">
-      <label class="contact__form-label" for="name">Nome</label>
-      <input required placeholder="Como posso te chamar?" type="text" class="contact__form-input" name="name"
-        id="name" />
+    <div class="contact__form-container">
+      <form class="contact__form" action="https://formspree.io/f/mnnwpkbk" method="POST">
+        <div class="contact__form-field">
+          <label class="contact__form-label" for="name">Nome</label>
+          <input
+            required
+            placeholder="Como posso te chamar?"
+            type="text"
+            class="contact__form-input"
+            name="name"
+            autocomplete="name"
+            id="name"
+          />
+        </div>
+
+        <div class="contact__form-field">
+          <label class="contact__form-label" for="email">E-mail</label>
+          <input
+            required
+            placeholder="Seu melhor e-mail"
+            type="email"
+            class="contact__form-input"
+            name="email"
+            autocomplete="email"
+            id="email"
+          />
+        </div>
+
+        <div class="contact__form-field">
+          <label class="contact__form-label" for="business">
+            Tipo de negócio
+          </label>
+          <input
+            placeholder="Clínica, loja, serviço, infoproduto, etc."
+            type="text"
+            class="contact__form-input"
+            autocomplete="organization"
+            name="business"
+            id="business"
+          />
+        </div>
+
+        <div class="contact__form-field">
+          <label class="contact__form-label" for="service">
+            O que você está buscando?
+          </label>
+          <select class="contact__form-input" name="service" id="service" required>
+            <option value="" selected disabled>Selecione uma opção</option>
+            <option value="Site / Landing page">Site / Landing page</option>
+            <option value="Bot de WhatsApp / Secretaria digital">
+              Bot de WhatsApp / Secretaria digital
+            </option>
+            <option value="Integração com IA">Integração com IA</option>
+            <option value="Site + Bot + IA">Site + Bot + IA</option>
+            <option value="Outro tipo de solução digital">
+              Outro tipo de solução digital
+            </option>
+          </select>
+        </div>
+
+        <div class="contact__form-field">
+          <label class="contact__form-label" for="message">
+            Me conte rapidamente seu cenário:
+          </label>
+          <textarea
+            required
+            class="contact__form-input"
+            name="message"
+            id="message"
+            rows="4"
+            placeholder="Ex: recebo muitos pedidos pelo WhatsApp, não dou conta de responder tudo..."
+          ></textarea>
+        </div>
+
+        <input type="hidden" name="_subject" value="Novo contato pelo site Gabriel Fernandes">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+
+        <button type="submit" class="btn btn--theme contact__btn">
+          Enviar e receber uma proposta
+        </button>
+      </form>
     </div>
 
-    <div class="contact__form-field">
-      <label class="contact__form-label" for="email">E-mail</label>
-      <input required placeholder="Seu melhor e-mail" type="email" class="contact__form-input" name="email"
-        id="email" />
     </div>
-
-    <div class="contact__form-field">
-      <label class="contact__form-label" for="business">
-        Tipo de negócio
-      </label>
-      <input placeholder="Clínica, loja, serviço, infoproduto, etc." type="text" class="contact__form-input"
-        name="business" id="business" />
-    </div>
-
-    <div class="contact__form-field">
-      <label class="contact__form-label" for="service">
-        O que você está buscando?
-      </label>
-      <select class="contact__form-input" name="service" id="service">
-        <option value="" selected disabled>Selecione uma opção</option>
-        <option value="Site / Landing page">Site / Landing page</option>
-        <option value="Bot de WhatsApp / Secretaria digital">
-          Bot de WhatsApp / Secretaria digital
-        </option>
-        <option value="Integração com IA">Integração com IA</option>
-        <option value="Site + Bot + IA">Site + Bot + IA</option>
-        <option value="Outro tipo de solução digital">
-          Outro tipo de solução digital
-        </option>
-      </select>
-    </div>
-
-    <div class="contact__form-field">
-      <label class="contact__form-label" for="message">
-        Me conte rapidamente seu cenário:
-      </label>
-      <textarea required class="contact__form-input" name="message" id="message" rows="4"
-        placeholder="Ex: recebo muitos pedidos pelo WhatsApp, não dou conta de responder tudo..."></textarea>
-    </div>
-
-    <!-- Formspree Hidden Controls -->
-    <input type="hidden" name="_subject" value="Novo contato pelo site Gabriel Fernandes">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_template" value="table">
-
-    <button type="submit" class="btn btn--theme contact__btn">
-      Enviar e receber uma proposta
-    </button>
-  </form>
-</div>
-
-    </div>
-  </div>
 </section>
+    </main>
 
     <!-- FOOTER -->
     <footer id="footer" class="main-footer">
@@ -509,6 +569,10 @@
                   class="main-footer__icon"
                   src="./assets/png/linkedin-ico.png"
                   alt="LinkedIn"
+                  width="25"
+                  height="25"
+                  loading="lazy"
+                  decoding="async"
                 />
               </a>
               <a
@@ -520,6 +584,10 @@
                   class="main-footer__icon"
                   src="./assets/png/github-ico.png"
                   alt="GitHub"
+                  width="25"
+                  height="25"
+                  loading="lazy"
+                  decoding="async"
                 />
               </a>
               <a
@@ -531,6 +599,10 @@
                   class="main-footer__icon main-footer__icon--mr-none"
                   src="./assets/png/insta-ico.png"
                   alt="Instagram"
+                  width="25"
+                  height="25"
+                  loading="lazy"
+                  decoding="async"
                 />
               </a>
             </div>
@@ -551,12 +623,11 @@
 
         <div class="main-footer__lower">
           &copy; Copyright 2024. Feito por
-          <a rel="noreferrer" target="_blank">Gabriel Fernandes</a>
+          <span>Gabriel Fernandes</span>
         </div>
       </div>
     </footer>
 
-    <script src="app.js"></script>
-    <script src="./index.js"></script>
+    <script src="./index.js" defer></script>
   </body>
 </html>

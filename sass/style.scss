@@ -1,5 +1,14 @@
-@use 'abstracts/variables'; // Define variables first
-@use 'abstracts/mixins';    // Define mixins next
-@use 'abstracts/utilities'; // Utilities might use variables and mixins
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
 
-@use 'components/mouse-scroll'; // Components
+@import 'base/base';
+
+@import 'abstracts/utilities';
+
+@import 'pages/home';
+@import 'pages/project-case-study';
+
+@import 'components/header';
+@import 'components/footer';
+@import 'components/skills';
+@import 'components/mouse-scroll';

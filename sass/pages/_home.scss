@@ -1,19 +1,19 @@
-// Use variables and mixins from other modules
 @use '../abstracts/variables' as vars;
 @use '../abstracts/mixins' as mixins;
 
 .home-hero {
-  color: #fff;
+  color: vars.$color-surface;
   background: linear-gradient(
       to right,
-      rgba(vars.$themeClrPrimary, 0.8),
-      rgba(vars.$themeClrPrimary, 0.8)
+      vars.$color-primary-overlay,
+      vars.$color-primary-overlay
     ),
     url(../../assets/svg/common-bg.svg);
   background-position: center;
   height: 100vh;
   min-height: 80rem;
   max-height: 120rem;
+  overflow: hidden;
   position: relative;
   @include mixins.respond(phone) {
     height: unset;
@@ -23,8 +23,8 @@
   &__socials {
     position: absolute;
     top: 50%;
-    border: 2px solid #eee;
-    border-left: 2px solid #eee; // Use mixins.respond
+    border: 2px solid vars.$color-surface-soft;
+    border-left: 2px solid vars.$color-surface-soft;
     transform: translateY(-50%);
     @include mixins.respond(tab-port) {
       display: none;
@@ -33,8 +33,8 @@
   &__mouse-scroll-cont {
     position: absolute;
     bottom: 3%;
-    left: 50%; // Use mixins.respond
-    transform: translateX(-50%); // Use mixins.respond
+    left: 50%;
+    transform: translateX(-50%);
     @include mixins.respond(phone) {
       display: none;
     }
@@ -48,11 +48,11 @@
     width: 100%;
     display: block;
     padding: 1.2rem;
-    border-bottom: 2px solid #eee; // Use mixins.respond
+    border-bottom: 2px solid vars.$color-surface-soft;
     transition: background .3s;
 
     &:hover {
-      background: rgba(#fff,.1);
+      background: rgba(vars.$color-surface,.14);
     }
 
     &--bd-none {
@@ -69,13 +69,19 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    max-width: 90rem;
-    width: 92%; // Use mixins.respond
+    max-width: min(90rem, calc(100vw - 3rem));
+    width: 92%;
     @include mixins.respond(phone) {
-      padding: 19rem 0 13rem 0;
+      padding: 14rem 0 9rem 0;
       margin: auto;
       position: static;
       transform: translate(0, 0);
+      width: calc(100% - 3rem);
+    }
+
+    @media only screen and (max-width: 22.5em) {
+      padding: 12rem 0 7rem 0;
+      width: calc(100% - 3rem);
     }
   }
 
@@ -84,24 +90,59 @@
     max-width: 80rem;
   }
   &__cta {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.4rem;
+    justify-content: center;
     margin-top: 5rem;
     text-align: center;
+
+    .btn {
+      line-height: 1.25;
+      max-width: min(100%, 48rem);
+      min-width: min(100%, 38rem);
+      padding-left: 5rem;
+      padding-right: 5rem;
+      white-space: normal;
+    }
+
+    @include mixins.respond(phone) {
+      flex-direction: column;
+      margin-top: 3.5rem;
+      width: 100%;
+
+      .btn {
+        font-size: 1.65rem;
+        letter-spacing: 0;
+        padding: 1.5rem 2rem;
+        width: 100%;
+      }
+    }
+
+    @media only screen and (max-width: 22.5em) {
+      .btn {
+        font-size: 1.5rem;
+        letter-spacing: 0;
+        padding: 1.3rem 1.2rem;
+      }
+    }
   }
 }
 
 .about {
-  background: rgb(250, 250, 250);
+  background: vars.$color-bg;
   &__content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 10rem; // Use mixins.respond
+    grid-gap: 10rem;
     @include mixins.respond(tab-port) {
       grid-template-columns: 1fr;
       grid-gap: 8rem;
     }
     &-title {
       font-weight: 700;
-      font-size: 2.8rem; // Use mixins.respond
+      font-size: 2.8rem;
       margin-bottom: 3rem;
       @include mixins.respond(phone) {
         font-size: 2.4rem;
@@ -109,7 +150,7 @@
     }
     &-details-para {
       font-size: 1.8rem;
-      color: grey;
+      color: vars.$color-muted;
       max-width: 60rem;
       line-height: 1.7;
       margin-bottom: 1rem;
@@ -135,8 +176,6 @@
       grid-gap: 2rem;
       margin-bottom: 8rem;
     }
-    // Use mixins.respond
-    // Use mixins.respond
     @include mixins.respond(tab-port) {
       text-align: center;
     }
@@ -167,14 +206,14 @@
       &-title {
         font-weight: 700;
         font-size: 2.8rem;
-        margin-bottom: 2rem; // Use mixins.respond
+        margin-bottom: 2rem;
         @include mixins.respond(phone) {
           font-size: 2.4rem;
         }
       }
       &-desc {
         font-size: 1.8rem;
-        color: grey;
+        color: vars.$color-muted;
         max-width: 60rem;
         line-height: 1.7;
         margin-bottom: 3rem;
@@ -189,28 +228,27 @@
 .contact {
   background: linear-gradient(
       to right,
-      rgba(vars.$themeClrPrimary, 0.8),
-      rgba(vars.$themeClrPrimary, 0.8)
+      vars.$color-primary-overlay,
+      vars.$color-primary-overlay
     ),
     url(../../assets/svg/common-bg.svg);
   background-size: cover;
   background-position: center;
 
   &__form-container {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background: rgba(#fff, 2);
+    box-shadow: 0 0 10px rgba(31, 23, 20, 0.1);
+    background: vars.$color-surface;
     padding: 4rem;
     margin-top: 6rem;
     max-width: 80rem;
     text-align: right;
-    width: 95%; // Use vars.$commonBorderRadius
+    width: 95%;
     border-radius: vars.$commonBorderRadius;
     margin: 5rem auto 0 auto;
     @include mixins.respond(phone) {
       padding: 3rem;
     }
   }
-  // Use mixins.respond
   &__form-field {
     margin-bottom: 4rem;
     @include mixins.respond(phone) {
@@ -218,48 +256,48 @@
     }
   }
   &__form-label {
-    color: #666;
+    color: vars.$color-muted;
     font-size: 1.4rem;
-    letter-spacing: 1px;
+    letter-spacing: 0;
     font-weight: 700;
     margin-bottom: 1rem;
     display: block;
     text-align: left;
   }
   &__form-input {
-    color: #333;
+    color: vars.$color-text;
     padding: 2rem;
     width: 100%;
-    border: 1px solid rgb(235, 235, 235);
+    border: 1px solid vars.$color-border;
     font-size: 1.6rem;
     letter-spacing: 0px;
-    background: rgba(rgb(240, 240, 240), 1);
+    background: vars.$color-surface-alt;
     border-radius: vars.$commonBorderRadius;
     font-weight: 600;
     /* Code for Modern Browsers */
     &::placeholder {
-      color: #999;
+      color: vars.$color-subtle;
       font-weight: 600;
       font-size: 1.6rem;
     }
 
     /* Code for WebKit, Blink, Edge */
     &::-webkit-input-placeholder {
-      color: #999;
+      color: vars.$color-subtle;
       font-weight: 600;
       font-size: 1.6rem;
     }
 
     /* Code for Internet Explorer 10-11 */
     &:-ms-input-placeholder {
-      color: #999;
+      color: vars.$color-subtle;
       font-weight: 600;
       font-size: 1.6rem;
     }
 
     /* Code for Microsoft Edge */
     &::-ms-input-placeholder {
-      color: #999;
+      color: vars.$color-subtle;
       font-weight: 600;
       font-size: 1.6rem;
     }
@@ -267,7 +305,7 @@
     /* Code for Mozilla Firefox 4 to 18 */
     &:-moz-placeholder {
       opacity: 1;
-      color: #999;
+      color: vars.$color-subtle;
       font-weight: 600;
       font-size: 1.6rem;
     }
@@ -275,17 +313,20 @@
     /* Code for Mozilla Firefox 19+ */
     &::-moz-placeholder {
       opacity: 1;
-      color: #999;
+      color: vars.$color-subtle;
       font-weight: 600;
       font-size: 1.6rem;
     }
   }
   &__btn {
-    width: 30%;
-
+    max-width: 100%;
+    min-width: 28rem;
     padding: 2rem 4rem;
     font-size: 1.6rem;
+    width: auto;
+
     @include mixins.respond(phone) {
+      min-width: 0;
       width: 100%;
     }
   }
@@ -299,19 +340,22 @@
 
 .whatsapp-btn {
   display: inline-block;
-  background: #25d366;
-  color: #fff;
+  background: vars.$color-success;
+  color: vars.$color-surface;
   font-size: 2.2rem;
   font-weight: 700;
+  line-height: 1.25;
+  max-width: 100%;
   padding: 1.8rem 5rem;
   border-radius: 50px;
-  letter-spacing: 0.5px;
-  box-shadow: 0 6px 24px rgba(37, 211, 102, 0.45);
+  letter-spacing: 0;
+  box-shadow: 0 6px 18px vars.$color-success-shadow;
   transition: transform 0.3s, box-shadow 0.3s;
 
   &:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 32px rgba(37, 211, 102, 0.55);
+    background: vars.$color-success-hover;
+    box-shadow: 0 10px 24px vars.$color-success-shadow;
   }
 
   @include mixins.respond(phone) {
@@ -322,7 +366,7 @@
 
 // ─── SERVICES SECTION ─────────────────────────────────────────────────────────
 .services {
-  background: #fff;
+  background: vars.$color-surface;
 }
 
 .services__grid {
@@ -337,19 +381,19 @@
 }
 
 .service-card {
-  background: #fff;
-  border: 1px solid #e8e8e8;
-  border-top: 4px solid vars.$themeClrPrimary;
+  background: vars.$color-surface;
+  border: 1px solid vars.$color-border;
   border-radius: 1.2rem;
   padding: 4rem 3.5rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 3px 8px rgba(31, 23, 20, 0.08);
   transition: box-shadow 0.3s, transform 0.3s;
 
   &:hover {
-    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.13);
+    border-color: vars.$color-primary-border;
+    box-shadow: 0 6px 8px rgba(31, 23, 20, 0.12);
     transform: translateY(-6px);
   }
 
@@ -361,21 +405,21 @@
   &__title {
     font-size: 2.4rem;
     font-weight: 700;
-    color: #222;
+    color: vars.$color-ink;
     line-height: 1.3;
     margin: 0;
   }
 
   &__text {
     font-size: 1.9rem;
-    color: #555;
+    color: vars.$color-muted;
     line-height: 1.75;
     margin: 0;
   }
 
   &__list {
     font-size: 1.8rem;
-    color: #444;
+    color: vars.$color-text;
     line-height: 1.85;
     padding-left: 2rem;
     margin: 0;
@@ -388,11 +432,11 @@
 
   &__result {
     font-size: 1.8rem;
-    color: #333;
-    background: rgba(vars.$themeClrPrimary, 0.07);
-    border-left: 4px solid vars.$themeClrPrimary;
+    color: vars.$color-primary-text;
+    background: vars.$color-primary-soft;
+    border: 1px solid vars.$color-primary-border;
     padding: 1.2rem 1.6rem;
-    border-radius: 0 6px 6px 0;
+    border-radius: 6px;
     line-height: 1.65;
     margin-top: auto;
   }
@@ -400,7 +444,7 @@
 
 // ─── WHY WORK WITH ME ─────────────────────────────────────────────────────────
 .whyme {
-  background: #f5f5f5;
+  background: vars.$color-surface-alt;
 }
 
 .whyme__grid {
@@ -419,16 +463,17 @@
 }
 
 .whyme__item {
-  background: #fff;
+  background: vars.$color-surface;
   border-radius: 1.2rem;
   padding: 4rem 3rem;
   text-align: center;
-  border: 1px solid #e8e8e8;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  border: 1px solid vars.$color-border;
+  box-shadow: 0 3px 8px rgba(31, 23, 20, 0.08);
   transition: box-shadow 0.3s, transform 0.3s;
 
   &:hover {
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.11);
+    border-color: vars.$color-primary-border;
+    box-shadow: 0 6px 8px rgba(31, 23, 20, 0.12);
     transform: translateY(-5px);
   }
 }
@@ -442,13 +487,13 @@
 .whyme__title {
   font-size: 2.2rem;
   font-weight: 700;
-  color: #222;
+  color: vars.$color-ink;
   margin-bottom: 1.4rem;
 }
 
 .whyme__text {
   font-size: 1.9rem;
-  color: #555;
+  color: vars.$color-muted;
   line-height: 1.75;
   margin: 0;
 }

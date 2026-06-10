@@ -22,8 +22,8 @@
     inset: 0;
     background: linear-gradient(
         120deg,
-        rgba(0, 0, 0, 0.75),
-        rgba(0, 0, 0, 0.35)
+        var(--color-overlay-strong),
+        var(--color-overlay)
     );
     z-index: 1;
 }
@@ -42,11 +42,11 @@
     width: 1140px;
     max-width: 70rem;
     box-sizing: border-box;
-    color: #fff;
-    background: rgba(0, 0, 0, 0.72);
+    color: var(--color-surface);
+    background: var(--color-overlay-strong);
     padding: 2.4rem 2.8rem;
     border-radius: 1.2rem;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+    box-shadow: 0 12px 30px rgba(31, 23, 20, 0.42);
 }
 
 /* texto mais leve e legível */
@@ -81,7 +81,7 @@
     font-size: 1.9rem;
     font-weight: 700;
     line-height: 1.4;
-    color: #f1683a;
+    color: var(--color-primary);
 }
 
 .carousel .list .item .buttons{
@@ -93,15 +93,15 @@
 }
 .carousel .list .item .buttons button{
     border: none;
-    background-color: #eee;
+    background-color: var(--color-surface-soft);
     letter-spacing: 3px;
     font-family: Poppins;
     font-weight: 500;
 }
 .carousel .list .item .buttons button:nth-child(2){
     background-color: transparent;
-    border: 1px solid #fff;
-    color: #eee;
+    border: 1px solid var(--color-surface);
+    color: var(--color-surface-soft);
 }
 /* thumbail */
 .thumbnail{
@@ -126,7 +126,7 @@
     border-radius: 20px;
 }
 .thumbnail .item .content{
-    color: #f1683a;
+    color: var(--color-primary);
     position: absolute;
     bottom: 10px;
     left: 10px;
@@ -154,16 +154,16 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: #f1683a;
+    background-color: var(--color-primary);
     border: none;
-    color: #fff;
+    color: var(--color-surface);
     font-family: monospace;
     font-weight: bold;
     transition: .5s;
 }
 .arrows button:hover{
-    background-color: #fff;
-    color: #000;
+    background-color: var(--color-surface);
+    color: var(--color-ink);
 }
 
 /* animation */
@@ -253,7 +253,7 @@
     z-index: 1000;
     width: 0%;
     height: 3px;
-    background-color: #f1683a;
+    background-color: var(--color-primary);
     left: 0;
     top: 0;
 }
@@ -344,5 +344,15 @@
 
     .carousel .list .item .des{
         font-size: 1.4rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .carousel,
+    .carousel * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        filter: none !important;
+        transition-duration: 0.01ms !important;
     }
 }
