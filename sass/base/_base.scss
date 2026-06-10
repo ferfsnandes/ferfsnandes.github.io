@@ -7,6 +7,22 @@
   font-family: inherit;
 }
 
+:root {
+  --color-primary: #{$color-primary};
+  --color-primary-hover: #{$color-primary-hover};
+  --color-primary-text: #{$color-primary-text};
+  --color-primary-soft: #{$color-primary-soft};
+  --color-primary-border: #{$color-primary-border};
+  --color-success: #{$color-success};
+  --color-ink: #{$color-ink};
+  --color-text: #{$color-text};
+  --color-muted: #{$color-muted};
+  --color-surface: #{$color-surface};
+  --color-surface-soft: #{$color-surface-soft};
+  --color-overlay-strong: rgba(31, 23, 20, 0.78);
+  --color-overlay: rgba(31, 23, 20, 0.42);
+}
+
 html {
   // This defines what 1rem is
   font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
@@ -50,8 +66,27 @@ li {
 input:focus,
 button:focus,
 a:focus,
+select:focus,
 textarea:focus {
+  outline: 3px solid $color-primary-text;
+  outline-offset: 4px;
+}
+
+input:focus:not(:focus-visible),
+button:focus:not(:focus-visible),
+a:focus:not(:focus-visible),
+select:focus:not(:focus-visible),
+textarea:focus:not(:focus-visible) {
   outline: none;
+}
+
+input:focus-visible,
+button:focus-visible,
+a:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid $color-primary-text;
+  outline-offset: 4px;
 }
 
 button {
@@ -61,4 +96,34 @@ button {
 
 textarea {
   resize: none;
+}
+
+.skip-link {
+  background: $color-surface;
+  color: $color-ink;
+  font-size: 1.6rem;
+  font-weight: 700;
+  left: 1rem;
+  padding: 1rem 1.4rem;
+  position: fixed;
+  top: 1rem;
+  transform: translateY(-150%);
+  transition: transform 0.2s ease;
+  z-index: 1100;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }
