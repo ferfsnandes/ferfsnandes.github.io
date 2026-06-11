@@ -8,7 +8,7 @@ _Last updated: 2026-06-10 · Cadence: ~2 pieces/month (solo capacity)_
 |---|---|---|---|---|
 | 1 | `/servicos/automacao-whatsapp/` | WhatsApp | automação de WhatsApp para empresas | ✅ done |
 | 2 | `/servicos/criacao-de-sites/` | Sites | criação de sites São Paulo | ✅ done |
-| 3 | `/servicos/integracao-ia/` | IA | integração de IA no atendimento | todo |
+| 3 | `/servicos/integracao-ia/` | IA | integração de IA no atendimento | ✅ done |
 | 4 | `/sobre/` | Brand / E-E-A-T | Gabriel Fernandes programador | todo |
 | 5 | `/trabalhos/dra-thais-maltempi/` | Vertical (clínica) | site para clínica / médico | todo |
 | 6 | `/trabalhos/casa-guaruja/` | Vertical (turismo) | site casa de temporada | todo |

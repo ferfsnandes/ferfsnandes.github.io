@@ -22,7 +22,7 @@ Legend: ✅ done · ⏳ in progress · ⬜ todo · 👤 requires Gabriel (off-si
 
 ## Phase 2 — Expansion (weeks 5–12)
 
-- ✅ Build `/servicos/criacao-de-sites/` · ⬜ `/servicos/integracao-ia/`
+- ✅ Build `/servicos/criacao-de-sites/` and `/servicos/integracao-ia/`
 - ⬜ Build `/sobre/` with bio + Unicamp credential
 - ⬜ Expand `/trabalhos` into 3 individual case-study pages + testimonials
 - 👤 Claim **Bing Places** + **Apple Business Connect**
