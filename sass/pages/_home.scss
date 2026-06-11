@@ -782,6 +782,24 @@
     font-size: clamp(2.6rem, 2.2vw, 3.2rem);
     line-height: 1.08;
   }
+
+  &__link {
+    align-self: start;
+    border-bottom: 2px solid currentColor;
+    font-family: 'Archivo', 'Source Sans 3', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-top: 0.4rem;
+    padding-bottom: 0.3rem;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+    width: fit-content;
+
+    &:hover,
+    &:focus-visible {
+      opacity: 0.7;
+    }
+  }
 }
 
 .whyme {
